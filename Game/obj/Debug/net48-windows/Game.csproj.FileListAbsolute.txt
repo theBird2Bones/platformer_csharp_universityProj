@@ -8,3 +8,5 @@ C:\Users\Konstantine\Desktop\Учеба\Программирование\C#\Иг
 C:\Users\Konstantine\Desktop\Учеба\Программирование\C#\Игра\Game\obj\Debug\net48-windows\Game.csproj.CoreCompileInputs.cache
 C:\Users\Konstantine\Desktop\Учеба\Программирование\C#\Игра\Game\obj\Debug\net48-windows\Game.exe
 C:\Users\Konstantine\Desktop\Учеба\Программирование\C#\Игра\Game\obj\Debug\net48-windows\Game.pdb
+C:\Users\Konstantine\Desktop\Учеба\Программирование\C#\Игра\Game\obj\Debug\net48-windows\Game.ResourcesImages.resources
+C:\Users\Konstantine\Desktop\Учеба\Программирование\C#\Игра\Game\obj\Debug\net48-windows\Game.csproj.GenerateResource.cache

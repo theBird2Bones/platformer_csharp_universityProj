@@ -23,24 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7e6dba40-83ca-4591-a40f-9825c57494f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/contentModel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Game/riderModule.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Debug/net48-windows/Game.assets.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Game.csproj.nuget.dgspec.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Game.csproj.nuget.g.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/Game.csproj.nuget.g.targets" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Game.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net48-windows/Game.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net48-windows/Game.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +39,9 @@
       <list>
         <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Form1.cs" />
+        <option value="$PROJECT_DIR$/resourcesImages.resx" />
+        <option value="$PROJECT_DIR$/resourcesImage.resx" />
+        <option value="$PROJECT_DIR$/resources.cs" />
       </list>
     </option>
   </component>
@@ -98,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617613636173</updated>
-      <workItem from="1617613721419" duration="1049000" />
+      <workItem from="1617613721419" duration="2393000" />
     </task>
     <servers />
   </component>
@@ -120,5 +107,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="617" y="357" width="440" height="171" key="AddNewResourceElement" timestamp="1617617301265">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state x="617" y="357" width="440" height="171" key="AddNewResourceElement/0.0.1676.911@0.0.1676.911" timestamp="1617617301265" />
+    <state width="1632" height="239" key="GridCell.Tab.0.bottom" timestamp="1617617416619">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="239" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1617617416619" />
+    <state width="1632" height="239" key="GridCell.Tab.0.center" timestamp="1617617416619">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="239" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1617617416619" />
+    <state width="1632" height="239" key="GridCell.Tab.0.left" timestamp="1617617416619">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="239" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1617617416619" />
+    <state width="1632" height="239" key="GridCell.Tab.0.right" timestamp="1617617416619">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="239" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1617617416619" />
   </component>
 </project>

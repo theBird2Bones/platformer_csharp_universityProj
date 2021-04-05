@@ -18,6 +18,8 @@ namespace Game{
                 if (res != DialogResult.Yes)
                     eventArgs.Cancel = true;
             };
+            BackgroundImage = ResourcesImages.tempBackground;
         }
+
     }
 }

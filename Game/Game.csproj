@@ -26,4 +26,19 @@
       <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="ResourcesImages.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>ResourcesImages.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="ResourcesImages.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>ResourcesImages.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
+    </ItemGroup>
+
 </Project>
