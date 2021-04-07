@@ -9,11 +9,11 @@ namespace Game
 {
     interface IWeaponInterface
     {
-        public int BulletCount { get; set; }
-        public int ReloadingTime { get; set; }
-        public double SplashRadius { get; set; }
-        public Vector BulletSpeed { get; set; }
-        public Vector BulletGravity { get; set; }
-        public Vector GetTotalBulletVector();
+        int BulletCount { get; set; }
+        int ReloadingTime { get; set; }
+        double SplashRadius { get; set; }
+        Vector BulletSpeed { get; set; }
+        Vector BulletGravity { get; set; }
+        Vector GetTotalBulletVector();
     }
 }

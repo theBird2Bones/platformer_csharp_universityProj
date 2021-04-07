@@ -8,6 +8,6 @@ namespace Game
 {
     interface IStaticObjectInterface : IEntityInterface
     {
-        public void Action();
+        void Action();
     }
 }

@@ -10,10 +10,10 @@ namespace Game
 {
     interface IGameInterface
     {
-        public int Scores { get; set; }
-        public bool IsOver { get; set; }
-        public Point MapSize { get; set; }
-        public Keys KeyPressed { get; set; }
-        public Dictionary<string, Entity> Entities { get; set; }
+        int Scores { get; set; }
+        bool IsOver { get; set; }
+        Point MapSize { get; set; }
+        Keys KeyPressed { get; set; }
+        Dictionary<string, Entity> Entities { get; set; }
     }
 }

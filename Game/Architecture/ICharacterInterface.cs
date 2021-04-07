@@ -8,11 +8,11 @@ namespace Game
 {
     interface ICharacterInterface : IEntityInterface
     {
-        public int Health { get; set; }
-        public int Speed { get; }
-        public int JumpHeight { get; }
-        public Weapon Weapon { get; set; }
-        public void Action();
-        public void OnDeath();
+        int Health { get; set; }
+        int Speed { get; }
+        int JumpHeight { get; }
+        Weapon Weapon { get; set; }
+        void Action();
+        void OnDeath();
     }
 }

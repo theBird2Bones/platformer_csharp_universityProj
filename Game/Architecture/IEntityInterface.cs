@@ -9,11 +9,11 @@ namespace Game
 {
     interface IEntityInterface
     {
-        public string ImageName { get; }
-        public int DrowingPriority { get; set; }
-        public Vector Location { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public void OnConflict(Entity entity);
+        string ImageName { get; }
+        int DrowingPriority { get; set; }
+        Vector Location { get; set; }
+        int Width { get; set; }
+        int Height { get; set; }
+        void OnConflict(Entity entity);
     }
 }
