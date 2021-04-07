@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\Konstantine\\Desktop\\Учеба\\Программирование\\C#\\Игра\\Game\\Game.csproj",
-    "projectName": "Game",
-    "projectPath": "C:\\Users\\Konstantine\\Desktop\\Учеба\\Программирование\\C#\\Игра\\Game\\Game.csproj",
-    "outputPath": "C:\\Users\\Konstantine\\Desktop\\Учеба\\Программирование\\C#\\Игра\\Game\\obj\\",
+    "projectUniqueName": "C:\\Users\\Konstantine\\Desktop\\Учеба\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+    "projectName": "WinFormsApp1",
+    "projectPath": "C:\\Users\\Konstantine\\Desktop\\Учеба\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+    "outputPath": "C:\\Users\\Konstantine\\Desktop\\Учеба\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
       "C:\\Microsoft\\Xamarin\\NuGet"
