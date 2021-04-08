@@ -15,15 +15,13 @@ namespace WinFormsApp1{
     public partial class Form1 : Form{
         public Form1(GameClass game){
             InitializeComponent();
-			
-			
             Width = game.MapSize.X;
             Height = game.MapSize.Y;
             StartPosition = FormStartPosition.CenterScreen;
             
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
 
-            var PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName +
+            var PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
                 "\\Images\\";
             
             var platform = new PictureBox(){
@@ -121,12 +119,10 @@ namespace WinFormsApp1{
                 if (jumping && force < 0) {
                     jumping = false;
                 }
-
                 if (jumping) {
                     jumpSpeed = -150;
                     force = -1;
                 }
-
                 else jumpSpeed = 35;
                 if (goLeft) {
                     if(player.Left > 50)
