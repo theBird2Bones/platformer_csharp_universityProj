@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Drawing;
 
 namespace Game
 {
     interface IEntityInterface
     {
         string ImageName { get; }
-        int DrowingPriority { get; set; }
-        Vector Location { get; set; }
-        int Width { get; set; }
-        int Height { get; set; }
+        int DrawingPriority { get; set; }
+        Point Location { get; set; }
+        Size Size { get; set; }
         void OnConflict(Entity entity);
     }
 }

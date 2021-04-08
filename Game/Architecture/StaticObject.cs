@@ -3,33 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Drawing;
 
 namespace Game
 {
-    class StaticObject : IStaticObjectInterface
+    class StaticObject : Entity
     {
-        public StaticObject(string imageName, int drowingPriority, Vector location,
-            int width, int height)
+        public StaticObject() { }
+        public StaticObject(string name, string imageName, int drawingPriority, 
+            Point location, Size size) 
+            : base(name, imageName, drawingPriority, location, size)
         {
-            ImageName = imageName;
-            DrowingPriority = drowingPriority;
+        }
+
+        public StaticObject WithName(string name)
+        {
+            Name = name;
+            return this;
+        }
+
+        public StaticObject WithImageName(string name)
+        {
+            ImageName = name;
+            return this;
+        }
+
+        public StaticObject WithDrowingPriority(int drawingPriority)
+        {
+            DrawingPriority = drawingPriority;
+            return this;
+        }
+
+        public StaticObject WithLocation(Point location)
+        {
             Location = location;
-            Width = width;
-            Height = height;
+            return this;
         }
-        public string ImageName { get; }
-        public int DrowingPriority { get; set; }
-        public Vector Location { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
 
-        public void Action()
+        public StaticObject WithSize(Size size)
         {
-            throw new NotImplementedException();
+            Size = size;
+            return this;
         }
 
-        public void OnConflict(Entity entity)
+        public override void OnConflict(Entity entity)
         {
         }
     }

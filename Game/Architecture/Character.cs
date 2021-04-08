@@ -3,30 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Drawing;
 
 namespace Game
 {
     class Character : ICharacterInterface
     {
-        public Character(string imageName, int drowingPriority, Vector location, int width, 
-            int height, int health, int speed, int jumpHeight, Weapon weapon)
+        public Character(string imageName, int drowingPriority, Point location, 
+            Size size, int health, int speed, int jumpHeight, Weapon weapon)
         {
             ImageName = imageName;
-            DrowingPriority = drowingPriority;
+            DrawingPriority = drowingPriority;
             Location = location;
-            Width = width;
-            Height = height;
+            Size = size;
             Health = health;
             Speed = speed;
             JumpHeight = jumpHeight;
             Weapon = weapon;
         }
         public string ImageName { get; }
-        public int DrowingPriority { get; set; }
-        public Vector Location { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
+        public int DrawingPriority { get; set; }
+        public Point Location { get; set; }
+        public Size Size { get; set; }
         public int Health { get; set; }
         public int Speed { get; }
         public int JumpHeight { get; }
