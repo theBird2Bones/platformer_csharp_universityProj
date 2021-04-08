@@ -16,12 +16,12 @@ namespace Game
             IsOver = false;
             MapSize = mapSize;
             KeyPressed = Keys.None;
-            Entities = new Dictionary<string, Entity>();
+            StaticObjectBuilders = new Dictionary<string, StaticObjectBuilder>();
         }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
         public Point MapSize { get; set; }
         public Keys KeyPressed { get; set; }
-        public Dictionary<string, Entity> Entities { get; set; }
+        public Dictionary<string, StaticObjectBuilder> StaticObjectBuilders { get; set; }
     }
 }

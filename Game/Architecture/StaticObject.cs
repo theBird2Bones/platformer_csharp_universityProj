@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Game
 {
-    class StaticObject : Entity
+    public class StaticObject : Entity
     {
         public StaticObject() { }
         public StaticObject(string name, string imageName, int drawingPriority, 

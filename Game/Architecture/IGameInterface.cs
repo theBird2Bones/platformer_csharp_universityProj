@@ -14,6 +14,6 @@ namespace Game
         bool IsOver { get; set; }
         Point MapSize { get; set; }
         Keys KeyPressed { get; set; }
-        Dictionary<string, Entity> Entities { get; set; }
+        Dictionary<string, StaticObjectBuilder> StaticObjectBuilders { get; set; }
     }
 }

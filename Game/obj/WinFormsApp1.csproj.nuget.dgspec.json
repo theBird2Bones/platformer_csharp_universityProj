@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {}
+    "D:\\The_p\\GameOfTheCentury2\\Game\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {
+    "D:\\The_p\\GameOfTheCentury2\\Game\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+        "projectUniqueName": "D:\\The_p\\GameOfTheCentury2\\Game\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+        "projectPath": "D:\\The_p\\GameOfTheCentury2\\Game\\WinFormsApp1.csproj",
         "packagesPath": "C:\\Users\\The_p\\.nuget\\packages\\",
-        "outputPath": "D:\\The_p\\GameOfTheCentury\\Game\\obj\\",
+        "outputPath": "D:\\The_p\\GameOfTheCentury2\\Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\The_p\\AppData\\Roaming\\NuGet\\NuGet.Config",

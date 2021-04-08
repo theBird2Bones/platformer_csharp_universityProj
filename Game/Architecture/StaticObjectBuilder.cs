@@ -2,30 +2,46 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace Game
 {
-    class StaticObjectBuilder : IStaticObjectBuilderInterface
+    public class StaticObjectBuilder : IStaticObjectBuilderInterface
     {
+        public string PATH_TO_IMAGES = new DirectoryInfo(Directory.GetCurrentDirectory())
+            .Parent.Parent.Parent.Parent.FullName + "\\Images\\";
         public StaticObject staticObject = new StaticObject();
-        public StaticObjectBuilder() { }
-        public Entity Build()
+        public PictureBox pictureBox = new PictureBox();
+        public StaticObjectBuilder() 
+        { 
+            pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox.Visible = true;
+        }
+        public Entity BuildEntity()
         {
             return staticObject;
+        }
+
+        public PictureBox BuildPictureBox()
+        {
+            return pictureBox;
         }
 
         public StaticObjectBuilder SetName(string name)
         {
             staticObject = staticObject.WithName(name);
+            pictureBox.Tag = name;
             return this;
         }
 
         public StaticObjectBuilder SetImageName(string imageName)
         {
             staticObject = staticObject.WithImageName(imageName);
+            pictureBox.BackgroundImage = Image.FromFile(PATH_TO_IMAGES + imageName);
             return this;
         }
 
@@ -38,12 +54,14 @@ namespace WinFormsApp1
         public StaticObjectBuilder SetLocation(Point location)
         {
             staticObject = staticObject.WithLocation(location);
+            pictureBox.Location = location;
             return this;
         }
 
         public StaticObjectBuilder SetSize(Size size)
         {
             staticObject = staticObject.WithSize(size);
+            pictureBox.Size = size;
             return this;
         }
     }

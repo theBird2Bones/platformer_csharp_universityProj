@@ -5,8 +5,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace WinFormsApp1
+namespace Game
 {
     interface IStaticObjectBuilderInterface
     {
@@ -15,6 +16,7 @@ namespace WinFormsApp1
         StaticObjectBuilder SetDrowingPriority(int drawingPriority);
         StaticObjectBuilder SetLocation(Point location);
         StaticObjectBuilder SetSize(Size size);
-        Entity Build();
+        Entity BuildEntity();
+        PictureBox BuildPictureBox();
     }
 }

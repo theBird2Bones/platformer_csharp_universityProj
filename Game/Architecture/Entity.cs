@@ -13,7 +13,7 @@ namespace Game
         private Size DEFAULTSIZE = new Size(100, 100);
         private string DEFAULTNAME = "entity";
         private string DEFAULTIMAGENAME = "nothing";
-        private int DRAWINGPRIORITY = 2;
+        private int DRAWINGPRIORITY = 3;
         public Entity()
         {
             Name = DEFAULTNAME;
