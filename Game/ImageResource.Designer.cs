@@ -63,9 +63,9 @@ namespace WinFormsApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap first_bush {
+        internal static System.Drawing.Bitmap firstBush {
             get {
-                object obj = ResourceManager.GetObject("first_bush", resourceCulture);
+                object obj = ResourceManager.GetObject("firstBush", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace WinFormsApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap first_tree {
+        internal static System.Drawing.Bitmap firstTree {
             get {
-                object obj = ResourceManager.GetObject("first_tree", resourceCulture);
+                object obj = ResourceManager.GetObject("firstTree", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace WinFormsApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap second_bush {
+        internal static System.Drawing.Bitmap secondBush {
             get {
-                object obj = ResourceManager.GetObject("second_bush", resourceCulture);
+                object obj = ResourceManager.GetObject("secondBush", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +123,9 @@ namespace WinFormsApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap second_tree {
+        internal static System.Drawing.Bitmap secondTree {
             get {
-                object obj = ResourceManager.GetObject("second_tree", resourceCulture);
+                object obj = ResourceManager.GetObject("secondTree", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace WinFormsApp1 {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap third_tree {
+        internal static System.Drawing.Bitmap thirdTree {
             get {
-                object obj = ResourceManager.GetObject("third_tree", resourceCulture);
+                object obj = ResourceManager.GetObject("thirdTree", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
