@@ -36,14 +36,14 @@ namespace WinFormsApp1{
                 .SetName("player")
                 .SetImageName("mushroom.png")
                 .SetDrowingPriority(1)
-                .SetLocation(new Point(300, platform.staticObject.Location.Y - 40))
+                .SetLocation(new Point(300, platform.StaticObject.Location.Y - 40))
                 .SetSize(new Size(30, 40));
 
             var tree = new StaticObjectBuilder()
                 .SetName("tree")
                 .SetImageName("thirdTree.png")
                 .SetDrowingPriority(2)
-                .SetLocation(new Point(600, platform.staticObject.Location.Y - 300))
+                .SetLocation(new Point(600, platform.StaticObject.Location.Y - 300))
                 .SetSize(new Size(150, 300));
 
             game.StaticObjectBuilders.Add(platform.BuildEntity().Name, platform);

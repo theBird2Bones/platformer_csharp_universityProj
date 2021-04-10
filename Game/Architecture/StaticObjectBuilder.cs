@@ -12,56 +12,56 @@ namespace Game
 {
     public class StaticObjectBuilder : IStaticObjectBuilderInterface
     {
-        public string PATH_TO_IMAGES = new DirectoryInfo(Directory.GetCurrentDirectory())
+        public string PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory())
             .Parent.Parent.Parent.Parent.FullName + "\\Images\\";
-        public StaticObject staticObject = new StaticObject();
-        public PictureBox pictureBox = new PictureBox();
+        public StaticObject StaticObject = new StaticObject();
+        public PictureBox PictureBox = new PictureBox();
         public StaticObjectBuilder() 
         { 
-            pictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-            pictureBox.Visible = true;
+            PictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+            PictureBox.Visible = true;
         }
         public Entity BuildEntity()
         {
-            return staticObject;
+            return StaticObject;
         }
 
         public PictureBox BuildPictureBox()
         {
-            return pictureBox;
+            return PictureBox;
         }
 
         public StaticObjectBuilder SetName(string name)
         {
-            staticObject = staticObject.WithName(name);
-            pictureBox.Tag = name;
+            StaticObject = StaticObject.WithName(name);
+            PictureBox.Tag = name;
             return this;
         }
 
         public StaticObjectBuilder SetImageName(string imageName)
         {
-            staticObject = staticObject.WithImageName(imageName);
-            pictureBox.BackgroundImage = Image.FromFile(PATH_TO_IMAGES + imageName);
+            StaticObject = StaticObject.WithImageName(imageName);
+            PictureBox.BackgroundImage = Image.FromFile(PathToImages + imageName);
             return this;
         }
 
         public StaticObjectBuilder SetDrowingPriority(int drawingPriority)
         {
-            staticObject = staticObject.WithDrowingPriority(drawingPriority);
+            StaticObject = StaticObject.WithDrowingPriority(drawingPriority);
             return this;
         }
 
         public StaticObjectBuilder SetLocation(Point location)
         {
-            staticObject = staticObject.WithLocation(location);
-            pictureBox.Location = location;
+            StaticObject = StaticObject.WithLocation(location);
+            PictureBox.Location = location;
             return this;
         }
 
         public StaticObjectBuilder SetSize(Size size)
         {
-            staticObject = staticObject.WithSize(size);
-            pictureBox.Size = size;
+            StaticObject = StaticObject.WithSize(size);
+            PictureBox.Size = size;
             return this;
         }
     }

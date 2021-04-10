@@ -9,18 +9,18 @@ namespace Game
 {
     public abstract class Entity : IEntityInterface
     {
-        private Point ZIROLOCATION = new Point(0, 0);
-        private Size DEFAULTSIZE = new Size(100, 100);
-        private string DEFAULTNAME = "entity";
-        private string DEFAULTIMAGENAME = "nothing";
-        private int DRAWINGPRIORITY = 3;
+        private Point _zeroLocation = new Point(0, 0);
+        private Size _defaultSize = new Size(100, 100);
+        private string _defaultName = "entity";
+        private string _defaultImageName = "nothing";
+        private int _drawingPriority = 3;
         public Entity()
         {
-            Name = DEFAULTNAME;
-            ImageName = DEFAULTIMAGENAME;
-            DrawingPriority = DRAWINGPRIORITY;
-            Location = ZIROLOCATION;
-            Size = DEFAULTSIZE;
+            Name = _defaultName;
+            ImageName = _defaultImageName;
+            DrawingPriority = _drawingPriority;
+            Location = _zeroLocation;
+            Size = _defaultSize;
         }
         public Entity(string name, string imageName, int drawingPriority, Point location, Size size)
         {
