@@ -32,6 +32,7 @@ namespace WinFormsApp1{
                     new Plant(new Point(600, game.MapSize.Height - 300),
                     new Size(150, 300),
                     PlantsType.fir));
+                game.Background = new Background(game.MapSize);
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
         }

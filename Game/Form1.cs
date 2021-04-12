@@ -24,26 +24,12 @@ namespace WinFormsApp1
 
             var PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
                 "\\Images\\";
-
             
-            var background = new PictureBox()
-            {
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Tag = "background",
-                Size = new Size(2000, 500),
-                Location = new Point(0, 0),
-                BackgroundImage = Image.FromFile(PathToImages + "background.png"),
-                Visible = true,
-            };
-            
-
-            
-
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
             }
             Controls.Add(game.Hero);
-            Controls.Add(background);
+            Controls.Add(game.Background);
 
             bool goLeft = false; // boolean which will control players going left
             bool goRight = false; // boolean which will control players going right
@@ -106,9 +92,9 @@ namespace WinFormsApp1
                 {
                     if (game.Hero.Left > 50)
                         game.Hero.Left -= playerSpeed;
-                    if (background.Left < 0)
+                    if (game.Background.Left < 0)
                     {
-                        background.Left += backLeft;
+                        game.Background.Left += backLeft;
                         foreach (Control control in Controls)
                         {
                             if (control.Tag == "tree" || control.Tag == "platform")
@@ -121,10 +107,10 @@ namespace WinFormsApp1
                 {
                     if ((game.Hero.Left + game.Hero.Width + 50) < ClientSize.Width)
                         game.Hero.Left += playerSpeed;
-                    if (background.Left < 500)
+                    if (game.Background.Left < 500)
                     {
-                        Console.WriteLine(background.Left);
-                        background.Left -= backLeft;
+                        Console.WriteLine(game.Background.Left);
+                        game.Background.Left -= backLeft;
                         foreach (Control control in Controls)
                         {
                             if (control.Tag == "tree" || control.Tag == "platform")

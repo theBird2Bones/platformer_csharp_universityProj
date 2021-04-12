@@ -17,6 +17,7 @@ namespace Game
         }
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
+        public Background Background { get; set; }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
         public Size MapSize { get; }

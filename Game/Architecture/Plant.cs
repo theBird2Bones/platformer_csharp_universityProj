@@ -24,7 +24,7 @@ namespace Game {
             Location = location;
             Size = size;
             SizeMode = PictureBoxSizeMode.StretchImage;
-            Tag = "plants";
+            Tag = "plant";
             Image = new Bitmap(PathToImages + plantsType[plantType]);
             Visible = true;
         }
