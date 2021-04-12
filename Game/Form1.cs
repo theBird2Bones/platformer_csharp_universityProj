@@ -19,11 +19,6 @@ namespace WinFormsApp1
         {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
-
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
-            var PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
-                "\\Images\\";
             
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
