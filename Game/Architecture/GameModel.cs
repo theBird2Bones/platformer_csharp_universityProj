@@ -8,20 +8,19 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public class GameClass : IGameInterface
-    {
-        public GameClass(Point mapSize, int scores = 0)
-        {
+    public class GameModel {
+        public GameModel(Size mapSize, int scores = 0) {
             Scores = scores;
             IsOver = false;
             MapSize = mapSize;
-            KeyPressed = Keys.None;
-            StaticObjectBuilders = new Dictionary<string, StaticObjectBuilder>();
+            EnvironmentObjects = new List<PictureBox>();
         }
+        public Hero Hero { get; set; }
+        public List<PictureBox> EnvironmentObjects { get; set; }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
-        public Point MapSize { get; set; }
-        public Keys KeyPressed { get; set; }
-        public Dictionary<string, StaticObjectBuilder> StaticObjectBuilders { get; set; }
+        public Size MapSize { get; }
+        
+        
     }
 }

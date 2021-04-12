@@ -15,11 +15,9 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        public Form1(GameClass game)
+        public Form1(GameModel game)
         {
             InitializeComponent();
-            Width = game.MapSize.X;
-            Height = game.MapSize.Y;
             StartPosition = FormStartPosition.CenterScreen;
 
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
@@ -27,24 +25,7 @@ namespace WinFormsApp1
             var PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
                 "\\Images\\";
 
-            var platform = new PictureBox()
-            {
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Tag = "platform",
-                Size = new Size(2000, 60),
-                Location = new Point(0, ClientSize.Height - 60),
-                BackgroundImage = Image.FromFile(PathToImages + "onlyGround.png"),
-                Visible = true,
-            };
-            var platform2 = new PictureBox()
-            {
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Tag = "platform",
-                Size = new Size(120, 60),
-                Location = new Point(400, ClientSize.Height - 240),
-                BackgroundImage = Image.FromFile(PathToImages + "onlyGround.png"),
-                Visible = true,
-            };
+            
             var background = new PictureBox()
             {
                 SizeMode = PictureBoxSizeMode.StretchImage,
@@ -54,30 +35,14 @@ namespace WinFormsApp1
                 BackgroundImage = Image.FromFile(PathToImages + "background.png"),
                 Visible = true,
             };
-            var player = new PictureBox()
-            {
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Tag = "player",
-                Size = new Size(30, 40),
-                Location = new Point(300, platform.Location.Y - 40),
-                BackgroundImage = Image.FromFile(PathToImages + "mushroom.png"),
-                Visible = true,
-            };
+            
 
-            var tree = new PictureBox()
-            {
-                SizeMode = PictureBoxSizeMode.StretchImage,
-                Tag = "tree",
-                Size = new Size(150, 300),
-                Location = new Point(600, platform.Location.Y - 300),
-                BackgroundImage = Image.FromFile(PathToImages + "thirdTree.png"),
-                Visible = true,
-            };
+            
 
-            Controls.Add(platform);
-            Controls.Add(platform2);
-            Controls.Add(player);
-            Controls.Add(tree);
+            foreach (var environmentEl in game.EnvironmentObjects) {
+                Controls.Add(environmentEl);
+            }
+            Controls.Add(game.Hero);
             Controls.Add(background);
 
             bool goLeft = false; // boolean which will control players going left
@@ -124,8 +89,9 @@ namespace WinFormsApp1
             var timer = new Timer();
             timer.Interval = 43;
             timer.Tick += (sender, args) => {
-                player.Top += jumpSpeed;
-                player.Refresh();
+                game.Hero.Top += jumpSpeed;
+                game.Hero.Refresh();
+                
                 if (jumping && force < 0)
                 {
                     jumping = false;
@@ -138,8 +104,8 @@ namespace WinFormsApp1
                 else jumpSpeed = 35;
                 if (goLeft)
                 {
-                    if (player.Left > 50)
-                        player.Left -= playerSpeed;
+                    if (game.Hero.Left > 50)
+                        game.Hero.Left -= playerSpeed;
                     if (background.Left < 0)
                     {
                         background.Left += backLeft;
@@ -153,8 +119,8 @@ namespace WinFormsApp1
 
                 if (goRight)
                 {
-                    if ((player.Left + player.Width + 50) < ClientSize.Width)
-                        player.Left += playerSpeed;
+                    if ((game.Hero.Left + game.Hero.Width + 50) < ClientSize.Width)
+                        game.Hero.Left += playerSpeed;
                     if (background.Left < 500)
                     {
                         Console.WriteLine(background.Left);
@@ -171,10 +137,10 @@ namespace WinFormsApp1
                 {
                     if (control is PictureBox && control.Tag == "platform")
                     {
-                        if (!jumping && player.Bounds.IntersectsWith(control.Bounds))
+                        if (!jumping && game.Hero.Bounds.IntersectsWith(control.Bounds))
                         {
                             force = 8;
-                            player.Top = control.Top - player.Height;
+                            game.Hero.Top = control.Top - game.Hero.Height;
                             jumpSpeed = 0;
                         }
                     }
