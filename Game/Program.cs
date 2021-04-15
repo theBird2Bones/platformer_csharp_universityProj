@@ -17,9 +17,8 @@ namespace WinFormsApp1{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 var game = new GameModel(new Size(1500, 900));
-                var player = new Hero(100, 15, 50,
-                    //new Point(300, platform.Location.Y - 40),
-                    new Point(0,0), 
+                var player = new Hero(100, 6, 12,
+                    new Point(400,400), 
                     new Size(30, 40));
                 game.Hero = player;
                 game.EnvironmentObjects.Add(
