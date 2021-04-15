@@ -13,24 +13,14 @@ namespace Game{
         goRight,
         Jump,
     }
-    public class Hero : PictureBox{
-        
-        public Hero(int health, int speed, int jumpHeight, Point location, Size size){
-            Health = health;
-            Speed = speed;
-            JumpHeight = jumpHeight;
-            Location = location;
-            Size = size;
-            SizeMode = PictureBoxSizeMode.StretchImage;
+    public class Hero : DynamicObject
+    {
+        public Hero(int health, int speed, int jumpHeight, Point location, Size size)
+            : base(health, speed, jumpHeight, location, size)
+        {
             Tag = "hero";
             Image = new Bitmap(PathToImages + "hero.png");
-            Visible = true;
         }
-        public int DrawingPriority { get; set; }
-        public int Health { get; set; }
-        public int Speed { get; }
-        public int JumpHeight { get; }
-        public Weapon Weapon { get; set; }
 
         public bool IsMoving {
             get {
@@ -44,11 +34,8 @@ namespace Game{
         public bool IsLanded { get; set; }
         
         public int CurrentJumpHeight { get; set; }
-        public void OnConflict(Entity entity) { }
-        public void Action() { }
-        public void OnDeath() { }
 
-        public void Move() {
+        public new void Move() {
             if (IsGoingLeft) 
                 this.Left -= this.Speed;
             if (IsGoingRight)
@@ -61,10 +48,76 @@ namespace Game{
                 IsJumping = false;
             }
         }
+
+        public void ProcessKeys(GameModel game, Keys key, string DownOrUp)
+        {
+            if (DownOrUp == "Down")
+            {
+                switch (key)
+                {
+                    case Keys.Left:
+                        game.Hero.IsGoingLeft = true;
+                        break;
+                    case Keys.Right:
+                        game.Hero.IsGoingRight = true;
+                        break;
+                    case Keys.Space:
+                        if (game.Hero.IsLanded)
+                        {
+                            game.Hero.IsJumping = true;
+                            game.Hero.IsLanded = false;
+                        }
+                        break;
+                }
+            }
+            if (DownOrUp == "Up")
+            {
+                switch (key)
+                {
+                    case Keys.Left:
+                        game.Hero.IsGoingLeft = false;
+                        break;
+                    case Keys.Right:
+                        game.Hero.IsGoingRight = false;
+                        break;
+                    case Keys.Space:
+                        if (game.Hero.IsJumping)
+                            game.Hero.IsJumping = false;
+                        break;
+                }
+            }
+        }
+
+        public void Action(GameModel game, Keys key, string DownOrUp)
+        {
+            ProcessKeys(game, key, DownOrUp);
+            if (game.Hero.IsMoving)
+            {
+                game.Hero.Move();
+                game.Hero.Refresh();
+            }
+
+            if (!game.Hero.IsJumping)
+            {
+                game.Hero.Top += game.Hero.JumpHeight;
+                game.Hero.Refresh();
+            }
+            foreach (Control obj in game.EnvironmentObjects)
+            {
+                if (obj is Platform && game.Hero.Bounds.IntersectsWith(obj.Bounds))
+                {
+                    if (game.Hero.Bottom <= obj.Top + game.Hero.Height / 3d)
+                    {
+                        game.Hero.Top = obj.Top - game.Hero.Height;
+                        game.Hero.Refresh();
+                    }
+                    game.Hero.Refresh();
+                    game.Hero.IsLanded = true;
+                    game.Hero.CurrentJumpHeight = 0;
+                }
+            }
+        }
+
         private int _jumpLimit = 200;
-        
-        
-        private string PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
-            "\\Images\\";
     }
 }
