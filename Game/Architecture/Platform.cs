@@ -3,23 +3,12 @@ using System.IO;
 using System.Windows.Forms;
 
 namespace Game {
-    public class Platform : PictureBox  {
-        public Platform(Point location, Size size){
-            Location = location;
-            Size = size;
+    public class Platform : StaticObject  {
+        public Platform(Point location, Size size)
+            :base( size, location){
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "platform";
             Image = new Bitmap(PathToImages + "onlyGround.png");
-            Visible = true;
-        }
-        protected string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
-        private static DirectoryInfo GetGameDirectoryRoot() {
-            var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
-            while (!dir.ToString().EndsWith("GameOfTheCentury")) {
-                dir = dir.Parent;
-            }
-
-            return dir;
         }
     }
 }

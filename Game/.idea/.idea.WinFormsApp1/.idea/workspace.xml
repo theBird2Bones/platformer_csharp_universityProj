@@ -30,14 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/Background.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Background.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/DynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/DynamicObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Plant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Plant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Platform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/StaticObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/StaticObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormsApp1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormsApp1.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +54,6 @@
         <option value="$PROJECT_DIR$/ImageResource.resx" />
         <option value="$PROJECT_DIR$/Architecture/IGameInterface.cs" />
         <option value="$PROJECT_DIR$/Architecture/Character.cs" />
-        <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
         <option value="$PROJECT_DIR$/Architecture/Entity.cs" />
         <option value="$PROJECT_DIR$/Architecture/newEntity.cs" />
         <option value="$PROJECT_DIR$/Architecture/IStaticObjectInterface.cs" />
@@ -72,12 +66,13 @@
         <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/Images.cs" />
         <option value="$PROJECT_DIR$/Images.resx" />
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Architecture/DynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Background.cs" />
         <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
         <option value="$PROJECT_DIR$/Architecture/Platform.cs" />
+        <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Background.cs" />
       </list>
     </option>
   </component>
@@ -130,7 +125,7 @@
       <workItem from="1618079346795" duration="10922000" />
       <workItem from="1618475391905" duration="18797000" />
       <workItem from="1618558831687" duration="8313000" />
-      <workItem from="1618570556628" duration="1685000" />
+      <workItem from="1618570556628" duration="2286000" />
     </task>
     <servers />
   </component>
@@ -171,22 +166,22 @@
       <screen x="0" y="0" width="1676" height="911" />
     </state>
     <state width="795" height="436" key="DebuggerActiveHint/0.0.1676.911@0.0.1676.911" timestamp="1618571977203" />
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom" timestamp="1618572149741">
+    <state width="1632" height="162" key="GridCell.Tab.0.bottom" timestamp="1618572281572">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572149741" />
-    <state width="1632" height="162" key="GridCell.Tab.0.center" timestamp="1618572149741">
+    <state width="1632" height="162" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
+    <state width="1632" height="162" key="GridCell.Tab.0.center" timestamp="1618572281572">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618572149741" />
-    <state width="1632" height="162" key="GridCell.Tab.0.left" timestamp="1618572149741">
+    <state width="1632" height="162" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
+    <state width="1632" height="162" key="GridCell.Tab.0.left" timestamp="1618572281572">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618572149741" />
-    <state width="1632" height="162" key="GridCell.Tab.0.right" timestamp="1618572149741">
+    <state width="1632" height="162" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
+    <state width="1632" height="162" key="GridCell.Tab.0.right" timestamp="1618572281572">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618572149741" />
+    <state width="1632" height="162" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
     <state width="1632" height="335" key="GridCell.Tab.1.bottom" timestamp="1618572148386">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
