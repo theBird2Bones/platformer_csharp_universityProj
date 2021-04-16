@@ -13,6 +13,12 @@ namespace Game{
         goRight,
         Jump,
     }
+
+    public enum ActionWithKey {
+        Unpressed,
+        Pressed,
+        None,
+    }
     public class Hero : DynamicObject
     {
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
@@ -49,48 +55,43 @@ namespace Game{
             }
         }
 
-        public void ProcessKeys(GameModel game, Keys key, string DownOrUp)
-        {
-            if (DownOrUp == "Down")
-            {
-                switch (key)
-                {
-                    case Keys.Left:
-                        game.Hero.IsGoingLeft = true;
-                        break;
-                    case Keys.Right:
-                        game.Hero.IsGoingRight = true;
-                        break;
-                    case Keys.Space:
-                        if (game.Hero.IsLanded)
-                        {
-                            game.Hero.IsJumping = true;
-                            game.Hero.IsLanded = false;
-                        }
-                        break;
-                }
-            }
-            if (DownOrUp == "Up")
-            {
-                switch (key)
-                {
-                    case Keys.Left:
-                        game.Hero.IsGoingLeft = false;
-                        break;
-                    case Keys.Right:
-                        game.Hero.IsGoingRight = false;
-                        break;
-                    case Keys.Space:
-                        if (game.Hero.IsJumping)
-                            game.Hero.IsJumping = false;
-                        break;
-                }
+        public void ProcessKeys(GameModel game, Keys key, ActionWithKey ActionWithKey) {
+            switch (ActionWithKey) {
+                case ActionWithKey.Pressed:
+                    switch (key) {
+                        case Keys.Left:
+                            game.Hero.IsGoingLeft = true;
+                            break;
+                        case Keys.Right:
+                            game.Hero.IsGoingRight = true;
+                            break;
+                        case Keys.Space:
+                            if (game.Hero.IsLanded) {
+                                game.Hero.IsJumping = true;
+                                game.Hero.IsLanded = false;
+                            }
+                            break;
+                    }
+                    break;
+                case ActionWithKey.Unpressed:
+                    switch (key) {
+                        case Keys.Left:
+                            game.Hero.IsGoingLeft = false;
+                            break;
+                        case Keys.Right:
+                            game.Hero.IsGoingRight = false;
+                            break;
+                        case Keys.Space:
+                            if (game.Hero.IsJumping)
+                                game.Hero.IsJumping = false;
+                            break;
+                    }
+                    break;
             }
         }
 
-        public void Action(GameModel game, Keys key, string DownOrUp)
-        {
-            ProcessKeys(game, key, DownOrUp);
+        public void Action(GameModel game, Keys key, ActionWithKey actionWithKey) {
+            ProcessKeys(game, key, actionWithKey);
             if (game.Hero.IsMoving)
             {
                 game.Hero.Move();

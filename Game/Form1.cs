@@ -14,15 +14,6 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1 {
     public partial class Form1 : Form {
-        public void RefreshWorld(GameModel game)
-        {
-            foreach (var environmentEl in game.EnvironmentObjects)
-            {
-                Controls.Add(environmentEl);
-            }
-            Controls.Add(game.Hero);
-            Controls.Add(game.Background);
-        }
         public Form1(GameModel game) {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -34,18 +25,17 @@ namespace WinFormsApp1 {
             Controls.Add(game.Background);
 
             KeyDown += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, "Down");
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed);
             };
             KeyUp += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, "Up");
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed);
             };
             var timer = new Timer();
             timer.Interval = 1;
             timer.Tick += (sender, args) => {
-                game.SpawnMonster();
+                //game.SpawnMonster();
                 game.MakeActionOfDynamicObjects();
-                game.Hero.Action(game, Keys.None, "None");
-                RefreshWorld(game);
+                game.Hero.Action(game, Keys.None, ActionWithKey.None);
             };
             timer.Start();
 

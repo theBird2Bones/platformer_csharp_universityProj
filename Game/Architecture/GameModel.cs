@@ -10,7 +10,7 @@ namespace Game
 {
     public class GameModel
     {
-        private int monsterSpownsMonitor;
+        private int monsterSpawnsMonitor;
         public GameModel(Size mapSize, int scores = 0)
         {
             Scores = scores;
@@ -27,7 +27,7 @@ namespace Game
 
         public void SpawnMonster()
         {
-            if (monsterSpownsMonitor % 20 == 0)
+            if (monsterSpawnsMonitor % 20 == 0)
             {
                 var random = new Random();
                 var delta1 = random.Next() % 300;
@@ -35,9 +35,9 @@ namespace Game
                 var monster = new Monster(1, 1, 0, new Point(300 + delta2, 300 + delta1), new Size(40, 40));
                 EnvironmentObjects.Add(monster);
             }
-            if (monsterSpownsMonitor == 20 * 100)
-                monsterSpownsMonitor = 0;
-            monsterSpownsMonitor++;
+            if (monsterSpawnsMonitor == 20 * 100)
+                monsterSpawnsMonitor = 0;
+            monsterSpawnsMonitor++;
         }
 
         public void MakeActionOfDynamicObjects()

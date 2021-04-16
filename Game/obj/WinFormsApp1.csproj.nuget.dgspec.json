@@ -1,24 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {}
+    "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {
+    "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
-        "packagesPath": "C:\\Users\\The_p\\.nuget\\packages\\",
-        "outputPath": "D:\\The_p\\GameOfTheCentury\\Game\\obj\\",
+        "projectPath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+        "packagesPath": "C:\\Users\\Konstantine\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\The_p\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Konstantine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net48"
+          "net48-windows"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -39,7 +43,7 @@
       "frameworks": {
         "net48": {
           "targetAlias": "net48-windows",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
