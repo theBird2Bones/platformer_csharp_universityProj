@@ -19,27 +19,24 @@ namespace Game{
         Pressed,
         None,
     }
-    public class Hero : DynamicObject
-    {
+    
+    public class Hero : DynamicObject {
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
-            : base(health, speed, jumpHeight, location, size)
-        {
+            : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
             Image = new Bitmap(PathToImages + "hero.png");
         }
-
+        public bool IsGoingLeft { get; set; }
+        public bool IsGoingRight { get; set; }
+        public bool IsJumping { get; set; }
+        public bool IsLanded { get; set; }
+        public int CurrentJumpHeight { get; set; }
         public bool IsMoving {
             get {
                 return IsGoingLeft || IsGoingRight || IsJumping;
             }
         }
-
-        public bool IsGoingLeft { get; set; }
-        public bool IsGoingRight { get; set; }
-        public bool IsJumping { get; set; } = false;
-        public bool IsLanded { get; set; }
-        
-        public int CurrentJumpHeight { get; set; }
+        private int _jumpLimit = 200;
 
         public new void Move() {
             if (IsGoingLeft) 
@@ -92,25 +89,20 @@ namespace Game{
 
         public void Action(GameModel game, Keys key, ActionWithKey actionWithKey) {
             ProcessKeys(game, key, actionWithKey);
-            if (game.Hero.IsMoving)
-            {
+            if (game.Hero.IsMoving) {
                 game.Hero.Move();
                 game.Hero.Refresh();
             }
 
-            if (!game.Hero.IsJumping)
-            {
+            if (!game.Hero.IsJumping) {
                 game.Hero.Top += game.Hero.JumpHeight;
                 game.Hero.Refresh();
             }
-            foreach (Control obj in game.EnvironmentObjects)
-            {
-                if (obj is Platform && game.Hero.Bounds.IntersectsWith(obj.Bounds))
-                {
-                    if (game.Hero.Bottom <= obj.Top + game.Hero.Height / 3d)
-                    {
-                        game.Hero.Top = obj.Top - game.Hero.Height;
-                        game.Hero.Refresh();
+            game.Hero.IsLanded = false;
+            foreach (Control obj in game.EnvironmentObjects) {
+                if (obj is Platform && game.Hero.Bounds.IntersectsWith(obj.Bounds)) {
+                    if (game.Hero.Bottom <= obj.Top + game.Hero.Height / 3d) {
+                        game.Hero.Top = obj.Top - game.Hero.Height + 1;
                     }
                     game.Hero.Refresh();
                     game.Hero.IsLanded = true;
@@ -118,7 +110,5 @@ namespace Game{
                 }
             }
         }
-
-        private int _jumpLimit = 200;
     }
 }

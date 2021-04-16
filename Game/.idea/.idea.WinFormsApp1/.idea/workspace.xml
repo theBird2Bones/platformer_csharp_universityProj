@@ -30,13 +30,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +118,7 @@
       <workItem from="1618053135972" duration="6062000" />
       <workItem from="1618079346795" duration="10922000" />
       <workItem from="1618475391905" duration="18797000" />
-      <workItem from="1618558831687" duration="1534000" />
+      <workItem from="1618558831687" duration="2178000" />
     </task>
     <servers />
   </component>
@@ -160,22 +155,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1632" height="121" key="GridCell.Tab.0.bottom" timestamp="1618560014350">
+    <state width="1632" height="121" key="GridCell.Tab.0.bottom" timestamp="1618560399337">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="121" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618560014350" />
-    <state width="1632" height="121" key="GridCell.Tab.0.center" timestamp="1618560014350">
+    <state width="1632" height="121" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618560399337" />
+    <state width="1632" height="121" key="GridCell.Tab.0.center" timestamp="1618560399337">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="121" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618560014350" />
-    <state width="1632" height="121" key="GridCell.Tab.0.left" timestamp="1618560014350">
+    <state width="1632" height="121" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618560399337" />
+    <state width="1632" height="121" key="GridCell.Tab.0.left" timestamp="1618560399337">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="121" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618560014350" />
-    <state width="1632" height="121" key="GridCell.Tab.0.right" timestamp="1618560014350">
+    <state width="1632" height="121" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618560399337" />
+    <state width="1632" height="121" key="GridCell.Tab.0.right" timestamp="1618560399337">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="121" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618560014350" />
+    <state width="1632" height="121" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618560399337" />
     <state width="1632" height="115" key="GridCell.Tab.1.bottom" timestamp="1618499178713">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
