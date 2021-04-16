@@ -25,7 +25,7 @@ namespace WinFormsApp1{
                     new Platform(new Point(0, game.MapSize.Height - 100),
                     new Size(2000, 60)));
                 game.EnvironmentObjects.Add(
-                    new Platform(new Point(0, game.MapSize.Height - 240),
+                    new Platform(new Point(60, game.MapSize.Height - 240),
                     new Size(120, 50)));
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(600, game.MapSize.Height - 300),

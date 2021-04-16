@@ -36,18 +36,19 @@ namespace Game{
                 return IsGoingLeft || IsGoingRight || IsJumping;
             }
         }
-        private int _jumpLimit = 200;
+        public const int JumpLimit = 200;
+        public int TempJumpLimit = JumpLimit;
 
         public new void Move() {
             if (IsGoingLeft) 
                 this.Left -= this.Speed;
             if (IsGoingRight)
                 this.Left += this.Speed;
-            if (IsJumping && CurrentJumpHeight <= _jumpLimit) {
+            if (IsJumping && CurrentJumpHeight <= TempJumpLimit) {
                 this.Top -= this.JumpHeight;
                 CurrentJumpHeight += this.JumpHeight;
             }
-            else if (CurrentJumpHeight > _jumpLimit) {
+            else if (CurrentJumpHeight > TempJumpLimit) {
                 IsJumping = false;
             }
         }
@@ -103,10 +104,32 @@ namespace Game{
                 if (obj is Platform && game.Hero.Bounds.IntersectsWith(obj.Bounds)) {
                     if (game.Hero.Bottom <= obj.Top + game.Hero.Height / 3d) {
                         game.Hero.Top = obj.Top - game.Hero.Height + 1;
+                        game.Hero.Refresh();
+                        game.Hero.IsLanded = true;
+                        game.Hero.CurrentJumpHeight = 0;
                     }
-                    game.Hero.Refresh();
-                    game.Hero.IsLanded = true;
-                    game.Hero.CurrentJumpHeight = 0;
+                }
+
+                if (obj is Platform && (game.Hero.Left <= obj.Right && game.Hero.Left >= obj.Left ||
+                        game.Hero.Right >= obj.Left && game.Hero.Right <= obj.Right) &&
+                    game.Hero.Top >= obj.Bottom) {
+                    game.Hero.TempJumpLimit = game.Hero.Top - obj.Bottom > game.Hero.TempJumpLimit ?
+                        Hero.JumpLimit :
+                        game.Hero.Top - obj.Bottom + 35;
+                    break;
+                }
+                game.Hero.TempJumpLimit = JumpLimit;
+                if (obj is Platform && !game.Hero.IsLanded && game.Hero.Top <= obj.Bottom && game.Hero.Bottom >= obj.Top) {
+                    if ((game.Hero.Left <= obj.Right && game.Hero.Left > obj.Left || 
+                            game.Hero.Right >= obj.Left && game.Hero.Right < obj.Right)) {
+                        if (game.Hero.IsGoingLeft) 
+                            game.Hero.Left += 2;
+                        if (game.Hero.IsGoingRight) 
+                            game.Hero.Left -= 2;
+                        game.Hero.IsGoingLeft = false;
+                        game.Hero.IsGoingRight = false;
+                        break;
+                    }
                 }
             }
         }
