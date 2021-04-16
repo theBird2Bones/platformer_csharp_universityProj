@@ -19,6 +19,9 @@
     <Compile Update="Architecture\Platform.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Architecture\StaticObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
