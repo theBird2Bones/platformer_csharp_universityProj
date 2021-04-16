@@ -16,12 +16,11 @@ namespace Game
             Location = location;
             Size = size;
             SizeMode = PictureBoxSizeMode.StretchImage;
-            //Tag = "background";
-            //Image = new Bitmap(PathToImages + "background.png");
             Visible = true;
+            BackColor = Color.Transparent;
         }
         
-        protected string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
+        protected static string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
         private static DirectoryInfo GetGameDirectoryRoot() {
             var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
             while (!dir.ToString().EndsWith("GameOfTheCentury")) {

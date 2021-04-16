@@ -29,6 +29,16 @@
   },
   "frameworks": {
     "net48": {
+      "dependencies": {
+        "NUnit": {
+          "target": "Package",
+          "version": "[3.13.1, )"
+        },
+        "NUnit3TestAdapter": {
+          "target": "Package",
+          "version": "[3.17.0, )"
+        }
+      },
       "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
     }
   },

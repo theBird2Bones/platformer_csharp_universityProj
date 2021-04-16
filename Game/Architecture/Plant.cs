@@ -7,7 +7,7 @@ using System.Windows.Forms;
 namespace Game {
     public enum PlantsType {
         firstBush,
-        secodBush,
+        secondBush,
         firstTree,
         secondTree,
         fir,
@@ -15,7 +15,7 @@ namespace Game {
     public class Plant : StaticObject {
         private Dictionary<PlantsType, string> plantsType = new Dictionary<PlantsType, string>() {
             {PlantsType.firstBush, "firstBush.png"},
-            {PlantsType.secodBush, "secodBush.png"},
+            {PlantsType.secondBush, "secondBush.png"},
             {PlantsType.firstTree, "firstTree.png"},
             {PlantsType.secondTree, "secondTree.png"},
             {PlantsType.fir, "thirdTree.png"},

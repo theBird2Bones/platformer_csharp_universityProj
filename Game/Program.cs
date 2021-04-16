@@ -30,14 +30,20 @@ namespace WinFormsApp1{
                     new Platform(new Point(60, game.MapSize.Height - 240),
                     new Size(120, 50)));
                 game.EnvironmentObjects.Add(
-                    new Plant(new Point(600, game.MapSize.Height - 300),
+                    new Plant(new Point(-55, game.MapSize.Height - 350),
                     new Size(150, 300),
                     PlantsType.fir));
+                game.EnvironmentObjects.Add(
+                    new Plant(new Point(700, game.MapSize.Height - 300),
+                        new Size(150, 200),
+                        PlantsType.secondTree));
+                game.EnvironmentObjects.Add(
+                    new Plant(new Point(640, game.MapSize.Height - 170),
+                        new Size(120, 70),
+                        PlantsType.firstBush));
                 game.Background = new Background(game.MapSize,new Point(0,0));
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
-
-            
         }
     }
 }

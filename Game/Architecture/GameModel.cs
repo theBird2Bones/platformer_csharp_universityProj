@@ -20,6 +20,7 @@ namespace Game
         }
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
+        public List<PictureBox> Monsters { get; set; }
         public Background Background { get; set; }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
@@ -33,16 +34,16 @@ namespace Game
                 var delta1 = random.Next() % 300;
                 var delta2 = random.Next() % 300;
                 var monster = new Monster(1, 1, 0, new Point(300 + delta2, 300 + delta1), new Size(40, 40));
-                EnvironmentObjects.Add(monster);
+                Monsters.Add(monster);
             }
             if (monsterSpawnsMonitor == 20 * 100)
                 monsterSpawnsMonitor = 0;
             monsterSpawnsMonitor++;
         }
 
-        public void MakeActionOfDynamicObjects()
+        public void MakeActionOfMonsters()
         {
-            foreach (var obj in EnvironmentObjects)
+            foreach (var obj in Monsters)
             {
                 if (obj is DynamicObject)
                 {

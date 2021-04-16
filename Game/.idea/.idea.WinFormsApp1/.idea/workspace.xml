@@ -30,9 +30,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Architecture/Background.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Background.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/DynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/DynamicObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Plant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Plant.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/StaticObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/StaticObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +54,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/6a/4703dd8e/BorderStyle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1E9166BF-CA65-4377-B09C-EA42D003812D/a9/f50c9a18/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/f3/92cdde89/Path.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
@@ -62,17 +73,18 @@
         <option value="$PROJECT_DIR$/Architecture/Environment.cs" />
         <option value="$PROJECT_DIR$/Architecture/Tree.cs" />
         <option value="$PROJECT_DIR$/Architecture/Plants.cs" />
-        <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
-        <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/Images.cs" />
         <option value="$PROJECT_DIR$/Images.resx" />
-        <option value="$PROJECT_DIR$/Architecture/DynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
         <option value="$PROJECT_DIR$/Architecture/Platform.cs" />
-        <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Architecture/Background.cs" />
+        <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
+        <option value="$PROJECT_DIR$/Architecture/testiki.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
+        <option value="$PROJECT_DIR$/Architecture/DynamicObject.cs" />
+        <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
+        <option value="$PROJECT_DIR$/Form1.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
   </component>
@@ -166,22 +178,22 @@
       <screen x="0" y="0" width="1676" height="911" />
     </state>
     <state width="795" height="436" key="DebuggerActiveHint/0.0.1676.911@0.0.1676.911" timestamp="1618571977203" />
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom" timestamp="1618572281572">
+    <state width="1632" height="162" key="GridCell.Tab.0.bottom" timestamp="1618597487769">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
-    <state width="1632" height="162" key="GridCell.Tab.0.center" timestamp="1618572281572">
+    <state width="1632" height="162" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
+    <state width="1632" height="162" key="GridCell.Tab.0.center" timestamp="1618597487769">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
-    <state width="1632" height="162" key="GridCell.Tab.0.left" timestamp="1618572281572">
+    <state width="1632" height="162" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
+    <state width="1632" height="162" key="GridCell.Tab.0.left" timestamp="1618597487769">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
-    <state width="1632" height="162" key="GridCell.Tab.0.right" timestamp="1618572281572">
+    <state width="1632" height="162" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
+    <state width="1632" height="162" key="GridCell.Tab.0.right" timestamp="1618597487769">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618572281572" />
+    <state width="1632" height="162" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
     <state width="1632" height="335" key="GridCell.Tab.1.bottom" timestamp="1618572148386">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
@@ -254,29 +266,16 @@
       <screen x="0" y="0" width="1676" height="911" />
     </state>
     <state x="319" y="28" key="SettingsEditor/0.0.1676.911@0.0.1676.911" timestamp="1618248707815" />
+    <state x="92" y="92" width="1491" height="726" key="VCS.FileHistoryDialog" timestamp="1618589129495">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state x="92" y="92" width="1491" height="726" key="VCS.FileHistoryDialog/0.0.1676.911@0.0.1676.911" timestamp="1618589129495" />
     <state x="500" y="192" width="672" height="678" key="search.everywhere.popup" timestamp="1618569195798">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
     <state x="500" y="192" width="672" height="678" key="search.everywhere.popup/0.0.1676.911@0.0.1676.911" timestamp="1618569195798" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Architecture/DynamicObject.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\Users\Konstantine\Personal\Study\Программирование\C#\Игра\GameOfTheCentury\Game\Architecture\DynamicObject.cs" initialLine="46">
-            <startOffsets>
-              <option value="1474" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1485" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression=" GetGameDirectoryRoot().ToString() + &quot;\\Images\\&quot;" language="C#" />

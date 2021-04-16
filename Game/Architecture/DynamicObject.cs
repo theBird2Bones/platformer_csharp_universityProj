@@ -36,13 +36,12 @@ namespace Game
         }
         public void OnDeath() { }
 
-        protected string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
+        protected static string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
         private static DirectoryInfo GetGameDirectoryRoot() {
             var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
             while (!dir.ToString().EndsWith("GameOfTheCentury")) {
                 dir = dir.Parent;
             }
-
             return dir;
         }
     }

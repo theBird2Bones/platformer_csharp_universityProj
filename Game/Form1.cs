@@ -18,23 +18,21 @@ namespace WinFormsApp1 {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             DoubleBuffered = true;
+            
+            Controls.Add(game.Hero);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
+                environmentEl.Parent = game.Background;
             }
-            Controls.Add(game.Hero);
             Controls.Add(game.Background);
-
-            KeyDown += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed);
-            };
-            KeyUp += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed);
-            };
+            game.Hero.Parent = game.Background;
+            KeyDown += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed); };
+            KeyUp += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed); };
             var timer = new Timer();
             timer.Interval = 1;
             timer.Tick += (sender, args) => {
                 //game.SpawnMonster();
-                game.MakeActionOfDynamicObjects();
+                //game.MakeActionOfMonsters();
                 game.Hero.Action(game, Keys.None, ActionWithKey.None);
             };
             timer.Start();

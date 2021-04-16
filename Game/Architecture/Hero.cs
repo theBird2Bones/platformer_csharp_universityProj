@@ -26,7 +26,7 @@ namespace Game{
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
-            Image = new Bitmap(PathToImages + "hero.png");
+            Image = new Bitmap(PathToImages + "hero.png",true);
         }
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
@@ -97,7 +97,7 @@ namespace Game{
                 game.Hero.Refresh();
             }
 
-            if (!game.Hero.IsJumping) {
+            if (!game.Hero.IsJumping && !game.Hero.IsLanded) {
                 game.Hero.Top += game.Hero.JumpHeight;
                 game.Hero.Refresh();
             }
