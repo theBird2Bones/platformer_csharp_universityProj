@@ -1,6 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Architecture\Background.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\DynamicObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\Hero.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\Monster.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\Plant.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\Platform.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
