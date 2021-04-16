@@ -19,4 +19,9 @@
       <Compile Remove="Form2.Designer.cs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NUnit" Version="3.13.1" />
+      <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    </ItemGroup>
+
 </Project>
