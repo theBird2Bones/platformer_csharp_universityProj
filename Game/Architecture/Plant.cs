@@ -12,7 +12,7 @@ namespace Game {
         secondTree,
         fir,
     }
-    public class Plant : PictureBox {
+    public class Plant : StaticObject {
         private Dictionary<PlantsType, string> plantsType = new Dictionary<PlantsType, string>() {
             {PlantsType.firstBush, "firstBush.png"},
             {PlantsType.secodBush, "secodBush.png"},
@@ -20,15 +20,10 @@ namespace Game {
             {PlantsType.secondTree, "secondTree.png"},
             {PlantsType.fir, "thirdTree.png"},
         };
-        public Plant(Point location, Size size, PlantsType plantType){
-            Location = location;
-            Size = size;
-            SizeMode = PictureBoxSizeMode.StretchImage;
+        public Plant(Point location, Size size, PlantsType plantType)
+            :base( size, location){
             Tag = "plant";
             Image = new Bitmap(PathToImages + plantsType[plantType]);
-            Visible = true;
         }
-        protected string PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
-            "\\Images\\";
     }
 }
