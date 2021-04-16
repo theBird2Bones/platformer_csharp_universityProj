@@ -21,6 +21,7 @@ namespace Game
             Size = size;
             SizeMode = PictureBoxSizeMode.StretchImage;
             Visible = true;
+            BackColor = Color.Transparent;
         }
         public int DrawingPriority { get; set; }
         public int Health { get; set; }
@@ -35,7 +36,15 @@ namespace Game
         }
         public void OnDeath() { }
 
-        protected string PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
-            "\\Images\\";
+        protected string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
+        private static DirectoryInfo GetGameDirectoryRoot() {
+            var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+            while (!dir.ToString().EndsWith("GameOfTheCentury")) {
+                dir = dir.Parent;
+            }
+
+            return dir;
+        }
     }
+    
 }

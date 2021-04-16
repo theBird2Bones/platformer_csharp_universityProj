@@ -17,6 +17,18 @@
     <ItemGroup>
       <Compile Remove="Form2.cs" />
       <Compile Remove="Form2.Designer.cs" />
+      <Compile Update="Images.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Images.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Update="Images.resx">
+        <Generator>ResXFileCodeGenerator</Generator>
+        <LastGenOutput>Images.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 
 </Project>

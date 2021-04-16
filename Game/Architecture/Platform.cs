@@ -12,7 +12,14 @@ namespace Game {
             Image = new Bitmap(PathToImages + "onlyGround.png");
             Visible = true;
         }
-        protected string PathToImages = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.Parent.Parent.Parent.FullName +
-            "\\Images\\";
+        protected string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
+        private static DirectoryInfo GetGameDirectoryRoot() {
+            var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
+            while (!dir.ToString().EndsWith("GameOfTheCentury")) {
+                dir = dir.Parent;
+            }
+
+            return dir;
+        }
     }
 }

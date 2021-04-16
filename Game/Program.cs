@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.IO;
 using Game;
 
 namespace WinFormsApp1{
@@ -34,6 +35,8 @@ namespace WinFormsApp1{
                 game.Background = new Background(game.MapSize);
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
+
+            
         }
     }
 }
