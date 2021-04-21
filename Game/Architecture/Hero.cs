@@ -90,7 +90,8 @@ namespace Game{
             }
         }
         
-        public void Action(GameModel game, Keys key, ActionWithKey actionWithKey) {
+        public void Action(GameModel game, Keys key, ActionWithKey actionWithKey,Timer timer) {
+            if(!timer.Enabled) return;
             ProcessKeys(game, key, actionWithKey);
             if (game.Hero.IsMoving) {
                 game.Hero.Move();

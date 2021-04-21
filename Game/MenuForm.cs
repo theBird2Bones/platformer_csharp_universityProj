@@ -19,7 +19,14 @@ namespace WinFormsApp1
         public MenuForm()
         {
             InitializeComponent();
-            
+        }
+
+        public MenuForm(Form1 gameForm)
+        {            
+            InitializeComponent();
+            this.Closing += (sender, args) => {
+                gameForm.timer.Start();
+            };   
         }
     }
 }

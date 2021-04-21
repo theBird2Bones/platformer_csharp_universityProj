@@ -33,7 +33,7 @@ namespace Game
                 new Size(30, 40));
 
             game.Hero.IsLanded = true;
-            game.Hero.Action(game, key, actionWithKey);
+            game.Hero.Action(game, key, actionWithKey,new Timer());
 
             switch (correctResult)
             {
@@ -52,7 +52,7 @@ namespace Game
                 case ResultFirstTest.IsJumping:
                     Assert.That(game.Hero.IsJumping);
                     game.Hero.IsJumping = false;
-                    game.Hero.Action(game, key, actionWithKey);
+                    game.Hero.Action(game, key, actionWithKey,new Timer());
                     Assert.That(!game.Hero.IsJumping);
                     break;
                 case ResultFirstTest.IsNotJumping:

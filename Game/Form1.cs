@@ -13,7 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1 {
-    public partial class Form1 : Form {
+    public partial class Form1 : Form
+    {
+        public Timer timer;
         public Form1(GameModel game) {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
@@ -28,14 +30,22 @@ namespace WinFormsApp1 {
             Controls.Add(game.Background);
             game.Hero.Parent = game.Background;
             game.MenuButton.Parent = game.Background;
-            KeyDown += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed); };
-            KeyUp += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed); };
-            var timer = new Timer();
+            timer = new Timer();
+
+            game.MenuButton.Click += (sender, args) =>
+            {
+                MenuForm menuForm = new MenuForm(this);
+                timer.Stop();
+                menuForm.Show();
+            };
+            
+            KeyDown += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer); };
+            KeyUp += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer); };
             timer.Interval = 1;
             timer.Tick += (sender, args) => {
                 //game.SpawnMonster();
                 //game.MakeActionOfMonsters();
-                game.Hero.Action(game, Keys.None, ActionWithKey.None);
+                game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
             };
             timer.Start();
 
