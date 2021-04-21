@@ -19,6 +19,7 @@ namespace WinFormsApp1 {
             StartPosition = FormStartPosition.CenterScreen;
             DoubleBuffered = true;
             
+            Controls.Add(game.MenuButton);
             Controls.Add(game.Hero);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
@@ -26,6 +27,7 @@ namespace WinFormsApp1 {
             }
             Controls.Add(game.Background);
             game.Hero.Parent = game.Background;
+            game.MenuButton.Parent = game.Background;
             KeyDown += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed); };
             KeyUp += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed); };
             var timer = new Timer();

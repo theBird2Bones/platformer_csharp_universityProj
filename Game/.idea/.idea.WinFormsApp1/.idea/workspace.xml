@@ -30,14 +30,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Architecture/MenuButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuForm.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MenuForm.resx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images/menuBack.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images/menuBackground.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/contentModel.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/riderModule.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/DynamicObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/DynamicObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Plant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Plant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Monster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/StaticObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/StaticObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Weapon.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormsApp1.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormsApp1.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Release/net48-windows/WinFormsApp1.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Release/net48-windows/WinFormsApp1.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
@@ -50,58 +63,54 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/6a/4703dd8e/BorderStyle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1E9166BF-CA65-4377-B09C-EA42D003812D/a9/f50c9a18/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/f3/92cdde89/Path.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/ImageResource.resx" />
-        <option value="$PROJECT_DIR$/Architecture/IGameInterface.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Character.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Entity.cs" />
-        <option value="$PROJECT_DIR$/Architecture/newEntity.cs" />
-        <option value="$PROJECT_DIR$/Architecture/IStaticObjectInterface.cs" />
-        <option value="$PROJECT_DIR$/Architecture/StaticObjectBuilder.cs" />
-        <option value="$PROJECT_DIR$/Architecture/GameClass.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Environment.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Tree.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Plants.cs" />
-        <option value="$PROJECT_DIR$/Images.cs" />
-        <option value="$PROJECT_DIR$/Images.resx" />
-        <option value="$PROJECT_DIR$/Architecture/Platform.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Background.cs" />
-        <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
-        <option value="$PROJECT_DIR$/Architecture/testiki.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-        <option value="$PROJECT_DIR$/Architecture/DynamicObject.cs" />
-        <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
-        <option value="$PROJECT_DIR$/Form1.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Architecture/DynamicObject.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
+      <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
+      <option value="$PROJECT_DIR$/Architecture/IStaticObjectInterface.cs" />
+      <option value="$PROJECT_DIR$/menuForm.cs" />
+      <option value="$PROJECT_DIR$/Architecture/MenuModel.cs" />
+      <option value="$PROJECT_DIR$/MenuForm.cs" />
+      <option value="$PROJECT_DIR$/Architecture/MenuButtom.cs" />
+      <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
+      <option value="$PROJECT_DIR$/Form1.cs" />
+      <option value="$PROJECT_DIR$/Architecture/MenuButton.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3497814" />
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29981261" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.C#" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
     <configuration name="WinFormsApp1" type="DotNetProject" factoryName=".NET Project">
@@ -138,6 +147,14 @@
       <workItem from="1618475391905" duration="18797000" />
       <workItem from="1618558831687" duration="8313000" />
       <workItem from="1618570556628" duration="2286000" />
+      <workItem from="1618834153989" duration="182000" />
+      <workItem from="1618913908734" duration="585000" />
+      <workItem from="1618930441108" duration="2573000" />
+      <workItem from="1618933083469" duration="635000" />
+      <workItem from="1618937956464" duration="897000" />
+      <workItem from="1618988350044" duration="5687000" />
+      <workItem from="1618996319635" duration="543000" />
+      <workItem from="1618999117091" duration="440000" />
     </task>
     <servers />
   </component>
@@ -171,109 +188,8 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="795" height="436" key="DebuggerActiveHint" timestamp="1618571977203">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="795" height="436" key="DebuggerActiveHint/0.0.1676.911@0.0.1676.911" timestamp="1618571977203" />
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom" timestamp="1618597487769">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
-    <state width="1632" height="162" key="GridCell.Tab.0.center" timestamp="1618597487769">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
-    <state width="1632" height="162" key="GridCell.Tab.0.left" timestamp="1618597487769">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
-    <state width="1632" height="162" key="GridCell.Tab.0.right" timestamp="1618597487769">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1618597487769" />
-    <state width="1632" height="335" key="GridCell.Tab.1.bottom" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.1.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.1.center" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.1.center/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.1.left" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.1.left/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.1.right" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.1.right/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.2.bottom" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.2.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.2.center" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.2.center/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.2.left" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.2.left/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.2.right" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.2.right/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.3.bottom" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.3.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.3.center" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.3.center/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.3.left" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.3.left/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.3.right" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.3.right/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.4.bottom" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.4.bottom/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.4.center" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.4.center/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.4.left" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.4.left/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state width="1632" height="335" key="GridCell.Tab.4.right" timestamp="1618572148386">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="335" key="GridCell.Tab.4.right/0.0.1676.911@0.0.1676.911" timestamp="1618572148386" />
-    <state x="429" y="187" key="Rider.ProjectTemplateDialog.Size" timestamp="1618507028519">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state x="429" y="187" key="Rider.ProjectTemplateDialog.Size/0.0.1676.911@0.0.1676.911" timestamp="1618507028519" />
-    <state x="319" y="28" key="SettingsEditor" timestamp="1618248707815">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state x="319" y="28" key="SettingsEditor/0.0.1676.911@0.0.1676.911" timestamp="1618248707815" />
-    <state x="92" y="92" width="1491" height="726" key="VCS.FileHistoryDialog" timestamp="1618589129495">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state x="92" y="92" width="1491" height="726" key="VCS.FileHistoryDialog/0.0.1676.911@0.0.1676.911" timestamp="1618589129495" />
-    <state x="500" y="192" width="672" height="678" key="search.everywhere.popup" timestamp="1618569195798">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state x="500" y="192" width="672" height="678" key="search.everywhere.popup/0.0.1676.911@0.0.1676.911" timestamp="1618569195798" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

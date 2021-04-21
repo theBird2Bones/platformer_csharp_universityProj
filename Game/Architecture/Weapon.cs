@@ -8,7 +8,7 @@ using System.Windows;
 namespace Game
 {
     public class Weapon : IWeaponInterface
-    {
+    { // поясни за базар
         public Weapon(int bulletCount, int reloadingTime, double splashRadius, 
             Vector bulletSpeed, Vector bulletGravity)
         {

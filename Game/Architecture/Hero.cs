@@ -40,7 +40,7 @@ namespace Game{
         }
         public const int JumpLimit = 200;
         public int TempJumpLimit = JumpLimit;
-
+        
         public new void Move() {
             if (IsGoingLeft) 
                 this.Left -= this.Speed;
@@ -89,7 +89,7 @@ namespace Game{
                     break;
             }
         }
-
+        
         public void Action(GameModel game, Keys key, ActionWithKey actionWithKey) {
             ProcessKeys(game, key, actionWithKey);
             if (game.Hero.IsMoving) {

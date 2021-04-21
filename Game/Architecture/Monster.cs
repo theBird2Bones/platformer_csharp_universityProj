@@ -9,13 +9,24 @@ using System.Windows.Forms;
 
 namespace Game
 {
+    public enum MonsterType {
+        firstMonster,
+        secondMonster,
+        thirdMonster,
+    }
     public class Monster : DynamicObject
     {
-        public Monster(int health, int speed, int jumpHeight, Point location, Size size)
+        private readonly Dictionary<MonsterType, string> _mosterType = new Dictionary<MonsterType, string>()
+        {
+            {MonsterType.firstMonster, "firstMonster.png"},
+            {MonsterType.secondMonster, "secondMonster.png"},
+            {MonsterType.thirdMonster, "thirdMonster.png"}
+        };
+        public Monster(int health, int speed, int jumpHeight, Point location, Size size, MonsterType monsterType)
             : base(health, speed, jumpHeight, location, size)
         {
             Tag = "monster";
-            Image = new Bitmap(PathToImages + "firstMonster.png");
+            Image = new Bitmap(PathToImages + _mosterType[monsterType]);
         }
     }
 }

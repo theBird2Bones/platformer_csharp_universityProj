@@ -22,6 +22,9 @@
         <AutoGen>True</AutoGen>
         <DependentUpon>Images.resx</DependentUpon>
       </Compile>
+      <Compile Update="MenuForm.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>
