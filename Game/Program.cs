@@ -42,6 +42,7 @@ namespace WinFormsApp1{
                         new Size(120, 70),
                         PlantsType.firstBush));
                 game.Background = new Background(game.MapSize,new Point(0,0));
+                game.MenuButton = new MenuButton(new Size(90, 60), new Point(0, 0));
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
         }

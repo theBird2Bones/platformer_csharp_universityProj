@@ -22,11 +22,13 @@ namespace Game
         public List<PictureBox> EnvironmentObjects { get; set; }
         public List<PictureBox> Monsters { get; set; }
         public Background Background { get; set; }
+        
+        public MenuButton MenuButton { get; set; }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
         public Size MapSize { get; }
-
-        public void SpawnMonster()
+        //как работает штука внизу
+        /*public void SpawnMonster()
         {
             if (monsterSpawnsMonitor % 20 == 0)
             {
@@ -39,7 +41,7 @@ namespace Game
             if (monsterSpawnsMonitor == 20 * 100)
                 monsterSpawnsMonitor = 0;
             monsterSpawnsMonitor++;
-        }
+        }*/ //переписать эту штуку для разных монсторв
 
         public void MakeActionOfMonsters()
         {

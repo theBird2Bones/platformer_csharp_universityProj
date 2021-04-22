@@ -20,6 +20,7 @@ namespace Game
             BackColor = Color.Transparent;
         }
         
+        
         protected static string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
         private static DirectoryInfo GetGameDirectoryRoot() {
             var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
