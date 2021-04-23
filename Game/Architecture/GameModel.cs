@@ -17,6 +17,7 @@ namespace Game
             IsOver = false;
             MapSize = mapSize;
             EnvironmentObjects = new List<PictureBox>();
+            Monsters = new List<PictureBox>();
         }
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
@@ -27,21 +28,30 @@ namespace Game
         public int Scores { get; set; }
         public bool IsOver { get; set; }
         public Size MapSize { get; }
-        //как работает штука внизу
-        /*public void SpawnMonster()
+
+        public void SpawnMonster()
         {
             if (monsterSpawnsMonitor % 20 == 0)
             {
                 var random = new Random();
                 var delta1 = random.Next() % 300;
                 var delta2 = random.Next() % 300;
-                var monster = new Monster(1, 1, 0, new Point(300 + delta2, 300 + delta1), new Size(40, 40));
+                MonsterType monsterType = MonsterType.firstMonster;
+                if (delta1 % 3 == 1)
+                    monsterType = MonsterType.secondMonster;
+                if (delta1 % 3 == 2)
+                    monsterType = MonsterType.thirdMonster;
+                var monster = new Monster(1, 1, 0, 
+                    new Point(300 + delta2, 300 + delta1), 
+                    new Size(40, 40), monsterType);
                 Monsters.Add(monster);
+                //EnvironmentObjects.Add(monster);
             }
             if (monsterSpawnsMonitor == 20 * 100)
                 monsterSpawnsMonitor = 0;
             monsterSpawnsMonitor++;
-        }*/ //переписать эту штуку для разных монсторв
+        }
+        //переписать эту штуку для разных монсторв
 
         public void MakeActionOfMonsters()
         {
