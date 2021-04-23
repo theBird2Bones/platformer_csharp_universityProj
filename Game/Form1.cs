@@ -34,11 +34,8 @@ namespace WinFormsApp1 {
             Controls.Add(game.Hero);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
-                //environmentEl.Parent = game.Background;
             }
             Controls.Add(game.Background);
-            //game.Hero.Parent = game.Background;
-            //game.MenuButton.Parent = game.Background;
             timer = new Timer();
 
             game.MenuButton.Click += (sender, args) =>
@@ -48,14 +45,19 @@ namespace WinFormsApp1 {
                 menuForm.Show();
             };
             
-            KeyDown += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer); };
-            KeyUp += (sender, args) => { game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer); };
+            KeyDown += (sender, args) => {
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer);
+            };
+            KeyUp += (sender, args) => {
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer);
+            };
             timer.Interval = 1;
             timer.Tick += (sender, args) => {
                 game.SpawnMonster();
                 UpdateControls(game);
                 game.MakeActionOfMonsters();
                 game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
+                Invalidate();
             };
             timer.Start();
             Paint += (sender, args) => {
@@ -67,6 +69,7 @@ namespace WinFormsApp1 {
                 foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {
                     g.DrawImage(environmentObject.Image, environmentObject.Location);
                 }
+                g.DrawImage(game.Hero.Image, game.Hero.Location);
             };
             FormClosing += (sender, eventArgs) => {
                 var res = MessageBox.Show("Уверен, что хочешь закрыть?",
