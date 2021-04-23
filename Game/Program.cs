@@ -39,7 +39,7 @@ namespace WinFormsApp1{
                         PlantsType.secondTree));
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(640, game.MapSize.Height - 170),
-                        new Size(120, 70),
+                        new Size(100, 70),
                         PlantsType.firstBush));
                 game.Background = new Background(game.MapSize,new Point(0,0));
                 game.MenuButton = new MenuButton(new Size(90, 60), new Point(0, 0));

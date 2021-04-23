@@ -9,6 +9,7 @@ namespace Game {
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "platform";
             Image = new Bitmap(PathToImages + "onlyGround.png");
+            Visible = true;
         }
     }
 }

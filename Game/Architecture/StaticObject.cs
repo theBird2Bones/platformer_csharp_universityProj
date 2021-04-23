@@ -16,6 +16,7 @@ namespace Game
             Location = location;
             Size = size;
             SizeMode = PictureBoxSizeMode.StretchImage;
+            //Visible = false;
             Visible = true;
             BackColor = Color.Transparent;
         }

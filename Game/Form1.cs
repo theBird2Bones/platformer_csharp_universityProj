@@ -25,11 +25,11 @@ namespace WinFormsApp1 {
             Controls.Add(game.Hero);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
-                environmentEl.Parent = game.Background;
+                //environmentEl.Parent = game.Background;
             }
             Controls.Add(game.Background);
-            game.Hero.Parent = game.Background;
-            game.MenuButton.Parent = game.Background;
+            //game.Hero.Parent = game.Background;
+            //game.MenuButton.Parent = game.Background;
             timer = new Timer();
 
             game.MenuButton.Click += (sender, args) =>
@@ -48,7 +48,13 @@ namespace WinFormsApp1 {
                 game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
             };
             timer.Start();
-
+            Paint += (sender, args) => {
+                var g = args.Graphics;
+                g.DrawImage(game.Background.Image, game.Background.Location);
+                foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {
+                    g.DrawImage(environmentObject.Image, environmentObject.Location);
+                }
+            };
             FormClosing += (sender, eventArgs) => {
                 var res = MessageBox.Show("Уверен, что хочешь закрыть?",
                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

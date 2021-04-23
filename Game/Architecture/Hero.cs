@@ -123,9 +123,9 @@ namespace Game{
                 }
                 game.Hero.TempJumpLimit = JumpLimit;
                 if (obj is Platform && !game.Hero.IsLanded && game.Hero.Top <= obj.Bottom && game.Hero.Bottom >= obj.Top) {
-                    if ((game.Hero.Left <= obj.Right && game.Hero.Left > obj.Left || 
-                            game.Hero.Right >= obj.Left && game.Hero.Right < obj.Right)) {
-                        if (game.Hero.IsGoingLeft) 
+                    if (game.Hero.Left <= obj.Right && game.Hero.Left > obj.Left || 
+                            game.Hero.Right >= obj.Left && game.Hero.Right < obj.Right) {
+                        if (game.Hero.IsGoingLeft)
                             game.Hero.Left += 2;
                         if (game.Hero.IsGoingRight) 
                             game.Hero.Left -= 2;

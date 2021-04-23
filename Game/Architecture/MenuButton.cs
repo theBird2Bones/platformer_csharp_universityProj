@@ -13,6 +13,7 @@ namespace Game
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "menuButton";
             Image = new Bitmap(PathToImages + "menuIcon.png");
+            Visible = true;
         }
     }
 }
