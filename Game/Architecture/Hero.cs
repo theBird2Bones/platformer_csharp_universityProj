@@ -26,7 +26,8 @@ namespace Game{
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
-            Image = new Bitmap(PathToImages + "hero.png",true);
+            Image = new Bitmap(PathToImages + "hero.png");
+            Visible = false;
         }
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
@@ -93,9 +94,25 @@ namespace Game{
         public void Action(GameModel game, Keys key, ActionWithKey actionWithKey,Timer timer) {
             if(!timer.Enabled) return;
             ProcessKeys(game, key, actionWithKey);
+// подхожу к краю карты, чтобы ее подвигать
+            if (this.Left > 0 && this.IsGoingLeft && this.Left - this.Speed*2 < 0) {
+                if(game.Background.Left < 0) {
+                    game.Background.Move(this, 1);
+                    foreach (var obj in game.EnvironmentObjects) {
+                        ((StaticObject)obj).Move(this, game.Hero.Speed);
+                    }
+                }
+                this.IsGoingLeft = false;
+            }
+            if (this.Right < game.MapSize.Width && this.IsGoingRight && this.Right + this.Speed*2 > game.MapSize.Width-26) {
+                game.Background.Move(this,1);
+                foreach (var obj in game.EnvironmentObjects) {
+                    ((StaticObject)obj).Move(this,game.Hero.Speed);
+                }
+                this.IsGoingRight = false;
+            }
             if (game.Hero.IsMoving) {
                 game.Hero.Move();
-                game.Hero.Refresh();
             }
 
             if (!game.Hero.IsJumping && !game.Hero.IsLanded) {
@@ -134,6 +151,7 @@ namespace Game{
                         break;
                     }
                 }
+                
             }
         }
     }
