@@ -11,7 +11,6 @@ namespace Game {
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "background";
             Image = new Bitmap(PathToImages + "background.png");
-            Visible = false;
         }
     }
 }
