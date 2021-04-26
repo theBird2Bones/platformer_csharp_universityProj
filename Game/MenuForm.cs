@@ -56,15 +56,12 @@ namespace WinFormsApp1
                  }
              };
 
-             Shuriken.Click += (sender, args) =>
-             {
-                 if (gameModel.Scores == 150)
-                 {
+             Shuriken.Click += (sender, args) => {
+                 if (gameModel.Scores == 150) {
                      gameModel.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
                      MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  }
-                 else
-                 {
+                 else {
                      MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                          MessageBoxIcon.Error);
                  }

@@ -106,16 +106,26 @@ namespace Game{
             if (this.Left > 0 && this.IsGoingLeft && this.Left - this.Speed*2 < 0) {
                 if(game.Background.Left < 0) {
                     game.Background.Move(this, 1);
+                    game.SpawnLocation = new Point(game.SpawnLocation.X + game.Hero.Speed,game.SpawnLocation.Y);
                     foreach (var obj in game.EnvironmentObjects) {
                         ((StaticObject)obj).Move(this, game.Hero.Speed);
+                    }
+
+                    foreach (var monster in game.Monsters) {
+                        monster.Left += game.Hero.Speed;
                     }
                 }
                 this.IsGoingLeft = false;
             }
             if (this.Right < game.MapSize.Width && this.IsGoingRight && this.Right + this.Speed*2 > game.MapSize.Width-26) {
                 game.Background.Move(this,1);
+                game.SpawnLocation = new Point(game.SpawnLocation.X - game.Hero.Speed,game.SpawnLocation.Y);
                 foreach (var obj in game.EnvironmentObjects) {
                     ((StaticObject)obj).Move(this,game.Hero.Speed);
+                }
+                
+                foreach (var monster in game.Monsters) {
+                    monster.Left -= game.Hero.Speed;
                 }
                 this.IsGoingRight = false;
             }

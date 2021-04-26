@@ -30,6 +30,7 @@ namespace Game
         public bool IsOver { get; set; }
         public Size MapSize { get; }
 
+        public Point SpawnLocation = new Point(0,0);
         public void SpawnMonster()
         {
             if (monsterSpawnsMonitor % 20 == 0)
@@ -43,7 +44,7 @@ namespace Game
                 if (delta1 % 3 == 2)
                     monsterType = MonsterType.thirdMonster;
                 var monster = new Monster(1, 1, 0, 
-                    new Point(300 + delta2, 300 + delta1), 
+                    new Point(SpawnLocation.X + delta2, SpawnLocation.Y + delta1), 
                     new Size(40, 40), monsterType);
                 Monsters.Add(monster);
                 //EnvironmentObjects.Add(monster);
