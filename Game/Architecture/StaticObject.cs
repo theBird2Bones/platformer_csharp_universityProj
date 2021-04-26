@@ -17,10 +17,15 @@ namespace Game
             Size = size;
             SizeMode = PictureBoxSizeMode.StretchImage;
             Visible = false;
-            //Visible = true;
             BackColor = Color.Transparent;
         }
-        
+
+        public void Move(Hero hero,int speed) {
+            if (hero.IsGoingLeft) 
+                this.Left += speed;
+            if(hero.IsGoingRight)
+                this.Left -= speed;
+        }
         
         protected static string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
         private static DirectoryInfo GetGameDirectoryRoot() {

@@ -19,24 +19,28 @@ namespace WinFormsApp1{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 var game = new GameModel(new Size(1500, 900));
-                var player = new Hero(100, 6, 12,
+                var player = new Hero(100, 4, 12,
                     new Point(400,400), 
                     new Size(30, 40));
                 game.Hero = player;
                 game.EnvironmentObjects.Add(
                     new Platform(new Point(0, game.MapSize.Height - 100),
-                    new Size(2000, 60)));
+                    new Size(8000, 60)));
+                
                 game.EnvironmentObjects.Add(
                     new Platform(new Point(60, game.MapSize.Height - 240),
                     new Size(120, 50)));
+                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(-55, game.MapSize.Height - 350),
                     new Size(150, 300),
                     PlantsType.fir));
+                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(700, game.MapSize.Height - 300),
                         new Size(150, 200),
                         PlantsType.secondTree));
+                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(640, game.MapSize.Height - 170),
                         new Size(100, 70),
@@ -46,6 +50,7 @@ namespace WinFormsApp1{
                 game.BackgroundWeapon = new BackgroundWeapon(new Size(100, 100), new Point(game.MapSize.Width-117, 0));
                 //game.WeaponIcon = new WeaponIcon(new Size(500, 500),new Point(0, game.MapSize.Height),
                    // WeaponTypeIcon.stone);
+
                 
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
