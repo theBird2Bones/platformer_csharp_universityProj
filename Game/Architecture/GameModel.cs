@@ -17,11 +17,11 @@ namespace Game
             IsOver = false;
             MapSize = mapSize;
             EnvironmentObjects = new List<PictureBox>();
-            Monsters = new List<PictureBox>();
+            Monsters = new List<Monster>();
         }
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
-        public List<PictureBox> Monsters { get; set; }
+        public List<Monster> Monsters { get; set; }
         public Background Background { get; set; }
         public WeaponIcons WeaponIcon { get; set; }
         public BackgroundWeapon BackgroundWeapon { get; set; }
@@ -30,38 +30,48 @@ namespace Game
         public bool IsOver { get; set; }
         public Size MapSize { get; }
 
+        public Point SpawnLocation = new Point(0,0);
         public void SpawnMonster()
         {
-            if (monsterSpawnsMonitor % 20 == 0)
+            if (monsterSpawnsMonitor % 60 == 0)
             {
                 var random = new Random();
-                var delta1 = random.Next() % 300;
-                var delta2 = random.Next() % 300;
-                MonsterType monsterType = MonsterType.firstMonster;
-                if (delta1 % 3 == 1)
-                    monsterType = MonsterType.secondMonster;
-                if (delta1 % 3 == 2)
-                    monsterType = MonsterType.thirdMonster;
+                var d = random.Next(3);
+                MonsterType monsterType = MonsterType.fatMonster;
+                if (d % 3 == 1)
+                    monsterType = MonsterType.normalMonster;
+                if (d % 3 == 2)
+                    monsterType = MonsterType.fastMonster;
                 var monster = new Monster(1, 1, 0, 
-                    new Point(300 + delta2, 300 + delta1), 
+                    new Point(SpawnLocation.X, SpawnLocation.Y), 
                     new Size(40, 40), monsterType);
                 Monsters.Add(monster);
                 //EnvironmentObjects.Add(monster);
             }
-            if (monsterSpawnsMonitor == 20 * 100)
-                monsterSpawnsMonitor = 0;
-            monsterSpawnsMonitor++;
+            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 61;
         }
         //переписать эту штуку для разных монсторв
 
         public void MakeActionOfMonsters()
         {
-            foreach (var obj in Monsters)
-            {
-                if (obj is DynamicObject)
-                {
-                    var objAsDynamicObject = (DynamicObject)obj;
-                    objAsDynamicObject.Action();
+            foreach (var monster in Monsters) {
+                switch (monster.MonsterType) {
+                    case MonsterType.fatMonster:
+                        monster.MoveToHero(this, 1);
+                        break;
+                    case MonsterType.normalMonster: 
+                        monster.MoveToHero(this, 3);
+                        break;
+                    case MonsterType.fastMonster:
+                        monster.MoveToHero(this, 5);
+                        break;
+                }
+                foreach (var platform in EnvironmentObjects.Where(x => x is Platform)) {
+                    if (monster.Bounds.IntersectsWith(platform.Bounds))
+                        monster.Top = platform.Top - monster.Height + 1;
+                    else {
+                        monster.Top += 7;
+                    }
                 }
             }
         }

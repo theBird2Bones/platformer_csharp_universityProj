@@ -31,8 +31,12 @@
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Images/thirdTree.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/thirdTree.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Monster.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,20 +51,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/6a/4703dd8e/BorderStyle.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1E9166BF-CA65-4377-B09C-EA42D003812D/a9/f50c9a18/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/f3/92cdde89/Path.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Architecture/BackgroundWeapon.cs" />
-      <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
-      <option value="$PROJECT_DIR$/Architecture/WeaponIcons.cs" />
-      <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
-      <option value="$PROJECT_DIR$/Program.cs" />
-      <option value="$PROJECT_DIR$/Architecture/IWeaponInterface.cs" />
-      <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
-      <option value="$PROJECT_DIR$/Form1.cs" />
-      <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-      <option value="$PROJECT_DIR$/MenuForm.cs" />
-      <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
-    </changedPaths>
+
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
+        <option value="$PROJECT_DIR$/MenuForm.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Form1.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
+        <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
+      </list>
+    </option>
+
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -165,5 +175,23 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1632" height="163" key="GridCell.Tab.0.bottom" timestamp="1619460462202">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="163" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1619460462202" />
+    <state width="1632" height="163" key="GridCell.Tab.0.center" timestamp="1619460462202">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="163" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1619460462202" />
+    <state width="1632" height="163" key="GridCell.Tab.0.left" timestamp="1619460462202">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="163" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1619460462202" />
+    <state width="1632" height="163" key="GridCell.Tab.0.right" timestamp="1619460462202">
+      <screen x="0" y="0" width="1676" height="911" />
+    </state>
+    <state width="1632" height="163" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1619460462202" />
   </component>
 </project>

@@ -1,21 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Desktop\\УНИВЕР\\ПРАКТОСЫ\\1 КУРС КН\\ШАРПЫ ЯТП\\ВТОРОЙ СЕМЕСТР\\ШАРПЫ ИГРА\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {}
+    "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Desktop\\УНИВЕР\\ПРАКТОСЫ\\1 КУРС КН\\ШАРПЫ ЯТП\\ВТОРОЙ СЕМЕСТР\\ШАРПЫ ИГРА\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {
+    "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\УНИВЕР\\ПРАКТОСЫ\\1 КУРС КН\\ШАРПЫ ЯТП\\ВТОРОЙ СЕМЕСТР\\ШАРПЫ ИГРА\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+        "projectUniqueName": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
         "projectName": "WinFormsApp1",
-        "projectPath": "C:\\Users\\ADMIN\\Desktop\\УНИВЕР\\ПРАКТОСЫ\\1 КУРС КН\\ШАРПЫ ЯТП\\ВТОРОЙ СЕМЕСТР\\ШАРПЫ ИГРА\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
-        "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Desktop\\УНИВЕР\\ПРАКТОСЫ\\1 КУРС КН\\ШАРПЫ ЯТП\\ВТОРОЙ СЕМЕСТР\\ШАРПЫ ИГРА\\GameOfTheCentury\\Game\\obj\\",
+        "projectPath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+        "packagesPath": "C:\\Users\\Konstantine\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ADMIN\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Konstantine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net48-windows"
@@ -49,7 +53,7 @@
               "version": "[3.17.0, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
