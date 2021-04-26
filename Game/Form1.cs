@@ -32,6 +32,8 @@ namespace WinFormsApp1 {
 
             Controls.Add(game.MenuButton);
             Controls.Add(game.Hero);
+            Controls.Add(game.WeaponIcon);
+            Controls.Add(game.BackgroundWeapon);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
             }
@@ -40,7 +42,7 @@ namespace WinFormsApp1 {
 
             game.MenuButton.Click += (sender, args) =>
             {
-                MenuForm menuForm = new MenuForm(this);
+                MenuForm menuForm = new MenuForm(this, game);
                 timer.Stop();
                 menuForm.Show();
             };

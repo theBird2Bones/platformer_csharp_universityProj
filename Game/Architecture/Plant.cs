@@ -10,7 +10,7 @@ namespace Game {
         secondBush,
         firstTree,
         secondTree,
-        fir,
+        thirdTree,
     }
     public class Plant : StaticObject {
         private Dictionary<PlantsType, string> plantsType = new Dictionary<PlantsType, string>() {
@@ -18,7 +18,7 @@ namespace Game {
             {PlantsType.secondBush, "secondBush.png"},
             {PlantsType.firstTree, "firstTree.png"},
             {PlantsType.secondTree, "secondTree.png"},
-            {PlantsType.fir, "thirdTree.png"},
+            {PlantsType.thirdTree, "thirdTree.png"},
         };
         public Plant(Point location, Size size, PlantsType plantType)
             :base( size, location){
