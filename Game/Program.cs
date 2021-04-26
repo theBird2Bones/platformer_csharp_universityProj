@@ -27,17 +27,17 @@ namespace WinFormsApp1{
                     new Platform(new Point(0, game.MapSize.Height - 100),
                     new Size(8000, 60)));
                 
-                game.EnvironmentObjects.Add(
-                    new Platform(new Point(60, game.MapSize.Height - 240),
-                    new Size(120, 50)));
+                //game.EnvironmentObjects.Add(
+                 //   new Platform(new Point(60, game.MapSize.Height - 240),
+                  //  new Size(120, 50)));
                 
                 game.EnvironmentObjects.Add(
-                    new Plant(new Point(-55, game.MapSize.Height - 350),
-                    new Size(150, 300),
-                    PlantsType.fir));
+                    new Plant(new Point(-100, game.MapSize.Height - 350),
+                    new Size(220, 523),
+                    PlantsType.thirdTree));
                 
                 game.EnvironmentObjects.Add(
-                    new Plant(new Point(700, game.MapSize.Height - 300),
+                    new Plant(new Point(25, game.MapSize.Height - 300),
                         new Size(150, 200),
                         PlantsType.secondTree));
                 
@@ -52,6 +52,9 @@ namespace WinFormsApp1{
                 game.MenuButton = new MenuButton(
                     new Size(90, 60),
                     new Point(0, 0));
+                game.BackgroundWeapon = new BackgroundWeapon(
+                    new Size(100, 100),
+                    new Point(game.MapSize.Width - 64, 0));
                 
                 Application.Run(new Form1(game){Size = game.MapSize});
             }

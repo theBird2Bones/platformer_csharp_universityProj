@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows;
 using System.Windows.Forms;
 using WinFormsApp1;
+using Point = System.Drawing.Point;
+using Size = System.Drawing.Size;
 
 namespace Game{
     public enum Movement {
@@ -23,12 +26,17 @@ namespace Game{
     }
     
     public class Hero : DynamicObject {
+        
+        public Weapon Weapon { get; set; } 
+        
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
             Image = new Bitmap(PathToImages + "hero.png");
             Visible = false;
+            Weapon = new Weapon(1, 12, 1.5, new Vector(), new Vector(), WeaponTypeIcons.stone); // уточнить по векторам
         }
+
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
         public bool IsJumping { get; set; }

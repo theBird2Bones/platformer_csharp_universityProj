@@ -23,7 +23,8 @@ namespace Game
         public List<PictureBox> EnvironmentObjects { get; set; }
         public List<PictureBox> Monsters { get; set; }
         public Background Background { get; set; }
-        
+        public WeaponIcons WeaponIcon { get; set; }
+        public BackgroundWeapon BackgroundWeapon { get; set; }
         public MenuButton MenuButton { get; set; }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
