@@ -30,24 +30,34 @@ namespace WinFormsApp1
 
              Shuriken.Click += (sender, args) =>
              {
+                 var res = MessageBox.Show("Уверен, что хочешь купить?",
+                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 if (res != DialogResult.Yes) return;
                  if (gameModel.Scores == 50)
                  {
-                     gameModel.Hero.Weapon = new Weapon(3, 8, 4, new Vector(), new Vector(), WeaponTypeIcons.shuriken);
+                     gameModel.Hero.Weapon =
+                         new Weapon(3, 8, 4, new Vector(), new Vector(), WeaponTypeIcons.shuriken);
                      MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     gameModel.Scores -= 50;
                  }
                  else
                  {
                      MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                          MessageBoxIcon.Error);
                  }
+
              };
              
              Kunai.Click += (sender, args) =>
              {
+                 var res = MessageBox.Show("Уверен, что хочешь купить?",
+                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 if (res != DialogResult.Yes) return;
                  if (gameModel.Scores == 100)
                  {
                      gameModel.Hero.Weapon = new Weapon(7, 4, 8, new Vector(), new Vector(), WeaponTypeIcons.kunai);
                      MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     gameModel.Scores -= 100;
                  }
                  else
                  {
@@ -58,10 +68,14 @@ namespace WinFormsApp1
 
              Shuriken.Click += (sender, args) =>
              {
+                 var res = MessageBox.Show("Уверен, что хочешь купить?",
+                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 if (res != DialogResult.Yes) return;
                  if (gameModel.Scores == 150)
                  {
                      gameModel.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
                      MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                     gameModel.Scores -= 150;
                  }
                  else
                  {
