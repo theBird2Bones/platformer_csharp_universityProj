@@ -15,50 +15,46 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class MenuForm : Form
-    {
-        public MenuForm(Form1 gameForm, GameModel gameModel)
-        {            
+    public partial class MenuForm : Form {
+        public MenuForm(Form1 gameForm, GameModel game) {            
             InitializeComponent();
             this.Closing += (sender, args) => {
                 gameForm.timer.Start();
-            }; 
+            };
+            ScoresBox.Text = game.Scores.ToString();
+            Controls.Add(Shuriken);
+            Controls.Add(Kunai);
+            Controls.Add(Bow);
+            Controls.Add(ScoresBox);
             
-             Controls.Add(Shuriken);
-             Controls.Add(Kunai);
-             Controls.Add(Bow);
-
-             Shuriken.Click += (sender, args) =>
-             {
-                 if (gameModel.Scores == 50)
-                 {
-                     gameModel.Hero.Weapon = new Weapon(3, 8, 4, new Vector(), new Vector(), WeaponTypeIcons.shuriken);
-                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-                 else
-                 {
-                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
-                         MessageBoxIcon.Error);
-                 }
-             };
+            Shuriken.Click += (sender, args) => {
+                if (game.Scores >= 50) {
+                    game.Scores -= 50;
+                    game.Hero.Weapon = new Weapon(3, 8, 4, new Vector(), new Vector(), WeaponTypeIcons.shuriken);
+                    MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            };
              
-             Kunai.Click += (sender, args) =>
-             {
-                 if (gameModel.Scores == 100)
-                 {
-                     gameModel.Hero.Weapon = new Weapon(7, 4, 8, new Vector(), new Vector(), WeaponTypeIcons.kunai);
-                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-                 else
-                 {
-                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
-                         MessageBoxIcon.Error);
-                 }
+            Kunai.Click += (sender, args) => {
+                if (game.Scores >= 100) {
+                    game.Scores -= 100;
+                    game.Hero.Weapon = new Weapon(7, 4, 8, new Vector(), new Vector(), WeaponTypeIcons.kunai);
+                    MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
              };
 
-             Shuriken.Click += (sender, args) => {
-                 if (gameModel.Scores == 150) {
-                     gameModel.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
+             Bow.Click += (sender, args) => {
+                 if (game.Scores >= 150) {
+                     game.Scores -= 150;
+                     game.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
                      MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  }
                  else {
