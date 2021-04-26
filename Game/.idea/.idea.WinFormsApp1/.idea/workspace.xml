@@ -30,46 +30,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Images — копия/background.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/bow.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/firstBush.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/firstMonster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/firstTree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/flower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/hero.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/kunai.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/kunaiIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/menuIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/menu_.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/mushroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/onlyGround.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/potion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/secondBush.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/secondMonster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/secondTree.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/shuriken.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/shurikenIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/stone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/stoneOnTheGround.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/thirdMonster.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Images — копия/thirdTree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Architecture/BackgroundWeapon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Architecture/WeaponIcon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images — копия/backgroundWeapon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Images/backgroundWeapon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Background.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Background.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/MenuButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/MenuButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Platform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Platform.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/StaticObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/StaticObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuForm.resx" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.resx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Images/firstBush.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/firstBush.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Images/secondTree.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/secondTree.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Images/thirdTree.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/thirdTree.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,24 +63,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/6a/4703dd8e/BorderStyle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1E9166BF-CA65-4377-B09C-EA42D003812D/a9/f50c9a18/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/f3/92cdde89/Path.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Background.cs" />
-        <option value="$PROJECT_DIR$/Form1.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Platform.cs" />
-        <option value="$PROJECT_DIR$/Architecture/MenuButton.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
-        <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Architecture/Weaponicon.cs" />
+      <option value="$PROJECT_DIR$/Architecture/WeaponIcon.cs" />
+      <option value="$PROJECT_DIR$/Architecture/BackgroundWeeapon.cs" />
+      <option value="$PROJECT_DIR$/Architecture/BackgroundWeapon.cs" />
+      <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
+      <option value="$PROJECT_DIR$/Form1.cs" />
+      <option value="$PROJECT_DIR$/Architecture/StaticObject.cs" />
+      <option value="$PROJECT_DIR$/Program.cs" />
+      <option value="$PROJECT_DIR$/MenuForm.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -170,6 +143,8 @@
       <workItem from="1618988350044" duration="5687000" />
       <workItem from="1618996319635" duration="543000" />
       <workItem from="1618999117091" duration="1656000" />
+      <workItem from="1619237578852" duration="295000" />
+      <workItem from="1619418307826" duration="1256000" />
     </task>
     <servers />
   </component>
@@ -206,46 +181,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom" timestamp="1619160515886">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1619160515886" />
-    <state width="1632" height="162" key="GridCell.Tab.0.center" timestamp="1619160515886">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1619160515886" />
-    <state width="1632" height="162" key="GridCell.Tab.0.left" timestamp="1619160515886">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1619160515886" />
-    <state width="1632" height="162" key="GridCell.Tab.0.right" timestamp="1619160515886">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="162" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1619160515886" />
-    <state x="92" y="92" width="1491" height="726" key="VCS.FileHistoryDialog" timestamp="1619158879154">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state x="92" y="92" width="1491" height="726" key="VCS.FileHistoryDialog/0.0.1676.911@0.0.1676.911" timestamp="1619158879154" />
-  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Form1.cs</url>
-          <line>62</line>
-          <properties documentPath="C:\Users\Konstantine\Personal\Study\Программирование\C#\Игра\GameOfTheCentury\Game\Form1.cs" initialLine="58">
-            <startOffsets>
-              <option value="2446" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2447" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="DotNetProject">
         <watch expression=" GetGameDirectoryRoot().ToString() + &quot;\\Images\\&quot;" language="C#" />

@@ -43,6 +43,10 @@ namespace WinFormsApp1{
                         PlantsType.firstBush));
                 game.Background = new Background(game.MapSize,new Point(0,0));
                 game.MenuButton = new MenuButton(new Size(90, 60), new Point(0, 0));
+                game.BackgroundWeapon = new BackgroundWeapon(new Size(100, 100), new Point(game.MapSize.Width-117, 0));
+                //game.WeaponIcon = new WeaponIcon(new Size(500, 500),new Point(0, game.MapSize.Height),
+                   // WeaponTypeIcon.stone);
+                
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
         }

@@ -21,9 +21,11 @@ namespace Game
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
         public List<PictureBox> Monsters { get; set; }
-        public Background Background { get; set; }
         
+        public Background Background { get; set; }
+        public WeaponIcon WeaponIcon { get; set; }
         public MenuButton MenuButton { get; set; }
+        public BackgroundWeapon BackgroundWeapon { get; set; }
         public int Scores { get; set; }
         public bool IsOver { get; set; }
         public Size MapSize { get; }

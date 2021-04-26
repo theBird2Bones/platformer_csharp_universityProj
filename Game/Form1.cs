@@ -22,14 +22,14 @@ namespace WinFormsApp1 {
             DoubleBuffered = true;
             
             Controls.Add(game.MenuButton);
+            Controls.Add(game.WeaponIcon);
+            Controls.Add(game.BackgroundWeapon);
             Controls.Add(game.Hero);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
-                //environmentEl.Parent = game.Background;
             }
+            
             Controls.Add(game.Background);
-            //game.Hero.Parent = game.Background;
-            //game.MenuButton.Parent = game.Background;
             timer = new Timer();
 
             game.MenuButton.Click += (sender, args) =>
