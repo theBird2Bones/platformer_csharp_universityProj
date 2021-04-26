@@ -26,7 +26,6 @@ namespace WinFormsApp1
             Controls.Add(Kunai);
             Controls.Add(Bow);
             Controls.Add(ScoresBox);
-            
             Shuriken.Click += (sender, args) => {
                 if (game.Scores >= 50) {
                     game.Scores -= 50;
@@ -62,6 +61,7 @@ namespace WinFormsApp1
                         MessageBoxIcon.Error);
                 }
             };
+
         }
     }
 }

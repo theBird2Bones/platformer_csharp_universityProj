@@ -36,6 +36,7 @@
       <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +58,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
+
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
@@ -68,6 +70,7 @@
         <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
       </list>
     </option>
+
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -136,6 +139,7 @@
       <workItem from="1618988350044" duration="5687000" />
       <workItem from="1618996319635" duration="543000" />
       <workItem from="1618999117091" duration="1656000" />
+      <workItem from="1619454423894" duration="315000" />
     </task>
     <servers />
   </component>
