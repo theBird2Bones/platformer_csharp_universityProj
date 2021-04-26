@@ -19,12 +19,13 @@ namespace WinFormsApp1{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 var game = new GameModel(new Size(1500, 900));
+                game.Scores = 50;
                 var player = new Hero(100, 4, 12,
                     new Point(400,400), 
                     new Size(30, 40));
                 game.Hero = player;
                 game.EnvironmentObjects.Add(
-                    new Platform(new Point(0, game.MapSize.Height - 100),
+                    new Platform(new Point(-100, game.MapSize.Height - 100),
                     new Size(8000, 60)));
                 
                 //game.EnvironmentObjects.Add(

@@ -61,7 +61,7 @@ namespace WinFormsApp1 {
                 game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
                 Invalidate();
             };
-            game.SpawnLocation = new Point(150,500);
+            game.SpawnLocation = new Point(100,500);
             timer.Start();
             Paint += (sender, args) => {
                 var g = args.Graphics;

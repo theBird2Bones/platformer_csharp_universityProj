@@ -49,19 +49,19 @@ namespace WinFormsApp1
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-             };
+            };
 
-             Bow.Click += (sender, args) => {
-                 if (game.Scores >= 150) {
-                     game.Scores -= 150;
-                     game.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
-                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                 }
-                 else {
-                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
-                         MessageBoxIcon.Error);
-                 }
-             };
+            Bow.Click += (sender, args) => {
+                if (game.Scores >= 150) {
+                    game.Scores -= 150;
+                    game.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
+                    MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            };
         }
     }
 }
