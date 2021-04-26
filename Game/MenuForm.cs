@@ -66,7 +66,7 @@ namespace WinFormsApp1
                  }
              };
 
-             Shuriken.Click += (sender, args) =>
+             Bow.Click += (sender, args) =>
              {
                  var res = MessageBox.Show("Уверен, что хочешь купить?",
                      "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

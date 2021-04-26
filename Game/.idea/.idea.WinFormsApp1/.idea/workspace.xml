@@ -31,7 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Images/thirdTree.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/thirdTree.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +59,7 @@
       <option value="$PROJECT_DIR$/Form1.cs" />
       <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
       <option value="$PROJECT_DIR$/MenuForm.cs" />
+      <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
@@ -128,6 +129,7 @@
       <workItem from="1618988350044" duration="5687000" />
       <workItem from="1618996319635" duration="543000" />
       <workItem from="1618999117091" duration="1656000" />
+      <workItem from="1619454423894" duration="315000" />
     </task>
     <servers />
   </component>

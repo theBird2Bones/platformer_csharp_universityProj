@@ -66,7 +66,7 @@ namespace WinFormsApp1
             this.Shuriken.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Shuriken.TabIndex = 1;
             this.Shuriken.TabStop = false;
-            this.Shuriken.Click += new System.EventHandler(this.Shuriken_Click);
+            
             // 
             // Kunai
             // 
@@ -78,7 +78,7 @@ namespace WinFormsApp1
             this.Kunai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Kunai.TabIndex = 2;
             this.Kunai.TabStop = false;
-            this.Kunai.Click += new System.EventHandler(this.Kunai_Click);
+            
             // 
             // Bow
             // 
@@ -90,7 +90,7 @@ namespace WinFormsApp1
             this.Bow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Bow.TabIndex = 3;
             this.Bow.TabStop = false;
-            this.Bow.Click += new System.EventHandler(this.Bow_Click);
+            
             // 
             // label1
             // 
