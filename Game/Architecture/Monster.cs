@@ -28,6 +28,7 @@ namespace Game
             Tag = "monster";
             Image = new Bitmap(PathToImages + _mosterType[monsterType]);
             MonsterType = monsterType;
+            Visible = false;
         }
 
         public void MoveToHero(GameModel game, int travelSpeed) {

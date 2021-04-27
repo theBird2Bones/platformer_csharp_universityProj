@@ -34,9 +34,7 @@
       <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Monster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +56,17 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
         <option value="$PROJECT_DIR$/MenuForm.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
-        <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
+        <option value="$PROJECT_DIR$/Form1.cs" />
       </list>
     </option>
-
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

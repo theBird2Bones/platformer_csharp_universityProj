@@ -33,25 +33,29 @@ namespace Game
         public Point SpawnLocation = new Point(0,0);
         public void SpawnMonster()
         {
-            if (monsterSpawnsMonitor % 60 == 0)
+            if (monsterSpawnsMonitor % 100 == 0)
             {
                 var random = new Random();
-                var d = random.Next(3);
-                MonsterType monsterType = MonsterType.fatMonster;
-                if (d % 3 == 1)
-                    monsterType = MonsterType.normalMonster;
-                if (d % 3 == 2)
-                    monsterType = MonsterType.fastMonster;
-                var monster = new Monster(1, 1, 0, 
-                    new Point(SpawnLocation.X, SpawnLocation.Y), 
-                    new Size(40, 40), monsterType);
+                var randomMonsterType = random.Next(3);
+                Monster monster = new Monster(300, 1, 0, SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                switch (randomMonsterType) {
+                    case (int)MonsterType.fatMonster: {
+                        monster = new Monster(300, 1, 0, SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                        break;
+                    }
+                    case (int)MonsterType.normalMonster: {
+                        monster = new Monster(150, 3, 0, SpawnLocation, new Size(30, 40), MonsterType.normalMonster);
+                        break;
+                    }
+                    case (int)MonsterType.fastMonster: {
+                        monster = new Monster(50, 5, 0, SpawnLocation, new Size(25, 30), MonsterType.fastMonster);
+                        break;
+                    }
+                }
                 Monsters.Add(monster);
-                //EnvironmentObjects.Add(monster);
             }
-            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 61;
+            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 101;
         }
-        //переписать эту штуку для разных монсторв
-
         public void MakeActionOfMonsters()
         {
             foreach (var monster in Monsters) {
