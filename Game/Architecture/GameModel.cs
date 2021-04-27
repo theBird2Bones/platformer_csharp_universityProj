@@ -37,18 +37,18 @@ namespace Game
             {
                 var random = new Random();
                 var randomMonsterType = random.Next(3);
-                Monster monster = new Monster(300, 1, 0, SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                Monster monster = new Monster(300, 1, 0, 0,SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
                 switch (randomMonsterType) {
                     case (int)MonsterType.fatMonster: {
-                        monster = new Monster(300, 1, 0, SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                        monster = new Monster(300, 1, 0, 50,SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
                         break;
                     }
                     case (int)MonsterType.normalMonster: {
-                        monster = new Monster(150, 3, 0, SpawnLocation, new Size(30, 40), MonsterType.normalMonster);
+                        monster = new Monster(150, 3, 0, 35,SpawnLocation, new Size(30, 40), MonsterType.normalMonster);
                         break;
                     }
                     case (int)MonsterType.fastMonster: {
-                        monster = new Monster(50, 5, 0, SpawnLocation, new Size(25, 30), MonsterType.fastMonster);
+                        monster = new Monster(50, 5, 0, 15,SpawnLocation, new Size(25, 30), MonsterType.fastMonster);
                         break;
                     }
                 }
