@@ -20,17 +20,15 @@ namespace WinFormsApp1{
                 Application.SetCompatibleTextRenderingDefault(false);
                 var game = new GameModel(new Size(1500, 900));
                 game.Scores = 50;
+                
                 var player = new Hero(100, 4, 12,
                     new Point(400,400), 
                     new Size(30, 40));
+                
                 game.Hero = player;
                 game.EnvironmentObjects.Add(
                     new Platform(new Point(-100, game.MapSize.Height - 100),
                     new Size(8000, 60)));
-                
-                //game.EnvironmentObjects.Add(
-                 //   new Platform(new Point(60, game.MapSize.Height - 240),
-                  //  new Size(120, 50)));
                 
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(-100, game.MapSize.Height - 350),
@@ -50,9 +48,11 @@ namespace WinFormsApp1{
                 game.Background = new Background(
                     game.MapSize,
                     new Point(0,0));
+                
                 game.MenuButton = new MenuButton(
                     new Size(90, 60),
                     new Point(0, 0));
+                
                 game.BackgroundWeapon = new BackgroundWeapon(
                     new Size(100, 100),
                     new Point(game.MapSize.Width - 64, 0));

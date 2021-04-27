@@ -68,9 +68,14 @@ namespace WinFormsApp1 {
                 foreach (var monster in game.Monsters){
                     g.DrawImage(monster.Image, monster.Location);
                 }
+                
                 g.DrawImage(game.Background.Image, game.Background.Location);
                 foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {
                     g.DrawImage(environmentObject.Image, environmentObject.Location);
+                }
+
+                foreach (var monster in game.Monsters) {
+                    g.DrawImage(monster.Image, monster.Location);
                 }
                 g.DrawImage(game.Hero.Image, game.Hero.Location);
             };
