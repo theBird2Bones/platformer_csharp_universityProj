@@ -17,7 +17,7 @@ namespace WinFormsApp1{
             static void Main(){
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                var game = new GameModel(new Size(1400, 800));
+                var game = new GameModel(new Size(1500, 900));
                 game.Scores = 500;
                 
                 var player = new Hero(100, 4, 12,
@@ -55,9 +55,13 @@ namespace WinFormsApp1{
                 game.BackgroundWeapon = new BackgroundWeapon(
                     new Size(100, 100),
                     new Point(game.MapSize.Width - 64, 0));
+
+                game.WeaponIcon = new WeaponIcons(
+                    new Size(game.BackgroundWeapon.Size.Height-20, game.BackgroundWeapon.Size.Width - 20), 
+                    new Point(game.BackgroundWeapon.Location.X+10, game.BackgroundWeapon.Location.Y+10), 
+                    game.Hero.Weapon.WeaponTypeIcons);
                 
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
-        }
-    }
+        }    }
 }
