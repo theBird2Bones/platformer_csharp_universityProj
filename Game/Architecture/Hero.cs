@@ -26,15 +26,13 @@ namespace Game{
     }
     
     public class Hero : DynamicObject {
-        
-        public Weapon Weapon { get; set; } 
-        
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
             Image = new Bitmap(PathToImages + "hero.png");
             Visible = false;
-            Weapon = new Weapon(1, 12, 1.5, new Vector(), new Vector(), WeaponTypeIcons.stone); // уточнить по векторам
+            Weapon = new Weapon(new Size(25, 25), new Point(Location.X+10, Location.Y+15), 
+                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
         }
 
         public bool IsGoingLeft { get; set; }
@@ -106,16 +104,26 @@ namespace Game{
             if (this.Left > 0 && this.IsGoingLeft && this.Left - this.Speed*2 < 0) {
                 if(game.Background.Left < 0) {
                     game.Background.Move(this, 1);
+                    game.SpawnLocation = new Point(game.SpawnLocation.X + game.Hero.Speed,game.SpawnLocation.Y);
                     foreach (var obj in game.EnvironmentObjects) {
                         ((StaticObject)obj).Move(this, game.Hero.Speed);
+                    }
+
+                    foreach (var monster in game.Monsters) {
+                        monster.Left += game.Hero.Speed;
                     }
                 }
                 this.IsGoingLeft = false;
             }
             if (this.Right < game.MapSize.Width && this.IsGoingRight && this.Right + this.Speed*2 > game.MapSize.Width-26) {
                 game.Background.Move(this,1);
+                game.SpawnLocation = new Point(game.SpawnLocation.X - game.Hero.Speed,game.SpawnLocation.Y);
                 foreach (var obj in game.EnvironmentObjects) {
                     ((StaticObject)obj).Move(this,game.Hero.Speed);
+                }
+                
+                foreach (var monster in game.Monsters) {
+                    monster.Left -= game.Hero.Speed;
                 }
                 this.IsGoingRight = false;
             }
@@ -159,8 +167,8 @@ namespace Game{
                         break;
                     }
                 }
-                
             }
+            Weapon.UpdateWeapon();
         }
     }
 }

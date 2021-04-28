@@ -35,5 +35,10 @@ namespace Game
             Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
             Visible = true;
         }
+
+        public void UpdateWeapon(WeaponTypeIcons weaponTypeIcons)
+        {
+            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
+        }
     }
 }

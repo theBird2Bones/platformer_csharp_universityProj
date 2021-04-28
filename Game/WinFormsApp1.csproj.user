@@ -4,6 +4,9 @@
     <Compile Update="Architecture\Background.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Architecture\BackgroundWeapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Architecture\DynamicObject.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -23,6 +26,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Architecture\StaticObject.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\Weapon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Architecture\WeaponIcons.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Update="Form1.cs">

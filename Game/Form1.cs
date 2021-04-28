@@ -21,7 +21,8 @@ namespace WinFormsApp1 {
         {
             foreach (var monster in game.Monsters)
             {
-                Controls.Add(monster);
+                if (!Controls.Contains(monster))
+                    Controls.Add(monster);
             }
         }
 
@@ -32,6 +33,7 @@ namespace WinFormsApp1 {
 
             Controls.Add(game.MenuButton);
             Controls.Add(game.Hero);
+            Controls.Add(game.Hero.Weapon);
             Controls.Add(game.WeaponIcon);
             Controls.Add(game.BackgroundWeapon);
             foreach (var environmentEl in game.EnvironmentObjects) {
@@ -61,15 +63,18 @@ namespace WinFormsApp1 {
                 game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
                 Invalidate();
             };
+            game.SpawnLocation = new Point(100,500);
             timer.Start();
             Paint += (sender, args) => {
                 var g = args.Graphics;
-                foreach (var monster in game.Monsters){
-                    g.DrawImage(monster.Image, monster.Location);
-                }
+
                 g.DrawImage(game.Background.Image, game.Background.Location);
                 foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {
                     g.DrawImage(environmentObject.Image, environmentObject.Location);
+                }
+
+                foreach (var monster in game.Monsters) {
+                    g.DrawImage(monster.Image, monster.Location);
                 }
                 g.DrawImage(game.Hero.Image, game.Hero.Location);
             };

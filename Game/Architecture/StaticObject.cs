@@ -20,7 +20,7 @@ namespace Game
             BackColor = Color.Transparent;
         }
 
-        public void Move(Hero hero,int speed) {
+        public new void Move(Hero hero,int speed) {
             if (hero.IsGoingLeft) 
                 this.Left += speed;
             if(hero.IsGoingRight)

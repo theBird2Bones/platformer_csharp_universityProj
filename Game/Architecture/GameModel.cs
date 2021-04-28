@@ -17,11 +17,11 @@ namespace Game
             IsOver = false;
             MapSize = mapSize;
             EnvironmentObjects = new List<PictureBox>();
-            Monsters = new List<PictureBox>();
+            Monsters = new List<Monster>();
         }
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
-        public List<PictureBox> Monsters { get; set; }
+        public List<Monster> Monsters { get; set; }
         public Background Background { get; set; }
         public WeaponIcons WeaponIcon { get; set; }
         public BackgroundWeapon BackgroundWeapon { get; set; }
@@ -30,38 +30,52 @@ namespace Game
         public bool IsOver { get; set; }
         public Size MapSize { get; }
 
+        public Point SpawnLocation = new Point(0,0);
         public void SpawnMonster()
         {
-            if (monsterSpawnsMonitor % 20 == 0)
+            if (monsterSpawnsMonitor % 100 == 0)
             {
                 var random = new Random();
-                var delta1 = random.Next() % 300;
-                var delta2 = random.Next() % 300;
-                MonsterType monsterType = MonsterType.firstMonster;
-                if (delta1 % 3 == 1)
-                    monsterType = MonsterType.secondMonster;
-                if (delta1 % 3 == 2)
-                    monsterType = MonsterType.thirdMonster;
-                var monster = new Monster(1, 1, 0, 
-                    new Point(300 + delta2, 300 + delta1), 
-                    new Size(40, 40), monsterType);
+                var randomMonsterType = random.Next(3);
+                Monster monster = new Monster(300, 1, 0, 0,SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                switch (randomMonsterType) {
+                    case (int)MonsterType.fatMonster: {
+                        monster = new Monster(300, 1, 0, 50,SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                        break;
+                    }
+                    case (int)MonsterType.normalMonster: {
+                        monster = new Monster(150, 3, 0, 35,SpawnLocation, new Size(30, 40), MonsterType.normalMonster);
+                        break;
+                    }
+                    case (int)MonsterType.fastMonster: {
+                        monster = new Monster(50, 5, 0, 15,SpawnLocation, new Size(25, 30), MonsterType.fastMonster);
+                        break;
+                    }
+                }
                 Monsters.Add(monster);
-                //EnvironmentObjects.Add(monster);
             }
-            if (monsterSpawnsMonitor == 20 * 100)
-                monsterSpawnsMonitor = 0;
-            monsterSpawnsMonitor++;
+            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 101;
         }
-        //переписать эту штуку для разных монсторв
-
         public void MakeActionOfMonsters()
         {
-            foreach (var obj in Monsters)
-            {
-                if (obj is DynamicObject)
-                {
-                    var objAsDynamicObject = (DynamicObject)obj;
-                    objAsDynamicObject.Action();
+            foreach (var monster in Monsters) {
+                switch (monster.MonsterType) {
+                    case MonsterType.fatMonster:
+                        monster.MoveToHero(this, 1);
+                        break;
+                    case MonsterType.normalMonster: 
+                        monster.MoveToHero(this, 3);
+                        break;
+                    case MonsterType.fastMonster:
+                        monster.MoveToHero(this, 5);
+                        break;
+                }
+                foreach (var platform in EnvironmentObjects.Where(x => x is Platform)) {
+                    if (monster.Bounds.IntersectsWith(platform.Bounds))
+                        monster.Top = platform.Top - monster.Height + 1;
+                    else {
+                        monster.Top += 7;
+                    }
                 }
             }
         }
