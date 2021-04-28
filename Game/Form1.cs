@@ -32,6 +32,7 @@ namespace WinFormsApp1 {
 
             Controls.Add(game.MenuButton);
             Controls.Add(game.Hero);
+            Controls.Add(game.Hero.Weapon);
             Controls.Add(game.WeaponIcon);
             Controls.Add(game.BackgroundWeapon);
             foreach (var environmentEl in game.EnvironmentObjects) {
@@ -65,9 +66,6 @@ namespace WinFormsApp1 {
             timer.Start();
             Paint += (sender, args) => {
                 var g = args.Graphics;
-                foreach (var monster in game.Monsters){
-                    g.DrawImage(monster.Image, monster.Location);
-                }
                 
                 g.DrawImage(game.Background.Image, game.Background.Location);
                 foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {

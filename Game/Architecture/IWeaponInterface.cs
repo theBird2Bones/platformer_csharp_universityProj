@@ -12,7 +12,7 @@ namespace Game
         int BulletCount { get; set; }
         int ReloadingTime { get; set; }
         double SplashRadius { get; set; }
-        WeaponTypeIcons WeaponTypeIcon { get; set; }
+        WeaponIcons WeaponIcons { get; set; }
         Vector BulletSpeed { get; set; }
         Vector BulletGravity { get; set; }
         Vector GetTotalBulletVector();

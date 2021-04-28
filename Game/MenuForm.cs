@@ -29,7 +29,10 @@ namespace WinFormsApp1
             Shuriken.Click += (sender, args) => {
                 if (game.Scores >= 50) {
                     game.Scores -= 50;
-                    game.Hero.Weapon = new Weapon(3, 8, 4, new Vector(), new Vector(), WeaponTypeIcons.shuriken);
+                    game.Hero.Weapon.ChangeWeapon(new Weapon(
+                        new System.Drawing.Size(30, 30),
+                        new System.Drawing.Point(Location.X, Location.Y),
+                        WeaponTypeIcons.shuriken, 3, 8, 4, new Vector(), new Vector(), game.Hero));
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
@@ -41,7 +44,10 @@ namespace WinFormsApp1
             Kunai.Click += (sender, args) => {
                 if (game.Scores >= 100) {
                     game.Scores -= 100;
-                    game.Hero.Weapon = new Weapon(7, 4, 8, new Vector(), new Vector(), WeaponTypeIcons.kunai);
+                    game.Hero.Weapon.ChangeWeapon(new Weapon(
+                        new System.Drawing.Size(30, 30), 
+                        new System.Drawing.Point(Location.X, Location.Y),
+                        WeaponTypeIcons.kunai, 7, 4, 8, new Vector(), new Vector(), game.Hero));
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
@@ -53,7 +59,10 @@ namespace WinFormsApp1
             Bow.Click += (sender, args) => {
                 if (game.Scores >= 150) {
                     game.Scores -= 150;
-                    game.Hero.Weapon = new Weapon(12, 1, 11, new Vector(), new Vector(), WeaponTypeIcons.bow);
+                    game.Hero.Weapon.ChangeWeapon(new Weapon(
+                        new System.Drawing.Size(30, 30),
+                        new System.Drawing.Point(Location.X, Location.Y),
+                        WeaponTypeIcons.bow, 12, 1, 11, new Vector(), new Vector(), game.Hero));
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
