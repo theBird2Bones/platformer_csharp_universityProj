@@ -6,7 +6,6 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 using Game;
-using System.IO;
 
 namespace WinFormsApp1{
     public static class Helpers{
@@ -18,8 +17,8 @@ namespace WinFormsApp1{
             static void Main(){
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                var game = new GameModel(new Size(1500, 900));
-                game.Scores = 50;
+                var game = new GameModel(new Size(1400, 800));
+                game.Scores = 500;
                 
                 var player = new Hero(100, 4, 12,
                     new Point(400,400), 

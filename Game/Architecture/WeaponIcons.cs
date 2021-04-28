@@ -35,5 +35,7 @@ namespace Game
             Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
             Visible = true;
         }
+
+        public WeaponTypeIcons weaponTypeIcons { get; set; }
     }
 }

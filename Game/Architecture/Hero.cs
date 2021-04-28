@@ -26,15 +26,13 @@ namespace Game{
     }
     
     public class Hero : DynamicObject {
-        
-        public Weapon Weapon { get; set; } 
-        
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
             Image = new Bitmap(PathToImages + "hero.png");
             Visible = false;
-            Weapon = new Weapon(1, 12, 1.5, new Vector(), new Vector(), WeaponTypeIcons.stone); // уточнить по векторам
+            Weapon = new Weapon(new Size(25, 25), new Point(Location.X+10, Location.Y+15), 
+                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
         }
 
         public bool IsGoingLeft { get; set; }
@@ -169,8 +167,8 @@ namespace Game{
                         break;
                     }
                 }
-                
             }
+            Weapon.UpdateWeapon();
         }
     }
 }
