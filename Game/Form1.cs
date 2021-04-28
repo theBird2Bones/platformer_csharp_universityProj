@@ -34,8 +34,8 @@ namespace WinFormsApp1 {
             Controls.Add(game.MenuButton);
             Controls.Add(game.Hero);
             Controls.Add(game.Hero.Weapon);
-            Controls.Add(game.WeaponIcon);
-            Controls.Add(game.BackgroundWeapon);
+            //Controls.Add(game.BackgroundWeapon);
+            //Controls.Add(game.WeaponIcon);
             foreach (var environmentEl in game.EnvironmentObjects) {
                 Controls.Add(environmentEl);
             }
@@ -77,6 +77,9 @@ namespace WinFormsApp1 {
                     g.DrawImage(monster.Image, monster.Location);
                 }
                 g.DrawImage(game.Hero.Image, game.Hero.Location);
+                g.DrawImage(game.Hero.Weapon.Image, game.Hero.Weapon.Location);
+                g.DrawImage(new Bitmap(game.BackgroundWeapon.Image,new Size(75,75)), game.BackgroundWeapon.Location);
+                g.DrawImage(new Bitmap(game.WeaponIcon.Image,new Size(50,50)), game.WeaponIcon.Location);
             };
             FormClosing += (sender, eventArgs) => {
                 var res = MessageBox.Show("Уверен, что хочешь закрыть?",
