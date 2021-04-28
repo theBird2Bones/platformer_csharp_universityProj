@@ -40,6 +40,8 @@ namespace Game
             Visible = weapon.Visible;
             BackColor = weapon.BackColor;
             SizeMode = weapon.SizeMode;
+            Location = weapon.Location;
+            Size = weapon.Size;
             Tag = weapon.Tag;
             Image = weapon.Image;
             Visible = weapon.Visible;
