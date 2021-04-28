@@ -23,8 +23,7 @@ namespace Game
             BulletGravity = bulletGravity;
             Owner = owner;
             SizeMode = PictureBoxSizeMode.StretchImage;
-            Visible = true;
-            BackColor = Color.Transparent;
+            Visible = false;
             WeaponTypeIcons = weaponTypeIcons;
         }
 
@@ -48,10 +47,26 @@ namespace Game
             WeaponTypeIcons = weapon.WeaponTypeIcons;
         }
 
-        public void UpdateWeapon()
-        {
-            Location = new System.Drawing.Point(
-                Owner.Location.X + 15, Owner.Location.Y + 15);
+        public void UpdateWeapon() {
+            switch (this.WeaponTypeIcons) {
+                case WeaponTypeIcons.bow:
+                    Location = new System.Drawing.Point(
+                        Owner.Location.X + 15, Owner.Location.Y + 15);
+                    break;
+                case WeaponTypeIcons.kunai:
+                    Location = new System.Drawing.Point(
+                        Owner.Location.X + 20, Owner.Location.Y + 20);
+                    break;
+                case WeaponTypeIcons.shuriken:
+                    Location = new System.Drawing.Point(
+                        Owner.Location.X + 21, Owner.Location.Y + 21);
+                    break;
+                case WeaponTypeIcons.stone:
+                    Location = new System.Drawing.Point(
+                        Owner.Location.X + 20, Owner.Location.Y + 20);
+                    break;
+            }
+            
         }
 
         public WeaponTypeIcons WeaponTypeIcons { get; set; }

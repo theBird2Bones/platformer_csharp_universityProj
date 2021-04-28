@@ -23,7 +23,7 @@ namespace Game
             new Dictionary<WeaponTypeIcons, string>()
             {
                 {WeaponTypeIcons.stone, "stone.png"},
-                {WeaponTypeIcons.shuriken, "shurikenIcon.png"},
+                {WeaponTypeIcons.shuriken, "shuriken.png"},
                 {WeaponTypeIcons.kunai, "kunaiIcon.png"},
                 {WeaponTypeIcons.bow, "bow.png"}
             };
