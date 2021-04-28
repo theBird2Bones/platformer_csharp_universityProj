@@ -33,6 +33,7 @@ namespace WinFormsApp1
                         new System.Drawing.Size(30, 30),
                         new System.Drawing.Point(Location.X, Location.Y),
                         WeaponTypeIcons.shuriken, 3, 8, 4, new Vector(), new Vector(), game.Hero));
+                    game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
@@ -48,6 +49,7 @@ namespace WinFormsApp1
                         new System.Drawing.Size(30, 30), 
                         new System.Drawing.Point(Location.X, Location.Y),
                         WeaponTypeIcons.kunai, 7, 4, 8, new Vector(), new Vector(), game.Hero));
+                    game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
@@ -63,14 +65,13 @@ namespace WinFormsApp1
                         new System.Drawing.Size(30, 30),
                         new System.Drawing.Point(Location.X, Location.Y),
                         WeaponTypeIcons.bow, 12, 1, 11, new Vector(), new Vector(), game.Hero));
+                    game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else {
+                }                else {
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
             };
-
         }
     }
 }

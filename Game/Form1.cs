@@ -21,7 +21,8 @@ namespace WinFormsApp1 {
         {
             foreach (var monster in game.Monsters)
             {
-                Controls.Add(monster);
+                if (!Controls.Contains(monster))
+                    Controls.Add(monster);
             }
         }
 
@@ -66,7 +67,7 @@ namespace WinFormsApp1 {
             timer.Start();
             Paint += (sender, args) => {
                 var g = args.Graphics;
-                
+
                 g.DrawImage(game.Background.Image, game.Background.Location);
                 foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {
                     g.DrawImage(environmentObject.Image, environmentObject.Location);

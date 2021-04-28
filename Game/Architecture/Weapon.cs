@@ -25,6 +25,7 @@ namespace Game
             SizeMode = PictureBoxSizeMode.StretchImage;
             Visible = true;
             BackColor = Color.Transparent;
+            WeaponTypeIcons = weaponTypeIcons;
         }
 
         public void ChangeWeapon(Weapon weapon)
@@ -42,6 +43,7 @@ namespace Game
             Tag = weapon.Tag;
             Image = weapon.Image;
             Visible = weapon.Visible;
+            WeaponTypeIcons = weapon.WeaponTypeIcons;
         }
 
         public void UpdateWeapon()
@@ -50,6 +52,7 @@ namespace Game
                 Owner.Location.X + 15, Owner.Location.Y + 15);
         }
 
+        public WeaponTypeIcons WeaponTypeIcons { get; set; }
         public DynamicObject Owner { get; set; }
         public int BulletCount { get; set; }
         public int ReloadingTime { get; set; }
