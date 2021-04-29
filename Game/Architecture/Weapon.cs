@@ -10,12 +10,18 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public class Weapon : WeaponIcons, IWeaponInterface
-    { // поясни за базар
+    public class Weapon : WeaponIcons, IWeaponInterface { 
+        public WeaponTypeIcons WeaponTypeIcons { get; set; }
+        public DynamicObject Owner { get; set; }
+        public int BulletCount { get; set; }
+        public int ReloadingTime { get; set; }
+        public WeaponIcons WeaponIcons { get; set; }
+        public double SplashRadius { get; set; }
+        public Vector BulletSpeed { get; set; }
+        public Vector BulletGravity { get; set; }
         public Weapon(System.Drawing.Size size, System.Drawing.Point location, 
             WeaponTypeIcons weaponTypeIcons, int bulletCount, int reloadingTime, double splashRadius, 
-            Vector bulletSpeed, Vector bulletGravity, DynamicObject owner) : base(size, location, weaponTypeIcons)
-        {
+            Vector bulletSpeed, Vector bulletGravity, DynamicObject owner) : base(size, location, weaponTypeIcons) {
             BulletCount = bulletCount;
             ReloadingTime = reloadingTime;
             SplashRadius = splashRadius;
@@ -47,39 +53,52 @@ namespace Game
             WeaponTypeIcons = weapon.WeaponTypeIcons;
         }
 
-        public void UpdateWeapon() {
+        public void UpdateWeapon(Hero hero) {
+            WeaponTypeIcons weaponTypeIcons = hero.Weapon.WeaponTypeIcons;
             switch (this.WeaponTypeIcons) {
                 case WeaponTypeIcons.bow:
-                    Location = new System.Drawing.Point(
-                        Owner.Location.X + 15, Owner.Location.Y + 15);
+                    if(hero.IsGoingLeft) {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X, Owner.Location.Y + 15);
+                        weaponTypeIcons = WeaponTypeIcons.bowLeft;
+                    }
+                    if(hero.IsGoingRight) {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X + 15, Owner.Location.Y + 15);
+                        weaponTypeIcons = WeaponTypeIcons.bowRight;
+                    }
                     break;
                 case WeaponTypeIcons.kunai:
-                    Location = new System.Drawing.Point(
-                        Owner.Location.X + 20, Owner.Location.Y + 20);
+                    if(hero.IsGoingLeft) {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X-9, Owner.Location.Y + 20);
+                        weaponTypeIcons = WeaponTypeIcons.kunaiLeft;
+                    }
+                    if (hero.IsGoingRight) {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X + 20, Owner.Location.Y + 20);
+                        weaponTypeIcons = WeaponTypeIcons.kunaiRight;
+                    }
                     break;
-                case WeaponTypeIcons.shuriken:
-                    Location = new System.Drawing.Point(
-                        Owner.Location.X + 21, Owner.Location.Y + 21);
+                case WeaponTypeIcons.shuriken: 
+                    if(hero.IsGoingLeft)
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X-8, Owner.Location.Y + 21);
+                    
+                    if (hero.IsGoingRight)
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X + 21, Owner.Location.Y + 21);
+                    weaponTypeIcons = WeaponTypeIcons.shuriken;
                     break;
                 case WeaponTypeIcons.stone:
                     Location = new System.Drawing.Point(
                         Owner.Location.X + 20, Owner.Location.Y + 20);
                     break;
             }
-            
+            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
         }
-
-        public WeaponTypeIcons WeaponTypeIcons { get; set; }
-        public DynamicObject Owner { get; set; }
-        public int BulletCount { get; set; }
-        public int ReloadingTime { get; set; }
-        public WeaponIcons WeaponIcons { get; set; }
-        public double SplashRadius { get; set; }
-        public Vector BulletSpeed { get; set; }
-        public Vector BulletGravity { get; set; }
-
-        public Vector GetTotalBulletVector()
-        {
+        
+        public Vector GetTotalBulletVector() {
             throw new NotImplementedException();
         }
     }

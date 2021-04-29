@@ -13,17 +13,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormsApp1 {
-    public partial class Form1 : Form
-    {
+    public partial class Form1 : Form {
         public Timer timer;
-
-        public void UpdateControls(GameModel game)
-        {
-            foreach (var monster in game.Monsters)
-            {
+        
+        public void UpdateControls(GameModel game) {
+            foreach (var monster in game.Monsters) 
                 if (!Controls.Contains(monster))
                     Controls.Add(monster);
-            }
         }
 
         public Form1(GameModel game) {
@@ -32,30 +28,27 @@ namespace WinFormsApp1 {
             DoubleBuffered = true;
 
             Controls.Add(game.MenuButton);
-            Controls.Add(game.Hero);
-            Controls.Add(game.Hero.Weapon);
-            //Controls.Add(game.BackgroundWeapon);
-            //Controls.Add(game.WeaponIcon);
-            foreach (var environmentEl in game.EnvironmentObjects) {
+            foreach (var environmentEl in game.EnvironmentObjects) 
                 Controls.Add(environmentEl);
-            }
             Controls.Add(game.Background);
             timer = new Timer();
-
-            game.MenuButton.Click += (sender, args) =>
-            {
+            timer.Interval = 1;
+            timer.Start();
+            game.SpawnLocation = new Point(100,500);
+            KeyDown += (sender, args) => {
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer);
+            };
+            
+            KeyUp += (sender, args) => {
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer);
+            };
+            
+            game.MenuButton.Click += (sender, args) => {
                 MenuForm menuForm = new MenuForm(this, game);
                 timer.Stop();
                 menuForm.Show();
             };
             
-            KeyDown += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer);
-            };
-            KeyUp += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer);
-            };
-            timer.Interval = 1;
             timer.Tick += (sender, args) => {
                 game.SpawnMonster();
                 UpdateControls(game);
@@ -63,24 +56,22 @@ namespace WinFormsApp1 {
                 game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
                 Invalidate();
             };
-            game.SpawnLocation = new Point(100,500);
-            timer.Start();
+            
             Paint += (sender, args) => {
                 var g = args.Graphics;
-
                 g.DrawImage(game.Background.Image, game.Background.Location);
-                foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) {
+                foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) 
                     g.DrawImage(environmentObject.Image, environmentObject.Location);
-                }
 
-                foreach (var monster in game.Monsters) {
-                    g.DrawImage(monster.Image, monster.Location);
-                }
-                g.DrawImage(game.Hero.Image, game.Hero.Location);
-                g.DrawImage(game.Hero.Weapon.Image, game.Hero.Weapon.Location);
-                g.DrawImage(new Bitmap(game.BackgroundWeapon.Image,new Size(75,75)), game.BackgroundWeapon.Location);
+                foreach (var monster in game.Monsters) 
+                    g.DrawImage(new Bitmap(monster.Image,monster.Size), monster.Location);
+                
+                g.DrawImage(new Bitmap(game.Hero.Image, game.Hero.Size), game.Hero.Location);
+                g.DrawImage(new Bitmap(game.Hero.Weapon.Image,game.Hero.Weapon.Size), game.Hero.Weapon.Location);
+                g.DrawImage(new Bitmap(game.BackgroundWeapon.Image,game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
                 g.DrawImage(new Bitmap(game.WeaponIcon.Image,new Size(50,50)), game.WeaponIcon.Location);
             };
+            
             FormClosing += (sender, eventArgs) => {
                 var res = MessageBox.Show("Уверен, что хочешь закрыть?",
                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

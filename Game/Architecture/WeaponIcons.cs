@@ -14,30 +14,35 @@ namespace Game
         stone,
         shuriken,
         kunai,
-        bow
+        kunaiRight,
+        kunaiLeft,
+        bow,
+        bowRight,
+        bowLeft,
     }
     
     public class WeaponIcons : StaticObject
     {
-        private readonly Dictionary<WeaponTypeIcons, string> _weaponTypeIcons =
-            new Dictionary<WeaponTypeIcons, string>()
-            {
+        protected readonly Dictionary<WeaponTypeIcons, string> _weaponTypeIcons =
+            new Dictionary<WeaponTypeIcons, string>{
                 {WeaponTypeIcons.stone, "stone.png"},
-                {WeaponTypeIcons.shuriken, "shuriken.png"},
-                {WeaponTypeIcons.kunai, "kunaiIcon.png"},
-                {WeaponTypeIcons.bow, "bow.png"}
+                {WeaponTypeIcons.shuriken, "shurikenIcon.png"},
+                {WeaponTypeIcons.kunai, "kunaiRight.png"},
+                {WeaponTypeIcons.kunaiRight, "kunaiRight.png"},
+                {WeaponTypeIcons.kunaiLeft, "kunaiLeft.png"},
+                {WeaponTypeIcons.bow, "bowRight.png"},
+                {WeaponTypeIcons.bowRight, "bowRight.png"},
+                {WeaponTypeIcons.bowLeft, "bowLeft.png"},
             };
 
-        public WeaponIcons(Size size, Point location, WeaponTypeIcons weaponTypeIcons) : base(size, location)
-        {
+        public WeaponIcons(Size size, Point location, WeaponTypeIcons weaponTypeIcons) : base(size, location) {
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "weaponIcon";
             Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
             Visible = true;
         }
 
-        public void UpdateWeapon(WeaponTypeIcons weaponTypeIcons)
-        {
+        public void UpdateWeapon(WeaponTypeIcons weaponTypeIcons) {
             Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
         }
     }

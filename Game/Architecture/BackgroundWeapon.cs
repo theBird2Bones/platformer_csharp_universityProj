@@ -10,7 +10,7 @@ namespace Game
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "backgroundWeapon";
             Image = new Bitmap(PathToImages + "backgroundWeapon.png");
-            Visible = true;
+            Visible = false;
         }
     }
 }
