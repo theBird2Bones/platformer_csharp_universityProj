@@ -17,51 +17,44 @@ namespace WinFormsApp1{
             static void Main(){
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+                
                 var game = new GameModel(new Size(1500, 900));
                 game.Scores = 500;
-                
                 var player = new Hero(100, 4, 12,
                     new Point(400,400), 
                     new Size(30, 40));
-                
                 game.Hero = player;
                 game.EnvironmentObjects.Add(
                     new Platform(new Point(-100, game.MapSize.Height - 100),
                     new Size(8000, 60)));
-                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(-100, game.MapSize.Height - 350),
                     new Size(220, 523),
                     PlantsType.thirdTree));
-                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(25, game.MapSize.Height - 300),
                         new Size(150, 200),
                         PlantsType.secondTree));
-                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(640, game.MapSize.Height - 170),
                         new Size(100, 70),
                         PlantsType.firstBush));
-                
                 game.Background = new Background(
                     game.MapSize,
                     new Point(0,0));
-                
                 game.MenuButton = new MenuButton(
                     new Size(90, 60),
                     new Point(0, 0));
-                
                 game.BackgroundWeapon = new BackgroundWeapon(
-                    new Size(100, 100),
+                    new Size(75, 75),
                     new Point(game.MapSize.Width - 64, 0));
-
                 game.WeaponIcon = new WeaponIcons(
                     new Size(game.BackgroundWeapon.Size.Height-20, game.BackgroundWeapon.Size.Width - 20), 
-                    new Point(game.BackgroundWeapon.Location.X+10, game.BackgroundWeapon.Location.Y+10), 
+                    new Point(game.BackgroundWeapon.Location.X+13, game.BackgroundWeapon.Location.Y+13), 
                     game.Hero.Weapon.WeaponTypeIcons);
                 
                 Application.Run(new Form1(game){Size = game.MapSize});
             }
-        }    }
+        }
+    }
 }

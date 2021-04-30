@@ -18,9 +18,6 @@ namespace WinFormsApp1
     public partial class MenuForm : Form {
         public MenuForm(Form1 gameForm, GameModel game) {            
             InitializeComponent();
-            this.Closing += (sender, args) => {
-                gameForm.timer.Start();
-            };
             ScoresBox.Text = game.Scores.ToString();
             Controls.Add(Shuriken);
             Controls.Add(Kunai);
@@ -30,47 +27,49 @@ namespace WinFormsApp1
                 if (game.Scores >= 50) {
                     game.Scores -= 50;
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
-                        new System.Drawing.Size(30, 30),
+                        new System.Drawing.Size(20, 20),
                         new System.Drawing.Point(Location.X, Location.Y),
                         WeaponTypeIcons.shuriken, 3, 8, 4, new Vector(), new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else {
+                else 
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }
             };
              
             Kunai.Click += (sender, args) => {
                 if (game.Scores >= 100) {
                     game.Scores -= 100;
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
-                        new System.Drawing.Size(30, 30), 
+                        new System.Drawing.Size(19, 17), 
                         new System.Drawing.Point(Location.X, Location.Y),
                         WeaponTypeIcons.kunai, 7, 4, 8, new Vector(), new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else {
+                else 
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }
             };
 
             Bow.Click += (sender, args) => {
                 if (game.Scores >= 150) {
                     game.Scores -= 150;
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
-                        new System.Drawing.Size(30, 30),
-                        new System.Drawing.Point(Location.X, Location.Y),
+                        new System.Drawing.Size(25, 25),
+                        new System.Drawing.Point(Location.X, Location.Y-10),
                         WeaponTypeIcons.bow, 12, 1, 11, new Vector(), new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }                else {
+                }               
+                else 
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-                }
+            };
+            
+            this.Closing += (sender, args) => {
+                gameForm.timer.Start();
             };
         }
     }

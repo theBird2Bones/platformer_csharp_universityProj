@@ -13,15 +13,27 @@ namespace Game
         fatMonster,
         normalMonster,
         fastMonster,
+        fatMonsterGoingRight,
+        fatMonsterGoingLeft,
+        normalMonsterGoingRight,
+        normalMonsterGoingLeft,
+        fastMonsterGoingRight,
+        fastMonsterGoingLeft,
     }
     public class Monster : DynamicObject {
         public int Damage { get; private set; }
         public MonsterType MonsterType;
         private readonly Dictionary<MonsterType, string> _mosterType = new Dictionary<MonsterType, string>()
-        {
+        {           
             {MonsterType.fatMonster, "fatMonster.png"},
+            {MonsterType.fatMonsterGoingLeft, "fatMonsterLeft.png"},
+            {MonsterType.fatMonsterGoingRight, "fatMonsterRight.png"},
             {MonsterType.normalMonster, "normalMonster.png"},
-            {MonsterType.fastMonster, "fastMonster.png"}
+            {MonsterType.normalMonsterGoingLeft, "normalMonsterLeft.png"},
+            {MonsterType.normalMonsterGoingRight, "normalMonsterRight.png"},
+            {MonsterType.fastMonster, "fastMonster.png"},
+            {MonsterType.fastMonsterGoingLeft, "fastMonsterLeft.png"},
+            {MonsterType.fastMonsterGoingRight, "fastMonsterRight.png"},
         };
         public Monster(int health, int speed, int jumpHeight,int damage, Point location, Size size, MonsterType monsterType)
             : base(health, speed, jumpHeight, location, size)
@@ -34,11 +46,36 @@ namespace Game
         }
 
         public void MoveToHero(GameModel game, int travelSpeed) {
-            if (this.Left >= game.Hero.Right) 
+            MonsterType monsterType = this.MonsterType;
+            if (this.Left > game.Hero.Right) {
                 this.Left -= travelSpeed;
-            if (this.Right <= game.Hero.Left)
+                switch (this.MonsterType) {
+                    case MonsterType.fatMonster:
+                        monsterType = MonsterType.fatMonsterGoingLeft;
+                        break;
+                    case MonsterType.normalMonster:
+                        monsterType = MonsterType.normalMonsterGoingLeft;
+                        break;
+                    case MonsterType.fastMonster:
+                        monsterType = MonsterType.fastMonsterGoingLeft;
+                        break;
+                }
+            }
+            if (this.Right <= game.Hero.Left) {
                 this.Left += travelSpeed;
-            
+                switch (this.MonsterType) {
+                    case MonsterType.fatMonster:
+                        monsterType = MonsterType.fatMonsterGoingRight;
+                        break;
+                    case MonsterType.normalMonster:
+                        monsterType = MonsterType.normalMonsterGoingRight;
+                        break;
+                    case MonsterType.fastMonster:
+                        monsterType = MonsterType.fastMonsterGoingRight;
+                        break;
+                }
+            }
+            Image = new Bitmap(PathToImages + _mosterType[monsterType]);
         }
     }
 }

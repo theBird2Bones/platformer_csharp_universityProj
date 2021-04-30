@@ -13,12 +13,6 @@ using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
 
 namespace Game{
-    public enum Movement {
-        goLeft,
-        goRight,
-        Jump,
-    }
-
     public enum ActionWithKey {
         Unpressed,
         Pressed,
@@ -29,30 +23,30 @@ namespace Game{
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
-            Image = new Bitmap(PathToImages + "hero.png");
+            Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
-            Weapon = new Weapon(new Size(25, 25), new Point(Location.X+10, Location.Y+15), 
+            Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
                 WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
         }
-
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
         public bool IsJumping { get; set; }
         public bool IsLanded { get; set; }
         public int CurrentJumpHeight { get; set; }
-        public bool IsMoving {
-            get {
-                return IsGoingLeft || IsGoingRight || IsJumping;
-            }
-        }
+        public bool IsMoving => IsGoingLeft || IsGoingRight || IsJumping;
+        
         public const int JumpLimit = 200;
         public int TempJumpLimit = JumpLimit;
         
         public new void Move() {
-            if (IsGoingLeft) 
+            if (IsGoingLeft) {
                 this.Left -= this.Speed;
-            if (IsGoingRight)
+                Image = new Bitmap(PathToImages + "heroLeft.png");
+            }
+            if (IsGoingRight) {
                 this.Left += this.Speed;
+                Image = new Bitmap(PathToImages + "heroRight.png");
+            }
             if (IsJumping && CurrentJumpHeight <= TempJumpLimit) {
                 this.Top -= this.JumpHeight;
                 CurrentJumpHeight += this.JumpHeight;
@@ -168,7 +162,7 @@ namespace Game{
                     }
                 }
             }
-            Weapon.UpdateWeapon();
+            Weapon.UpdateWeapon(this);
         }
     }
 }
