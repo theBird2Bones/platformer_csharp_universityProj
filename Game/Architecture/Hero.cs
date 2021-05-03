@@ -32,9 +32,17 @@ namespace Game{
             Image = new Bitmap(PathToImages + "hero.png");
             Visible = false;
             Weapon = new Weapon(new Size(25, 25), new Point(Location.X+10, Location.Y+15), 
-                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
+                WeaponTypeIcons.stone, 1, 12, 1.5, 1 ,new Vector(), new Vector(), this); // уточнить по векторам
         }
 
+        public bool ActInConflict(Hero hero, Monster monster)
+        {
+            //if (hero.Bounds.IntersectsWith(monster.Bounds))
+            hero.Health -= monster.Damage;
+            return hero.Health > 0;
+          
+        }
+        
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
         public bool IsJumping { get; set; }

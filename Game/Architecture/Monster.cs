@@ -38,7 +38,12 @@ namespace Game
                 this.Left -= travelSpeed;
             if (this.Right <= game.Hero.Left)
                 this.Left += travelSpeed;
-            
+        }
+
+        public bool ActInConflict(Monster monster, Weapon weapon)
+        {
+            monster.Health -= weapon.Damage;
+            return monster.Health > 0;
         }
     }
 }

@@ -62,14 +62,28 @@ namespace Game
                 switch (monster.MonsterType) {
                     case MonsterType.fatMonster:
                         monster.MoveToHero(this, 1);
+                        if (monster.Bounds.IntersectsWith(Hero.Weapon.Bounds))
+                            monster.ActInConflict(monster, Hero.Weapon);
+                        if (monster.Bounds.IntersectsWith(Hero.Bounds))
+                            Hero.ActInConflict(Hero, monster);
+                        //нужно еще написать деструкторы, я пока не поняла, как с ними работать
                         break;
                     case MonsterType.normalMonster: 
                         monster.MoveToHero(this, 3);
+                        if (monster.Bounds.IntersectsWith(Hero.Weapon.Bounds))
+                            monster.ActInConflict(monster, Hero.Weapon);
+                        if (monster.Bounds.IntersectsWith(Hero.Bounds))
+                            Hero.ActInConflict(Hero, monster);
                         break;
                     case MonsterType.fastMonster:
                         monster.MoveToHero(this, 5);
+                        if (monster.Bounds.IntersectsWith(Hero.Weapon.Bounds))
+                            monster.ActInConflict(monster, Hero.Weapon);
+                        if (monster.Bounds.IntersectsWith(Hero.Bounds))
+                            Hero.ActInConflict(Hero, monster);
                         break;
                 }
+                
                 foreach (var platform in EnvironmentObjects.Where(x => x is Platform)) {
                     if (monster.Bounds.IntersectsWith(platform.Bounds))
                         monster.Top = platform.Top - monster.Height + 1;

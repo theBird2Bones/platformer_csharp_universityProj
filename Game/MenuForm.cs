@@ -32,7 +32,7 @@ namespace WinFormsApp1
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(30, 30),
                         new System.Drawing.Point(Location.X, Location.Y),
-                        WeaponTypeIcons.shuriken, 3, 8, 4, new Vector(), new Vector(), game.Hero));
+                        WeaponTypeIcons.shuriken, 3, 8, 4, 5,new Vector(), new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -48,7 +48,7 @@ namespace WinFormsApp1
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(30, 30), 
                         new System.Drawing.Point(Location.X, Location.Y),
-                        WeaponTypeIcons.kunai, 7, 4, 8, new Vector(), new Vector(), game.Hero));
+                        WeaponTypeIcons.kunai, 7, 4, 8, 7,new Vector(), new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -64,7 +64,7 @@ namespace WinFormsApp1
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(30, 30),
                         new System.Drawing.Point(Location.X, Location.Y),
-                        WeaponTypeIcons.bow, 12, 1, 11, new Vector(), new Vector(), game.Hero));
+                        WeaponTypeIcons.bow, 12, 1, 11, 10,new Vector(), new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponTypeIcons);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }                else {
