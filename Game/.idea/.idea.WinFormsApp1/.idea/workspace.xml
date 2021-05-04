@@ -29,21 +29,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/GameModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/GameModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Monster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Monster.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Weapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-    </list>
+    <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +52,6 @@
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Architecture/BackgroundWeapon.cs" />
-      <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
       <option value="$PROJECT_DIR$/Architecture/WeaponIcons.cs" />
       <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
       <option value="$PROJECT_DIR$/Program.cs" />
@@ -77,6 +62,7 @@
       <option value="$PROJECT_DIR$/MenuForm.cs" />
       <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
       <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
+      <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
