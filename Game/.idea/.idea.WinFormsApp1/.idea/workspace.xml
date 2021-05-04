@@ -29,13 +29,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Images/secondTree.png" beforeDir="false" afterPath="$PROJECT_DIR$/../Images/secondTree.png" afterDir="false" />
-    </list>
+    <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,27 +45,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/6a/4703dd8e/BorderStyle.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1E9166BF-CA65-4377-B09C-EA42D003812D/a9/f50c9a18/Bitmap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E81851A0-DC73-4A79-AFA9-F5B7273162BE/f3/92cdde89/Path.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/13DBC815-33D8-4EDC-819A-C50A274C0735/17/98a70dab/PictureBox.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://diff.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
-        <option value="$PROJECT_DIR$/Architecture/BackgroundWeapon.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Architecture/WeaponIcons.cs" />
-        <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
-        <option value="$PROJECT_DIR$/MenuForm.cs" />
-        <option value="$PROJECT_DIR$/Form1.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Architecture/BackgroundWeapon.cs" />
+      <option value="$PROJECT_DIR$/Architecture/WeaponIcons.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Plant.cs" />
+      <option value="$PROJECT_DIR$/Program.cs" />
+      <option value="$PROJECT_DIR$/Architecture/IWeaponInterface.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
+      <option value="$PROJECT_DIR$/Form1.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
+      <option value="$PROJECT_DIR$/MenuForm.cs" />
+      <option value="$PROJECT_DIR$/MenuForm.Designer.cs" />
+      <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
+      <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
+    </changedPaths>
+
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -140,8 +135,6 @@
       <workItem from="1618996319635" duration="543000" />
       <workItem from="1618999117091" duration="1656000" />
       <workItem from="1619454423894" duration="315000" />
-      <workItem from="1619611062134" duration="1945000" />
-      <workItem from="1619704461629" duration="10722000" />
     </task>
     <servers />
   </component>
@@ -177,115 +170,5 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state width="460" height="436" key="DebuggerActiveHint" timestamp="1619719924633">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="460" height="436" key="DebuggerActiveHint/0.0.1676.911@0.0.1676.911" timestamp="1619719924633" />
-    <state width="1632" height="166" key="GridCell.Tab.0.bottom" timestamp="1620123232687">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1620123232687" />
-    <state width="1632" height="166" key="GridCell.Tab.0.center" timestamp="1620123232687">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1620123232687" />
-    <state width="1632" height="166" key="GridCell.Tab.0.left" timestamp="1620123232687">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1620123232687" />
-    <state width="1632" height="166" key="GridCell.Tab.0.right" timestamp="1620123232687">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1620123232687" />
-    <state width="1632" height="166" key="GridCell.Tab.1.bottom" timestamp="1620123233640">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.1.bottom/0.0.1676.911@0.0.1676.911" timestamp="1620123233640" />
-    <state width="1632" height="166" key="GridCell.Tab.1.center" timestamp="1620123233640">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.1.center/0.0.1676.911@0.0.1676.911" timestamp="1620123233640" />
-    <state width="1632" height="166" key="GridCell.Tab.1.left" timestamp="1620123233639">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.1.left/0.0.1676.911@0.0.1676.911" timestamp="1620123233639" />
-    <state width="1632" height="166" key="GridCell.Tab.1.right" timestamp="1620123233640">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.1.right/0.0.1676.911@0.0.1676.911" timestamp="1620123233640" />
-    <state width="1632" height="166" key="GridCell.Tab.2.bottom" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.2.bottom/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.2.center" timestamp="1620123232441">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.2.center/0.0.1676.911@0.0.1676.911" timestamp="1620123232441" />
-    <state width="1632" height="166" key="GridCell.Tab.2.left" timestamp="1620123232441">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.2.left/0.0.1676.911@0.0.1676.911" timestamp="1620123232441" />
-    <state width="1632" height="166" key="GridCell.Tab.2.right" timestamp="1620123232441">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.2.right/0.0.1676.911@0.0.1676.911" timestamp="1620123232441" />
-    <state width="1632" height="166" key="GridCell.Tab.3.bottom" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.3.bottom/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.3.center" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.3.center/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.3.left" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.3.left/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.3.right" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.3.right/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.4.bottom" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.4.bottom/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.4.center" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.4.center/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.4.left" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.4.left/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-    <state width="1632" height="166" key="GridCell.Tab.4.right" timestamp="1620123232442">
-      <screen x="0" y="0" width="1676" height="911" />
-    </state>
-    <state width="1632" height="166" key="GridCell.Tab.4.right/0.0.1676.911@0.0.1676.911" timestamp="1620123232442" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Architecture/Hero.cs</url>
-          <line>151</line>
-          <properties documentPath="C:\Users\Konstantine\Personal\Study\Программирование\C#\Игра\GameOfTheCentury\Game\Architecture\Hero.cs" initialLine="151">
-            <startOffsets>
-              <option value="6298" />
-            </startOffsets>
-            <endOffsets>
-              <option value="6478" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="DotNetProject">
-        <watch expression="game.EnvironmentObjects.Where(x =&gt; x is Platform)" language="C#" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "CYhK1RCwolDi+bYcCXTUY5pq0kZOVXw/hP0mFsbNKJBIQCarDFif0xPYwbb3nQn15LBa3Qj6bD0A97xT0cks/w==",
+  "dgSpecHash": "10eie63alnOlkiiobGpNjBZi5JYODjvy/9w/Ed13ngCivD2o4qW8XiHLN6VH6TIYbY4iF2lZ+Gpp3r+JFDapqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\УНИВЕР\\ПРАКТОСЫ\\1 КУРС КН\\ШАРПЫ ЯТП\\ВТОРОЙ СЕМЕСТР\\ШАРПЫ ИГРА\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Konstantine\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
-    "C:\\Users\\Konstantine\\.nuget\\packages\\nunit3testadapter\\3.17.0\\nunit3testadapter.3.17.0.nupkg.sha512"
+    "C:\\Users\\ADMIN\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\nunit3testadapter\\3.17.0\\nunit3testadapter.3.17.0.nupkg.sha512"
   ],
   "logs": []
 }
