@@ -26,7 +26,15 @@ namespace Game{
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
             Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
+                WeaponTypeIcons.stone, 1, 12, 1.5, 1 ,new Vector(), new Vector(), this); // уточнить по векторам
+        }
+
+        public bool ActInConflict(Hero hero, Monster monster)
+        {
+            //if (hero.Bounds.IntersectsWith(monster.Bounds))
+            hero.Health -= monster.Damage;
+            return hero.Health > 0;
+          
         }
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
@@ -55,7 +63,7 @@ namespace Game{
                 IsJumping = false;
             }
         }
-
+        
         public void ProcessKeys(GameModel game, Keys key, ActionWithKey ActionWithKey) {
             switch (ActionWithKey) {
                 case ActionWithKey.Pressed:

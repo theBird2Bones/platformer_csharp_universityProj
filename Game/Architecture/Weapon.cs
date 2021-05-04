@@ -13,6 +13,7 @@ namespace Game
     public class Weapon : WeaponIcons, IWeaponInterface { 
         public WeaponTypeIcons WeaponTypeIcons { get; set; }
         public DynamicObject Owner { get; set; }
+        public int Damage { get; set; }
         public int BulletCount { get; set; }
         public int ReloadingTime { get; set; }
         public WeaponIcons WeaponIcons { get; set; }
@@ -20,13 +21,14 @@ namespace Game
         public Vector BulletSpeed { get; set; }
         public Vector BulletGravity { get; set; }
         public Weapon(System.Drawing.Size size, System.Drawing.Point location, 
-            WeaponTypeIcons weaponTypeIcons, int bulletCount, int reloadingTime, double splashRadius, 
+            WeaponTypeIcons weaponTypeIcons, int bulletCount, int reloadingTime, double splashRadius, int damage , 
             Vector bulletSpeed, Vector bulletGravity, DynamicObject owner) : base(size, location, weaponTypeIcons) {
             BulletCount = bulletCount;
             ReloadingTime = reloadingTime;
             SplashRadius = splashRadius;
             BulletSpeed = bulletSpeed;
             BulletGravity = bulletGravity;
+            Damage = damage;
             Owner = owner;
             SizeMode = PictureBoxSizeMode.StretchImage;
             Visible = false;
@@ -38,6 +40,7 @@ namespace Game
             BulletCount = weapon.BulletCount;
             ReloadingTime = weapon.ReloadingTime;
             SplashRadius = weapon.SplashRadius;
+            Damage = weapon.Damage;
             BulletSpeed = weapon.BulletSpeed;
             BulletGravity = weapon.BulletGravity;
             Owner = weapon.Owner;
