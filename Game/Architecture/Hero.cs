@@ -20,14 +20,6 @@ namespace Game{
     }
     
     public class Hero : DynamicObject {
-        public Hero(int health, int speed, int jumpHeight, Point location, Size size)
-            : base(health, speed, jumpHeight, location, size) {
-            Tag = "hero";
-            Image = new Bitmap(PathToImages + "heroRight.png");
-            Visible = false;
-            Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
-        }
         public bool IsGoingLeft { get; set; }
         public bool IsGoingRight { get; set; }
         public bool IsJumping { get; set; }
@@ -37,6 +29,15 @@ namespace Game{
         
         public const int JumpLimit = 200;
         public int TempJumpLimit = JumpLimit;
+        
+        public Hero(int health, int speed, int jumpHeight, Point location, Size size)
+            : base(health, speed, jumpHeight, location, size) {
+            Tag = "hero";
+            Image = new Bitmap(PathToImages + "heroRight.png");
+            Visible = false;
+            Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
+                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
+        }
         
         public new void Move() {
             if (IsGoingLeft) {
@@ -130,11 +131,10 @@ namespace Game{
                 game.Hero.Refresh();
             }
             game.Hero.IsLanded = false;
-            foreach (Control obj in game.EnvironmentObjects) {
+            foreach (Control obj in game.EnvironmentObjects.Where(x => x is Platform)) {
                 if (obj is Platform && game.Hero.Bounds.IntersectsWith(obj.Bounds)) {
                     if (game.Hero.Bottom <= obj.Top + game.Hero.Height / 3d) {
                         game.Hero.Top = obj.Top - game.Hero.Height + 1;
-                        game.Hero.Refresh();
                         game.Hero.IsLanded = true;
                         game.Hero.CurrentJumpHeight = 0;
                     }
@@ -149,18 +149,6 @@ namespace Game{
                     break;
                 }
                 game.Hero.TempJumpLimit = JumpLimit;
-                if (obj is Platform && !game.Hero.IsLanded && game.Hero.Top <= obj.Bottom && game.Hero.Bottom >= obj.Top) {
-                    if (game.Hero.Left <= obj.Right && game.Hero.Left > obj.Left || 
-                            game.Hero.Right >= obj.Left && game.Hero.Right < obj.Right) {
-                        if (game.Hero.IsGoingLeft)
-                            game.Hero.Left += 2;
-                        if (game.Hero.IsGoingRight) 
-                            game.Hero.Left -= 2;
-                        game.Hero.IsGoingLeft = false;
-                        game.Hero.IsGoingRight = false;
-                        break;
-                    }
-                }
             }
             Weapon.UpdateWeapon(this);
         }

@@ -26,15 +26,16 @@ namespace WinFormsApp1 {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             DoubleBuffered = true;
-
             Controls.Add(game.MenuButton);
-            foreach (var environmentEl in game.EnvironmentObjects) 
+            
+            foreach (var environmentEl in game.EnvironmentObjects.Where(x => x is Platform)) 
                 Controls.Add(environmentEl);
+            
             Controls.Add(game.Background);
             timer = new Timer();
             timer.Interval = 1;
             timer.Start();
-            game.SpawnLocation = new Point(100,500);
+            game.SpawnLocation = new Point(-50,500);
             KeyDown += (sender, args) => {
                 game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer);
             };
@@ -61,7 +62,7 @@ namespace WinFormsApp1 {
                 var g = args.Graphics;
                 g.DrawImage(game.Background.Image, game.Background.Location);
                 foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) 
-                    g.DrawImage(environmentObject.Image, environmentObject.Location);
+                    g.DrawImage(new Bitmap(environmentObject.Image, environmentObject.Size), environmentObject.Location);
 
                 foreach (var monster in game.Monsters) 
                     g.DrawImage(new Bitmap(monster.Image,monster.Size), monster.Location);
