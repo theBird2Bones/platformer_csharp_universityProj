@@ -30,6 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="" />
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +65,7 @@
       <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
       <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
     </changedPaths>
+
   </component>
   <component name="ProjectId" id="1qt9cpWKlWOAsMiGDfQwvBeEtah" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
