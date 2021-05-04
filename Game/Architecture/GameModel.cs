@@ -101,7 +101,7 @@ namespace Game
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
                         {
                             if(!monster.ActInConflict(Hero, false))
-                                //прописать затирание героя
+                                //прописать затирание героя.
                         }*/
                         break;
                 }
