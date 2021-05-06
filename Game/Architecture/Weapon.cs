@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public class Weapon : WeaponIcons, IWeaponInterface { 
-        public WeaponTypeIcons WeaponTypeIcons { get; set; }
+    public class Weapon : WeaponIcons { 
+        public WeaponType WeaponType { get; set; }
         public DynamicObject Owner { get; set; }
         public int Damage { get; set; }
         public int BulletCount { get; set; }
         public int ReloadingTime { get; set; }
         public WeaponIcons WeaponIcons { get; set; }
         public double SplashRadius { get; set; }
-        public Vector BulletSpeed { get; set; }
+        public int BulletSpeed { get; set; }
         public Vector BulletGravity { get; set; }
         public Weapon(System.Drawing.Size size, System.Drawing.Point location, 
-            WeaponTypeIcons weaponTypeIcons, int bulletCount, int reloadingTime, double splashRadius, int damage , 
-            Vector bulletSpeed, Vector bulletGravity, DynamicObject owner) : base(size, location, weaponTypeIcons) {
+            WeaponType weaponType, int bulletCount, int reloadingTime, double splashRadius, int damage , 
+            int bulletSpeed, Vector bulletGravity, DynamicObject owner) : base(size, location, weaponType) {
             BulletCount = bulletCount;
             ReloadingTime = reloadingTime;
             SplashRadius = splashRadius;
@@ -32,7 +32,7 @@ namespace Game
             Owner = owner;
             SizeMode = PictureBoxSizeMode.StretchImage;
             Visible = false;
-            WeaponTypeIcons = weaponTypeIcons;
+            WeaponType = weaponType;
         }
 
         public void ChangeWeapon(Weapon weapon)
@@ -53,37 +53,37 @@ namespace Game
             Tag = weapon.Tag;
             Image = weapon.Image;
             Visible = weapon.Visible;
-            WeaponTypeIcons = weapon.WeaponTypeIcons;
+            WeaponType = weapon.WeaponType;
         }
 
         public void UpdateWeapon(Hero hero) {
-            WeaponTypeIcons weaponTypeIcons = hero.Weapon.WeaponTypeIcons;
-            switch (this.WeaponTypeIcons) {
-                case WeaponTypeIcons.bow:
+            WeaponType weaponType = hero.Weapon.WeaponType;
+            switch (this.WeaponType) {
+                case WeaponType.bow:
                     if(hero.IsGoingLeft) {
                         Location = new System.Drawing.Point(
                             Owner.Location.X, Owner.Location.Y + 15);
-                        weaponTypeIcons = WeaponTypeIcons.bowLeft;
+                        weaponType = WeaponType.bowLeft;
                     }
                     if(hero.IsGoingRight) {
                         Location = new System.Drawing.Point(
                             Owner.Location.X + 15, Owner.Location.Y + 15);
-                        weaponTypeIcons = WeaponTypeIcons.bowRight;
+                        weaponType = WeaponType.bowRight;
                     }
                     break;
-                case WeaponTypeIcons.kunai:
+                case WeaponType.kunai:
                     if(hero.IsGoingLeft) {
                         Location = new System.Drawing.Point(
                             Owner.Location.X-9, Owner.Location.Y + 20);
-                        weaponTypeIcons = WeaponTypeIcons.kunaiLeft;
+                        weaponType = WeaponType.kunaiLeft;
                     }
                     if (hero.IsGoingRight) {
                         Location = new System.Drawing.Point(
                             Owner.Location.X + 20, Owner.Location.Y + 20);
-                        weaponTypeIcons = WeaponTypeIcons.kunaiRight;
+                        weaponType = WeaponType.kunaiRight;
                     }
                     break;
-                case WeaponTypeIcons.shuriken: 
+                case WeaponType.shuriken: 
                     if(hero.IsGoingLeft)
                         Location = new System.Drawing.Point(
                             Owner.Location.X-8, Owner.Location.Y + 21);
@@ -91,14 +91,14 @@ namespace Game
                     if (hero.IsGoingRight)
                         Location = new System.Drawing.Point(
                             Owner.Location.X + 21, Owner.Location.Y + 21);
-                    weaponTypeIcons = WeaponTypeIcons.shuriken;
+                    weaponType = WeaponType.shuriken;
                     break;
-                case WeaponTypeIcons.stone:
+                case WeaponType.stone:
                     Location = new System.Drawing.Point(
                         Owner.Location.X + 20, Owner.Location.Y + 20);
                     break;
             }
-            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
+            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponType]);
         }
         
         public Vector GetTotalBulletVector() {

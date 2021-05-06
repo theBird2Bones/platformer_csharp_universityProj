@@ -18,6 +18,11 @@ namespace Game{
         Pressed,
         None,
     }
+
+    public enum ViewDirecton {
+        LookingRight,
+        LookingLeft,
+    }
     
     public class Hero : DynamicObject {
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
@@ -25,12 +30,12 @@ namespace Game{
             Tag = "hero";
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
+            IsLookingRight = true;
             Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponTypeIcons.stone, 1, 12, 1.5, 1 ,new Vector(), new Vector(), this); // уточнить по векторам
+                WeaponType.stone, 1, 12, 1.5, 1 ,4, new Vector(), this); // уточнить по векторам
         }
 
-        public bool ActInConflict(Hero hero, Monster monster)
-        {
+        public bool ActInConflict(Hero hero, Monster monster) {
             //if (hero.Bounds.IntersectsWith(monster.Bounds))
             hero.Health -= monster.Damage;
             return hero.Health > 0;
@@ -42,25 +47,45 @@ namespace Game{
         public bool IsLanded { get; set; }
         public int CurrentJumpHeight { get; set; }
         public bool IsMoving => IsGoingLeft || IsGoingRight || IsJumping;
-        
+        public ViewDirecton ViewDirecton { get; set; }
+
+        public bool IsLookingRight {
+            get {
+                if(_isLookingLeft && _isLookingRight)
+                    throw new ArgumentException("why hero looking right and left simultaneously???");
+                return _isLookingRight;
+            }
+            set {
+                _isLookingRight = value;
+                this.ViewDirecton = ViewDirecton.LookingRight;
+                _isLookingLeft = !value;
+            }
+        }
+
+        public bool IsLookingLeft {
+            get {
+                if(_isLookingLeft && _isLookingRight)
+                    throw new ArgumentException("why hero looking right and left simultaneously???");
+                return _isLookingLeft;
+            }
+            set {
+                _isLookingLeft = value;
+                this.ViewDirecton = ViewDirecton.LookingLeft;
+                _isLookingRight = !value;
+            }
+        }
         public const int JumpLimit = 200;
         public int TempJumpLimit = JumpLimit;
-        
-        public Hero(int health, int speed, int jumpHeight, Point location, Size size)
-            : base(health, speed, jumpHeight, location, size) {
-            Tag = "hero";
-            Image = new Bitmap(PathToImages + "heroRight.png");
-            Visible = false;
-            Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
-        }
-        
+        private bool _isLookingRight;
+        private bool _isLookingLeft;
         public new void Move() {
             if (IsGoingLeft) {
+                IsLookingLeft = true;
                 this.Left -= this.Speed;
                 Image = new Bitmap(PathToImages + "heroLeft.png");
             }
             if (IsGoingRight) {
+                IsLookingRight = true;
                 this.Left += this.Speed;
                 Image = new Bitmap(PathToImages + "heroRight.png");
             }
@@ -71,6 +96,39 @@ namespace Game{
             else if (CurrentJumpHeight > TempJumpLimit) {
                 IsJumping = false;
             }
+        }
+
+        public void Shoot(GameModel game) {
+            var typeOfWeapon = Weapon.WeaponType;
+            Size bulletSize = Size.Empty;
+            switch (typeOfWeapon) {
+                case WeaponType.bow: 
+                    bulletSize = new Size(17,10);
+                    break;
+                case WeaponType.kunai: 
+                    bulletSize = new Size(15,15);
+                    break;
+                case WeaponType.shuriken: 
+                    bulletSize = new Size(15,15);
+                    break;
+                case WeaponType.stone: 
+                    bulletSize = new Size(16,16);
+                    break;
+            }
+
+            Bullet bullet = null;
+            if (IsLookingRight) {
+                 bullet = new Bullet(game.Hero.Location,
+                    bulletSize,Weapon.Damage,Weapon.BulletSpeed,
+                    typeOfWeapon, ViewDirecton.LookingRight);
+            }
+
+            if (IsLookingLeft) {
+                 bullet = new Bullet(game.Hero.Location,
+                    bulletSize,Weapon.Damage,-1 * Weapon.BulletSpeed,
+                    typeOfWeapon, ViewDirecton.LookingLeft);
+            }
+            game.FiredBullets.Add(bullet);
         }
         
         public void ProcessKeys(GameModel game, Keys key, ActionWithKey ActionWithKey) {
@@ -88,6 +146,9 @@ namespace Game{
                                 game.Hero.IsJumping = true;
                                 game.Hero.IsLanded = false;
                             }
+                            break;
+                        case Keys.F:
+                            Shoot(game);
                             break;
                     }
                     break;

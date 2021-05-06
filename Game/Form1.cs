@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1 {
     public partial class Form1 : Form {
-        public Timer timer;
+        public Timer generalTimer;
         
         public void UpdateControls(GameModel game) {
             foreach (var monster in game.Monsters) 
@@ -26,35 +26,38 @@ namespace WinFormsApp1 {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             DoubleBuffered = true;
-            Controls.Add(game.MenuButton);
             
+            Controls.Add(game.MenuButton);
             foreach (var environmentEl in game.EnvironmentObjects.Where(x => x is Platform)) 
                 Controls.Add(environmentEl);
-            
             Controls.Add(game.Background);
-            timer = new Timer();
-            timer.Interval = 1;
-            timer.Start();
-            game.SpawnLocation = new Point(-50,500);
+            game.SpawnLocation = new Point(-50,700);
             KeyDown += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer);
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,generalTimer);
             };
-            
             KeyUp += (sender, args) => {
-                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer);
+                game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,generalTimer);
             };
             
             game.MenuButton.Click += (sender, args) => {
                 MenuForm menuForm = new MenuForm(this, game);
-                timer.Stop();
+                generalTimer.Stop();
                 menuForm.Show();
             };
-            
-            timer.Tick += (sender, args) => {
+
+            generalTimer = new Timer();
+            generalTimer.Interval = 25;
+            generalTimer.Start();
+            generalTimer.Tick += (sender, args) => {
                 game.SpawnMonster();
                 UpdateControls(game);
                 game.MakeActionOfMonsters();
-                game.Hero.Action(game, Keys.None, ActionWithKey.None,timer);
+                game.Hero.Action(game, Keys.None, ActionWithKey.None,generalTimer);
+                if (game.FiredBullets.Count > 0) {
+                    foreach (var bullet in game.FiredBullets) {
+                        bullet.Move();
+                    }
+                }
                 Invalidate();
             };
             
@@ -66,7 +69,11 @@ namespace WinFormsApp1 {
 
                 foreach (var monster in game.Monsters) 
                     g.DrawImage(new Bitmap(monster.Image,monster.Size), monster.Location);
-                
+                if (game.FiredBullets.Count > 0) {
+                    foreach (var bullet in game.FiredBullets) {
+                        g.DrawImage(new Bitmap(bullet.Image, bullet.Size),bullet.Location );
+                    }
+                }
                 g.DrawImage(new Bitmap(game.Hero.Image, game.Hero.Size), game.Hero.Location);
                 g.DrawImage(new Bitmap(game.Hero.Weapon.Image,game.Hero.Weapon.Size), game.Hero.Weapon.Location);
                 g.DrawImage(new Bitmap(game.BackgroundWeapon.Image,game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);

@@ -35,7 +35,6 @@ namespace Game
             return this;
         }
         public void OnDeath() { }
-        // шо це таке внизу?
         protected static string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
         private static DirectoryInfo GetGameDirectoryRoot() {
             var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
