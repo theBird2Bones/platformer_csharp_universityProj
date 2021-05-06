@@ -27,7 +27,8 @@ namespace WinFormsApp1{
                 game.EnvironmentObjects.Add(
                     new Platform(new Point(-100, game.MapSize.Height - 100),
                         new Size(8000, 60)));
-//left side
+
+                #region leftSideEnvironment
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(120, game.MapSize.Height - 300),
                         new Size(180, 250),
@@ -46,12 +47,13 @@ namespace WinFormsApp1{
                     new Plant(new Point(140, game.MapSize.Height - 170),
                         new Size(100, 70),
                         PlantsType.firstBush));
-//right side         
+                #endregion
+                
+                #region rightSideEnvironment
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(1800, game.MapSize.Height - 300),
                         new Size(180, 250),
                         PlantsType.thirdTree));
-                
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(1830, game.MapSize.Height - 350),
                         new Size(210, 260),
@@ -60,7 +62,6 @@ namespace WinFormsApp1{
                     new Plant(new Point(1700, game.MapSize.Height - 400),
                         new Size(210, 300),
                         PlantsType.secondTree));
-
                 game.EnvironmentObjects.Add(
                     new Plant(new Point(1830, game.MapSize.Height - 170),
                         new Size(100, 70),
@@ -69,7 +70,8 @@ namespace WinFormsApp1{
                     new Plant(new Point(1700, game.MapSize.Height - 170),
                         new Size(100, 70),
                         PlantsType.firstBush));
-                
+                #endregion
+
                 game.Background = new Background(
                     game.MapSize,
                     new Point(0,-120));

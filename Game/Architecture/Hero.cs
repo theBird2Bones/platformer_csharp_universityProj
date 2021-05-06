@@ -25,12 +25,12 @@ namespace Game{
             Tag = "hero";
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
+            IsLookingRight = true;
             Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
                 WeaponTypeIcons.stone, 1, 12, 1.5, 1 ,new Vector(), new Vector(), this); // уточнить по векторам
         }
 
-        public bool ActInConflict(Hero hero, Monster monster)
-        {
+        public bool ActInConflict(Hero hero, Monster monster) {
             //if (hero.Bounds.IntersectsWith(monster.Bounds))
             hero.Health -= monster.Damage;
             return hero.Health > 0;
@@ -42,19 +42,34 @@ namespace Game{
         public bool IsLanded { get; set; }
         public int CurrentJumpHeight { get; set; }
         public bool IsMoving => IsGoingLeft || IsGoingRight || IsJumping;
-        
+
+        public bool IsLookingRight {
+            get {
+                if(_isLookingLeft && _isLookingRight)
+                    throw new ArgumentException("why hero looking right and left simultaneously???");
+                return _isLookingRight;
+            }
+            set {
+                _isLookingRight = value;
+                _isLookingLeft = !value;
+            }
+        }
+
+        public bool IsLookingLeft {
+            get {
+                if(_isLookingLeft && _isLookingRight)
+                    throw new ArgumentException("why hero looking right and left simultaneously???");
+                return _isLookingLeft;
+            }
+            set {
+                _isLookingLeft = value;
+                _isLookingRight = !value;
+            }
+        }
         public const int JumpLimit = 200;
         public int TempJumpLimit = JumpLimit;
-        
-        public Hero(int health, int speed, int jumpHeight, Point location, Size size)
-            : base(health, speed, jumpHeight, location, size) {
-            Tag = "hero";
-            Image = new Bitmap(PathToImages + "heroRight.png");
-            Visible = false;
-            Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponTypeIcons.stone, 1, 12, 1.5, new Vector(), new Vector(), this); // уточнить по векторам
-        }
-        
+        private bool _isLookingRight;
+        private bool _isLookingLeft;
         public new void Move() {
             if (IsGoingLeft) {
                 this.Left -= this.Speed;

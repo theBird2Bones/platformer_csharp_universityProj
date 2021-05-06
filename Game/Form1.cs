@@ -26,20 +26,20 @@ namespace WinFormsApp1 {
             InitializeComponent();
             StartPosition = FormStartPosition.CenterScreen;
             DoubleBuffered = true;
-            Controls.Add(game.MenuButton);
             
+            Controls.Add(game.MenuButton);
             foreach (var environmentEl in game.EnvironmentObjects.Where(x => x is Platform)) 
                 Controls.Add(environmentEl);
-            
             Controls.Add(game.Background);
+            
             timer = new Timer();
-            timer.Interval = 1;
+            timer.Interval = 25;
             timer.Start();
             game.SpawnLocation = new Point(-50,500);
+            
             KeyDown += (sender, args) => {
                 game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,timer);
             };
-            
             KeyUp += (sender, args) => {
                 game.Hero.Action(game, args.KeyCode, ActionWithKey.Unpressed,timer);
             };
