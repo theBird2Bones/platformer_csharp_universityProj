@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Game
 {
-    public enum WeaponTypeIcons
+    public enum WeaponType
     {
         stone,
         shuriken,
@@ -23,27 +23,27 @@ namespace Game
     
     public class WeaponIcons : StaticObject
     {
-        protected readonly Dictionary<WeaponTypeIcons, string> _weaponTypeIcons =
-            new Dictionary<WeaponTypeIcons, string>{
-                {WeaponTypeIcons.stone, "stone.png"},
-                {WeaponTypeIcons.shuriken, "shurikenIcon.png"},
-                {WeaponTypeIcons.kunai, "kunaiRight.png"},
-                {WeaponTypeIcons.kunaiRight, "kunaiRight.png"},
-                {WeaponTypeIcons.kunaiLeft, "kunaiLeft.png"},
-                {WeaponTypeIcons.bow, "bowRight.png"},
-                {WeaponTypeIcons.bowRight, "bowRight.png"},
-                {WeaponTypeIcons.bowLeft, "bowLeft.png"},
+        protected readonly Dictionary<WeaponType, string> _weaponTypeIcons =
+            new Dictionary<WeaponType, string>{
+                {WeaponType.stone, "stone.png"},
+                {WeaponType.shuriken, "shurikenIcon.png"},
+                {WeaponType.kunai, "kunaiRight.png"},
+                {WeaponType.kunaiRight, "kunaiRight.png"},
+                {WeaponType.kunaiLeft, "kunaiLeft.png"},
+                {WeaponType.bow, "bowRight.png"},
+                {WeaponType.bowRight, "bowRight.png"},
+                {WeaponType.bowLeft, "bowLeft.png"},
             };
 
-        public WeaponIcons(Size size, Point location, WeaponTypeIcons weaponTypeIcons) : base(size, location) {
+        public WeaponIcons(Size size, Point location, WeaponType weaponType) : base(size, location) {
             SizeMode = PictureBoxSizeMode.StretchImage;
             Tag = "weaponIcon";
-            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
+            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponType]);
             Visible = true;
         }
 
-        public void UpdateWeapon(WeaponTypeIcons weaponTypeIcons) {
-            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponTypeIcons]);
+        public void UpdateWeapon(WeaponType weaponType) {
+            Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponType]);
         }
     }
 }

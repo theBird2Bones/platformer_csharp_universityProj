@@ -22,6 +22,7 @@ namespace Game
         public Hero Hero { get; set; }
         public List<PictureBox> EnvironmentObjects { get; set; }
         public List<Monster> Monsters { get; set; }
+        public List<Bullet> FiredBullets { get; set; } = new List<Bullet>();
         public Background Background { get; set; }
         public WeaponIcons WeaponIcon { get; set; }
         public BackgroundWeapon BackgroundWeapon { get; set; }
