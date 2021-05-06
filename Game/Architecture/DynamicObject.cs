@@ -29,6 +29,7 @@ namespace Game
         public int JumpHeight { get; protected set; }
         public Weapon Weapon { get; set; }
         public void OnConflict(Entity entity) { }
+        public bool IsLookingRight { get; set; }
         public DynamicObject Action()
         {
             //Location = new Point(Location.X, Location.Y+10);
