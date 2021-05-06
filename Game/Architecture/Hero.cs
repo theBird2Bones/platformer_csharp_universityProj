@@ -172,7 +172,7 @@ namespace Game{
         public void Action(GameModel game, Keys key, ActionWithKey actionWithKey,Timer timer) {
             if(!timer.Enabled) return;
             ProcessKeys(game, key, actionWithKey);
-// подхожу к краю карты, чтобы ее подвигать
+            // подхожу к краю карты, чтобы ее подвигать
             if (this.Left > 0 && this.IsGoingLeft && this.Left - this.Speed*2 < 0) {
                 if(game.Background.Left < 0) {
                     game.Background.Move(this, 1);
@@ -227,7 +227,7 @@ namespace Game{
                 }
                 game.Hero.TempJumpLimit = JumpLimit;
             }
-            Weapon.UpdateWeapon(this);
+            Weapon.UpdateWeapon();
         }
     }
 }

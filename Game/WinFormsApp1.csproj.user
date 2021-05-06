@@ -7,6 +7,9 @@
     <Compile Update="Architecture\BackgroundWeapon.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Architecture\Bullet.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Architecture\DynamicObject.cs">
       <SubType>Component</SubType>
     </Compile>

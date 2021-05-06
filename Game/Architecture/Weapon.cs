@@ -56,41 +56,41 @@ namespace Game
             WeaponType = weapon.WeaponType;
         }
 
-        public void UpdateWeapon(Hero hero) {
-            WeaponType weaponType = hero.Weapon.WeaponType;
+        public void UpdateWeapon() {
+            WeaponType weaponType = Owner.Weapon.WeaponType;
             switch (this.WeaponType) {
                 case WeaponType.bow:
-                    if(hero.IsGoingLeft) {
-                        Location = new System.Drawing.Point(
-                            Owner.Location.X, Owner.Location.Y + 15);
-                        weaponType = WeaponType.bowLeft;
-                    }
-                    if(hero.IsGoingRight) {
+                    if(Owner.IsLookingRight) {
                         Location = new System.Drawing.Point(
                             Owner.Location.X + 15, Owner.Location.Y + 15);
                         weaponType = WeaponType.bowRight;
                     }
+                    else {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X, Owner.Location.Y + 15);
+                        weaponType = WeaponType.bowLeft;
+                    }
                     break;
                 case WeaponType.kunai:
-                    if(hero.IsGoingLeft) {
-                        Location = new System.Drawing.Point(
-                            Owner.Location.X-9, Owner.Location.Y + 20);
-                        weaponType = WeaponType.kunaiLeft;
-                    }
-                    if (hero.IsGoingRight) {
+                    if(Owner.IsLookingRight) {
                         Location = new System.Drawing.Point(
                             Owner.Location.X + 20, Owner.Location.Y + 20);
                         weaponType = WeaponType.kunaiRight;
                     }
-                    break;
-                case WeaponType.shuriken: 
-                    if(hero.IsGoingLeft)
+                    else {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X-8, Owner.Location.Y + 21);
-                    
-                    if (hero.IsGoingRight)
+                            Owner.Location.X - 9, Owner.Location.Y + 20);
+                        weaponType = WeaponType.kunaiLeft;
+                        
+                    }
+                    break;
+                case WeaponType.shuriken:
+                    if (Owner.IsLookingRight)
                         Location = new System.Drawing.Point(
                             Owner.Location.X + 21, Owner.Location.Y + 21);
+                    else
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X - 8, Owner.Location.Y + 21);
                     weaponType = WeaponType.shuriken;
                     break;
                 case WeaponType.stone:
