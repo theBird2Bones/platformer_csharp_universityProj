@@ -57,63 +57,88 @@ namespace Game
             }
             monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 101;
         }
-        public void MakeActionOfMonsters()
+        public void MakeActionOfMonsters(
+            Control.ControlCollection Controls, GameModel game)
         {
             foreach (var monster in Monsters) {
+                var collectionWasChanged = false;
                 switch (monster.MonsterType) {
                     case MonsterType.fatMonster:
                         monster.MoveToHero(this, 1);
-
-                        /*foreach (var firedBullet in FiredBullets)
+                        foreach (var firedBullet in FiredBullets)
                         {
                             if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
                             {
-                                if (!monster.ActInConflict(Hero, true)
-                                //прописать затирание монстра
+                                if (!monster.ActInConflict(Hero, true))
+                                {
+                                    Controls.Remove(monster);
+                                    game.Monsters.Remove(monster);
+                                    collectionWasChanged = true;
+                                }
+                                game.FiredBullets.Remove(firedBullet);
+                                break;
                             }
                         }
 
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
                         {
-                            if(!monster.ActInConflict(Hero, false))
-                                //прописать затирание героя
-                        }*/
+                            if (!monster.ActInConflict(Hero, false))
+                            {
+                                Controls.Remove(Hero);
+                            }
+                        }
                         break;
                     
                     case MonsterType.normalMonster: 
                         monster.MoveToHero(this, 3);
-                        /*foreach (var firedBullet in FiredBullets)
+                        foreach (var firedBullet in FiredBullets)
                         {
                             if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
                             {
-                                if (!monster.ActInConflict(Hero, true)
-                                //прописать затирание монстра
+                                if (!monster.ActInConflict(Hero, true))
+                                {
+                                    Controls.Remove(monster);
+                                    game.Monsters.Remove(monster);
+                                    collectionWasChanged = true;
+                                }
+                                game.FiredBullets.Remove(firedBullet);
+                                break;
                             }
                         }
                         
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
                         {
                             if(!monster.ActInConflict(Hero, false))
-                                //прописать затирание героя
-                        }*/
+                            {
+                                Controls.Remove(Hero);
+                            }
+                        }
                         break;
                     
                     case MonsterType.fastMonster:
                         monster.MoveToHero(this, 5);
-                        /*foreach (var firedBullet in FiredBullets)
+                        foreach (var firedBullet in FiredBullets)
                         {
                             if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
                             {
-                                if (!monster.ActInConflict(Hero, true)
-                                //прописать затирание монстра
+                                if (!monster.ActInConflict(Hero, true))
+                                {
+                                    Controls.Remove(monster);
+                                    game.Monsters.Remove(monster);
+                                    collectionWasChanged = true;
+                                }
+                                game.FiredBullets.Remove(firedBullet);
+                                break;
                             }
                         }
                         
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
                         {
                             if(!monster.ActInConflict(Hero, false))
-                                //прописать затирание героя
-                        }*/
+                            {
+                                Controls.Remove(Hero);
+                            }
+                        }
                         break;
                 }
                 foreach (var platform in EnvironmentObjects.Where(x => x is Platform)) {
@@ -123,6 +148,7 @@ namespace Game
                         monster.Top += 7;
                     }
                 }
+                if (collectionWasChanged) break;
             }
         }
     }

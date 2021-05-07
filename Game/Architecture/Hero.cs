@@ -31,7 +31,7 @@ namespace Game{
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
             Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponType.stone, 1, 12, 1.5, 1 ,4, new Vector(), this); // уточнить по векторам
+                WeaponType.stone, 1, 12, 1.5, 30,4, new Vector(), this); // уточнить по векторам
         }
 
         public bool ActInConflict(Hero hero, Monster monster) {
@@ -133,7 +133,7 @@ namespace Game{
             }
 
             Bullet bullet = null;
-            if (IsLookingRight) {
+            if (IsLookingRight || !IsLookingLeft) {
                  bullet = new Bullet(game.Hero.Location,
                     bulletSize,Weapon.Damage,Weapon.BulletSpeed,
                     typeOfWeapon, ViewDirecton.LookingRight);

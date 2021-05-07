@@ -51,7 +51,7 @@ namespace WinFormsApp1 {
             generalTimer.Tick += (sender, args) => {
                 game.SpawnMonster();
                 UpdateControls(game);
-                game.MakeActionOfMonsters();
+                game.MakeActionOfMonsters(Controls, game);
                 game.Hero.Action(game, Keys.None, ActionWithKey.None,generalTimer);
                 if (game.FiredBullets.Count > 0) {
                     foreach (var bullet in game.FiredBullets) {
