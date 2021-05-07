@@ -63,10 +63,14 @@ namespace Game
                 switch (monster.MonsterType) {
                     case MonsterType.fatMonster:
                         monster.MoveToHero(this, 1);
-                        /*if (monster.Bounds.IntersectsWith(Hero.Weapon.Bounds))
+
+                        /*foreach (var firedBullet in FiredBullets)
                         {
-                            if (!monster.ActInConflict(Hero, true)
+                            if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
+                            {
+                                if (!monster.ActInConflict(Hero, true)
                                 //прописать затирание монстра
+                            }
                         }
 
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
@@ -78,12 +82,15 @@ namespace Game
                     
                     case MonsterType.normalMonster: 
                         monster.MoveToHero(this, 3);
-                        /*if (monster.Bounds.IntersectsWith(Hero.Weapon.Bounds))
+                        /*foreach (var firedBullet in FiredBullets)
                         {
-                            if (!monster.ActInConflict(Hero, true)
+                            if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
+                            {
+                                if (!monster.ActInConflict(Hero, true)
                                 //прописать затирание монстра
+                            }
                         }
-
+                        
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
                         {
                             if(!monster.ActInConflict(Hero, false))
@@ -93,12 +100,15 @@ namespace Game
                     
                     case MonsterType.fastMonster:
                         monster.MoveToHero(this, 5);
-                        /*if (monster.Bounds.IntersectsWith(Hero.Weapon.Bounds))
+                        /*foreach (var firedBullet in FiredBullets)
                         {
-                            if (!monster.ActInConflict(Hero, true)
+                            if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
+                            {
+                                if (!monster.ActInConflict(Hero, true)
                                 //прописать затирание монстра
+                            }
                         }
-
+                        
                         if (monster.Bounds.IntersectsWith(Hero.Bounds))
                         {
                             if(!monster.ActInConflict(Hero, false))

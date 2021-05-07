@@ -50,7 +50,6 @@ namespace Game
             
             hero.Health -= this.Damage;
             return hero.Health > 0;
-            
         }
         
     }
