@@ -96,30 +96,30 @@ namespace WinFormsApp1
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(21, 264);
+            this.label1.Location = new System.Drawing.Point(11, 264);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 28);
+            this.label1.Size = new System.Drawing.Size(138, 37);
             this.label1.TabIndex = 4;
             this.label1.Text = "50 ОЧКОВ";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(182, 264);
+            this.label2.Location = new System.Drawing.Point(165, 264);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 37);
+            this.label2.Size = new System.Drawing.Size(148, 37);
             this.label2.TabIndex = 5;
             this.label2.Text = "100 ОЧКОВ\r\n";
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(346, 264);
+            this.label3.Location = new System.Drawing.Point(330, 263);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(134, 38);
+            this.label3.Size = new System.Drawing.Size(151, 38);
             this.label3.TabIndex = 6;
             this.label3.Text = "150 ОЧКОВ";
             // 
