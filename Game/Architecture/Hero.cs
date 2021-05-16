@@ -31,11 +31,10 @@ namespace Game{
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
             Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponType.stone, 1, 12, 1.5, 30,4, new Vector(), this); // уточнить по векторам
+                WeaponType.stone, 1, 0.295d, 1.5, 30,4, new Vector(), this); // уточнить по векторам
         }
 
         public bool ActInConflict(Hero hero, Monster monster) {
-            //if (hero.Bounds.IntersectsWith(monster.Bounds))
             hero.Health -= monster.Damage;
             return hero.Health > 0;
           
@@ -44,8 +43,6 @@ namespace Game{
         {
             get { return _isGoingLeft; }
             set {
-                IsLookingRight = false;
-                IsLookingLeft = true;
                 _isGoingLeft = value;
             }
         }
@@ -55,9 +52,8 @@ namespace Game{
             get { return _isGoingRight; }
             set
             {
-                IsLookingLeft = false;
-                IsLookingRight = true;
                 _isGoingRight = value;
+                
             }
         }
         private bool _isGoingRight;
@@ -96,13 +92,16 @@ namespace Game{
         public int TempJumpLimit = JumpLimit;
         private bool _isLookingRight;
         private bool _isLookingLeft;
+        private DateTime timeOfLastShoot = DateTime.Now;
         public new void Move() {
             if (IsGoingLeft) {
                 this.Left -= this.Speed;
+                IsLookingLeft = true;
                 Image = new Bitmap(PathToImages + "heroLeft.png");
             }
             if (IsGoingRight) {
                 this.Left += this.Speed;
+                IsLookingRight = true;
                 Image = new Bitmap(PathToImages + "heroRight.png");
             }
             if (IsJumping && CurrentJumpHeight <= TempJumpLimit) {
@@ -116,6 +115,14 @@ namespace Game{
 
         public void Shoot(GameModel game) {
             var typeOfWeapon = Weapon.WeaponType;
+            if (--Weapon.BulletCount <= 0) {
+                Weapon = new Weapon(
+                    new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
+                    WeaponType.stone, 1, 0.295, 1.5, 30,4,
+                    new Vector(), this);
+                game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
+
+            }
             Size bulletSize = Size.Empty;
             switch (typeOfWeapon) {
                 case WeaponType.bow: 
@@ -139,7 +146,7 @@ namespace Game{
                     typeOfWeapon, ViewDirecton.LookingRight);
             }
 
-            if (IsLookingLeft) {
+            if (IsLookingLeft || !IsLookingRight) {
                  bullet = new Bullet(game.Hero.Location,
                     bulletSize,Weapon.Damage,-1 * Weapon.BulletSpeed,
                     typeOfWeapon, ViewDirecton.LookingLeft);
@@ -164,7 +171,10 @@ namespace Game{
                             }
                             break;
                         case Keys.F:
-                            Shoot(game);
+                            if(DateTime.Now.Subtract(timeOfLastShoot).TotalSeconds > Weapon.ReloadingTime) {
+                                Shoot(game);
+                                timeOfLastShoot = DateTime.Now;
+                            }
                             break;
                     }
                     break;

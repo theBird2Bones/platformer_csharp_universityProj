@@ -46,7 +46,7 @@ namespace WinFormsApp1 {
             };
 
             generalTimer = new Timer();
-            generalTimer.Interval = 25;
+            generalTimer.Interval = 1;
             generalTimer.Start();
             generalTimer.Tick += (sender, args) => {
                 if (game.IsOver)
@@ -80,9 +80,13 @@ namespace WinFormsApp1 {
                         bullet.Move();
                     }
                 }
+            };
+            var drawingTimer = new Timer();
+            drawingTimer.Interval = 37;
+            drawingTimer.Tick += (s,a) => {
                 Invalidate();
             };
-
+          
             Paint += (sender, args) => {
                 if (game.Hero != null)
                 {

@@ -26,10 +26,11 @@ namespace WinFormsApp1
             Shuriken.Click += (sender, args) => {
                 if (game.Scores >= 50) {
                     game.Scores -= 50;
+                    ScoresBox.Text = game.Scores.ToString();
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(20, 20),
                         new System.Drawing.Point(Location.X, Location.Y),
-                        WeaponType.shuriken, 3, 8, 4, 60,7, new Vector(), game.Hero));
+                        WeaponType.shuriken, 3, 0.19, 4, 60,7, new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -41,10 +42,11 @@ namespace WinFormsApp1
             Kunai.Click += (sender, args) => {
                 if (game.Scores >= 100) {
                     game.Scores -= 100;
+                    ScoresBox.Text = game.Scores.ToString();
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(19, 17), 
                         new System.Drawing.Point(Location.X, Location.Y),
-                        WeaponType.kunai, 7, 4, 8, 80,5, new Vector(), game.Hero));
+                        WeaponType.kunai, 7, 0.23, 8, 80,5, new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -56,18 +58,18 @@ namespace WinFormsApp1
             Bow.Click += (sender, args) => {
                 if (game.Scores >= 150) {
                     game.Scores -= 150;
+                    ScoresBox.Text = game.Scores.ToString();
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(25, 25),
                         new System.Drawing.Point(Location.X, Location.Y-10),
-                        WeaponType.bow, 12, 1, 11, 150,6, new Vector(), game.Hero));
+                        WeaponType.bow, 12, 0.1, 11, 150,6, new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }               
                 else 
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-            };
-            
+            }; 
             this.Closing += (sender, args) => {
                 gameForm.generalTimer.Start();
             };
