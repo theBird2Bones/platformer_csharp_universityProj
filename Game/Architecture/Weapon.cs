@@ -12,7 +12,7 @@ namespace Game
 {
     public class Weapon : WeaponIcons { 
         public WeaponType WeaponType { get; set; }
-        public DynamicObject Owner { get; set; }
+        public Hero Owner { get; set; }
         public int Damage { get; set; }
         public int BulletCount { get; set; }
         public int ReloadingTime { get; set; }
@@ -22,7 +22,7 @@ namespace Game
         public Vector BulletGravity { get; set; }
         public Weapon(System.Drawing.Size size, System.Drawing.Point location, 
             WeaponType weaponType, int bulletCount, int reloadingTime, double splashRadius, int damage , 
-            int bulletSpeed, Vector bulletGravity, DynamicObject owner) : base(size, location, weaponType) {
+            int bulletSpeed, Vector bulletGravity, Hero owner) : base(size, location, weaponType) {
             BulletCount = bulletCount;
             ReloadingTime = reloadingTime;
             SplashRadius = splashRadius;
@@ -94,8 +94,12 @@ namespace Game
                     weaponType = WeaponType.shuriken;
                     break;
                 case WeaponType.stone:
-                    Location = new System.Drawing.Point(
-                        Owner.Location.X + 20, Owner.Location.Y + 20);
+                    if (Owner.IsLookingRight)
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X + 20, Owner.Location.Y + 20);
+                    else
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X, Owner.Location.Y + 20);
                     break;
             }
             Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponType]);
