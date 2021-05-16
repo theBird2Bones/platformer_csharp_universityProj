@@ -110,6 +110,7 @@
       "projectPath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
       "packagesPath": "C:\\Users\\Konstantine\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\obj\\",
+
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -118,9 +119,10 @@
         "C:\\Users\\Konstantine\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+
       ],
       "originalTargetFrameworks": [
-        "net48-windows"
+        "net48"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},

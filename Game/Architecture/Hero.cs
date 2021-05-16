@@ -30,9 +30,8 @@ namespace Game{
             Tag = "hero";
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
-            IsLookingRight = true;
             Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponType.stone, 1, 12, 1.5, 1 ,4, new Vector(), this); // уточнить по векторам
+                WeaponType.stone, 1, 12, 1.5, 30,4, new Vector(), this); // уточнить по векторам
         }
 
         public bool ActInConflict(Hero hero, Monster monster) {
@@ -41,15 +40,34 @@ namespace Game{
             return hero.Health > 0;
           
         }
-        public bool IsGoingLeft { get; set; }
-        public bool IsGoingRight { get; set; }
+        public bool IsGoingLeft
+        {
+            get { return _isGoingLeft; }
+            set {
+                IsLookingRight = false;
+                IsLookingLeft = true;
+                _isGoingLeft = value;
+            }
+        }
+        private bool _isGoingLeft;
+        public bool IsGoingRight
+        {
+            get { return _isGoingRight; }
+            set
+            {
+                IsLookingLeft = false;
+                IsLookingRight = true;
+                _isGoingRight = value;
+            }
+        }
+        private bool _isGoingRight;
         public bool IsJumping { get; set; }
         public bool IsLanded { get; set; }
         public int CurrentJumpHeight { get; set; }
         public bool IsMoving => IsGoingLeft || IsGoingRight || IsJumping;
         public ViewDirecton ViewDirecton { get; set; }
 
-        public bool IsLookingRight {
+        public new bool IsLookingRight {
             get {
                 if(_isLookingLeft && _isLookingRight)
                     throw new ArgumentException("why hero looking right and left simultaneously???");
@@ -80,12 +98,10 @@ namespace Game{
         private bool _isLookingLeft;
         public new void Move() {
             if (IsGoingLeft) {
-                IsLookingLeft = true;
                 this.Left -= this.Speed;
                 Image = new Bitmap(PathToImages + "heroLeft.png");
             }
             if (IsGoingRight) {
-                IsLookingRight = true;
                 this.Left += this.Speed;
                 Image = new Bitmap(PathToImages + "heroRight.png");
             }
@@ -117,7 +133,7 @@ namespace Game{
             }
 
             Bullet bullet = null;
-            if (IsLookingRight) {
+            if (IsLookingRight || !IsLookingLeft) {
                  bullet = new Bullet(game.Hero.Location,
                     bulletSize,Weapon.Damage,Weapon.BulletSpeed,
                     typeOfWeapon, ViewDirecton.LookingRight);
