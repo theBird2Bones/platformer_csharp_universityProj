@@ -35,7 +35,6 @@ namespace Game{
         }
 
         public bool ActInConflict(Hero hero, Monster monster) {
-            //if (hero.Bounds.IntersectsWith(monster.Bounds))
             hero.Health -= monster.Damage;
             return hero.Health > 0;
           
@@ -44,9 +43,8 @@ namespace Game{
         {
             get { return _isGoingLeft; }
             set {
-                IsLookingRight = false;
-                IsLookingLeft = true;
                 _isGoingLeft = value;
+                _isGoingRight = !value;
             }
         }
         private bool _isGoingLeft;
@@ -55,9 +53,8 @@ namespace Game{
             get { return _isGoingRight; }
             set
             {
-                IsLookingLeft = false;
-                IsLookingRight = true;
                 _isGoingRight = value;
+                _isGoingLeft = !value;
             }
         }
         private bool _isGoingRight;

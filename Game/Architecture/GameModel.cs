@@ -74,6 +74,7 @@ namespace Game
                                     Controls.Remove(monster);
                                     game.Monsters.Remove(monster);
                                     collectionWasChanged = true;
+                                    game.Scores += 60;
                                 }
                                 game.FiredBullets.Remove(firedBullet);
                                 break;
@@ -100,6 +101,7 @@ namespace Game
                                     Controls.Remove(monster);
                                     game.Monsters.Remove(monster);
                                     collectionWasChanged = true;
+                                    game.Scores += 40;
                                 }
                                 game.FiredBullets.Remove(firedBullet);
                                 break;
@@ -126,6 +128,7 @@ namespace Game
                                     Controls.Remove(monster);
                                     game.Monsters.Remove(monster);
                                     collectionWasChanged = true;
+                                    game.Scores += 25;
                                 }
                                 game.FiredBullets.Remove(firedBullet);
                                 break;
