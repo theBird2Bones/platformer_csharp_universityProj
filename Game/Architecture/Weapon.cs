@@ -15,13 +15,13 @@ namespace Game
         public Hero Owner { get; set; }
         public int Damage { get; set; }
         public int BulletCount { get; set; }
-        public int ReloadingTime { get; set; }
+        public double ReloadingTime { get; set; }
         public WeaponIcons WeaponIcons { get; set; }
         public double SplashRadius { get; set; }
         public int BulletSpeed { get; set; }
         public Vector BulletGravity { get; set; }
         public Weapon(System.Drawing.Size size, System.Drawing.Point location, 
-            WeaponType weaponType, int bulletCount, int reloadingTime, double splashRadius, int damage , 
+            WeaponType weaponType, int bulletCount, double reloadingTime, double splashRadius, int damage , 
             int bulletSpeed, Vector bulletGravity, Hero owner) : base(size, location, weaponType) {
             BulletCount = bulletCount;
             ReloadingTime = reloadingTime;
