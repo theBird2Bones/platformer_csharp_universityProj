@@ -96,6 +96,7 @@ namespace Game{
         public int TempJumpLimit = JumpLimit;
         private bool _isLookingRight;
         private bool _isLookingLeft;
+        private DateTime timeOfLastShoot = DateTime.Now;
         public new void Move() {
             if (IsGoingLeft) {
                 this.Left -= this.Speed;
@@ -164,7 +165,10 @@ namespace Game{
                             }
                             break;
                         case Keys.F:
-                            Shoot(game);
+                            if(DateTime.Now.Subtract(timeOfLastShoot).TotalSeconds > 0.295) {
+                                Shoot(game);
+                                timeOfLastShoot = DateTime.Now;
+                            }
                             break;
                     }
                     break;
