@@ -49,37 +49,67 @@ namespace WinFormsApp1 {
             generalTimer.Interval = 25;
             generalTimer.Start();
             generalTimer.Tick += (sender, args) => {
+                if (game.IsOver)
+                    return;
                 game.SpawnMonster();
                 UpdateControls(game);
                 game.MakeActionOfMonsters(Controls, game);
-                game.Hero.Action(game, Keys.None, ActionWithKey.None,generalTimer);
-                if (game.FiredBullets.Count > 0) {
-                    foreach (var bullet in game.FiredBullets) {
+                if (game.Hero != null)
+                    game.Hero.Action(game, Keys.None, ActionWithKey.None, generalTimer);
+                else
+                {
+                    game.IsOver = true;
+                    var res = MessageBox.Show("Поражение",
+                    "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (res == DialogResult.Yes)
+                        Application.Exit();
+                    else
+                    {
+                        game.NewGameShouldBeAfterThat = true;
+                        Application.ExitThread();
+                        Application.Restart();
+                    }
+                    generalTimer.Stop();
+
+                    return;
+                }
+                if (game.FiredBullets.Count > 0)
+                {
+                    foreach (var bullet in game.FiredBullets)
+                    {
                         bullet.Move();
                     }
                 }
                 Invalidate();
             };
-            
-            Paint += (sender, args) => {
-                var g = args.Graphics;
-                g.DrawImage(game.Background.Image, game.Background.Location);
-                foreach (var environmentObject in game.EnvironmentObjects.Where(x => ! (x is Platform))) 
-                    g.DrawImage(new Bitmap(environmentObject.Image, environmentObject.Size), environmentObject.Location);
 
-                foreach (var monster in game.Monsters) 
-                    g.DrawImage(new Bitmap(monster.Image,monster.Size), monster.Location);
-                if (game.FiredBullets.Count > 0) {
-                    foreach (var bullet in game.FiredBullets) {
-                        g.DrawImage(new Bitmap(bullet.Image, bullet.Size),bullet.Location );
-                    }
-                }
-                g.DrawImage(new Bitmap(game.Hero.Image, game.Hero.Size), game.Hero.Location);
-                g.DrawImage(new Bitmap(game.Hero.Weapon.Image,game.Hero.Weapon.Size), game.Hero.Weapon.Location);
-                g.DrawImage(new Bitmap(game.BackgroundWeapon.Image,game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
-                g.DrawImage(new Bitmap(game.WeaponIcon.Image,new Size(50,50)), game.WeaponIcon.Location);
-            };
             
+
+
+            Paint += (sender, args) => {
+                if (game.Hero != null)
+                {
+                    var g = args.Graphics;
+                    g.DrawImage(game.Background.Image, game.Background.Location);
+                    foreach (var environmentObject in game.EnvironmentObjects.Where(x => !(x is Platform)))
+                        g.DrawImage(new Bitmap(environmentObject.Image, environmentObject.Size), environmentObject.Location);
+
+                    foreach (var monster in game.Monsters)
+                        g.DrawImage(new Bitmap(monster.Image, monster.Size), monster.Location);
+                    if (game.FiredBullets.Count > 0)
+                    {
+                        foreach (var bullet in game.FiredBullets)
+                        {
+                            g.DrawImage(new Bitmap(bullet.Image, bullet.Size), bullet.Location);
+                        }
+                    }
+                    g.DrawImage(new Bitmap(game.Hero.Image, game.Hero.Size), game.Hero.Location);
+                    g.DrawImage(new Bitmap(game.Hero.Weapon.Image, game.Hero.Weapon.Size), game.Hero.Weapon.Location);
+                    g.DrawImage(new Bitmap(game.BackgroundWeapon.Image, game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
+                    g.DrawImage(new Bitmap(game.WeaponIcon.Image, new Size(50, 50)), game.WeaponIcon.Location);
+                }
+            };
+
             FormClosing += (sender, eventArgs) => {
                 var res = MessageBox.Show("Уверен, что хочешь закрыть?",
                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

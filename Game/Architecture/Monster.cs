@@ -49,6 +49,12 @@ namespace Game
             }
             
             hero.Health -= this.Damage;
+            if (hero.Health > 0)
+            {
+                var shift = 50;
+                if (hero.IsLookingRight) shift = -50;
+                hero.Location = new Point(hero.Location.X + shift, hero.Location.Y - 30);
+            }
             return hero.Health > 0;
         }
         
