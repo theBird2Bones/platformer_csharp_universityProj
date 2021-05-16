@@ -59,7 +59,7 @@ namespace WinFormsApp1 {
                 else
                 {
                     game.IsOver = true;
-                    var res = MessageBox.Show("Поражение",
+                    var res = MessageBox.Show("Поражение. Хотите полностью выйти из игры?",
                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (res == DialogResult.Yes)
                         Application.Exit();
@@ -82,9 +82,6 @@ namespace WinFormsApp1 {
                 }
                 Invalidate();
             };
-
-            
-
 
             Paint += (sender, args) => {
                 if (game.Hero != null)
