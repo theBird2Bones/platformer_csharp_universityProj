@@ -9,8 +9,14 @@ using Game;
 
 namespace WinFormsApp1{
     static class Program {
-        static GameModel MakeGame()
-        {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
+        [STAThread]
+        static void Main() {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
             var game = new GameModel(new Size(1500, 900));
             game.Scores = 500;
             var player = new Hero(100, 4, 12,
@@ -83,16 +89,6 @@ namespace WinFormsApp1{
                 new Point(game.BackgroundWeapon.Location.X + 13, game.BackgroundWeapon.Location.Y + 13),
                 game.Hero.Weapon.WeaponType);
             return game;
-        }
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main() {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
-            var game = MakeGame();
 
             Application.Run(new Form1(game) {Size = game.MapSize});
         }
