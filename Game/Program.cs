@@ -88,7 +88,6 @@ namespace WinFormsApp1{
                 new Size(game.BackgroundWeapon.Size.Height - 20, game.BackgroundWeapon.Size.Width - 20),
                 new Point(game.BackgroundWeapon.Location.X + 13, game.BackgroundWeapon.Location.Y + 13),
                 game.Hero.Weapon.WeaponType);
-            return game;
 
             Application.Run(new Form1(game) {Size = game.MapSize});
         }
