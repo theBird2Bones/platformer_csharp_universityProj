@@ -30,6 +30,7 @@ namespace Game
         public int Scores { get; set; }
         public bool IsOver { get; set; }
         public Size MapSize { get; }
+        public bool NewGameShouldBeAfterThat = false;
 
         public Point SpawnLocation = new Point(0,0);
         public void SpawnMonster()
@@ -86,6 +87,8 @@ namespace Game
                             if (!monster.ActInConflict(Hero, false))
                             {
                                 Controls.Remove(Hero);
+                                Hero = null;
+                                collectionWasChanged = true;
                             }
                         }
                         break;
@@ -113,6 +116,8 @@ namespace Game
                             if(!monster.ActInConflict(Hero, false))
                             {
                                 Controls.Remove(Hero);
+                                Hero = null;
+                                collectionWasChanged = true;
                             }
                         }
                         break;
@@ -140,6 +145,8 @@ namespace Game
                             if(!monster.ActInConflict(Hero, false))
                             {
                                 Controls.Remove(Hero);
+                                Hero = null;
+                                collectionWasChanged = true;
                             }
                         }
                         break;

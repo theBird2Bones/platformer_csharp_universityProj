@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "CYhK1RCwolDi+bYcCXTUY5pq0kZOVXw/hP0mFsbNKJBIQCarDFif0xPYwbb3nQn15LBa3Qj6bD0A97xT0cks/w==",
+  "dgSpecHash": "tUmDjeRCEl9wKw5mwHpglLz7vrSSzJuY5lpcx2E18MtzXcxLxKUTK2K8xii7489n6/7vODdiQ1RbfC2k6DnxIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Konstantine\\Personal\\Study\\Программирование\\C#\\Игра\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
+  "projectFilePath": "D:\\The_p\\GameOfTheCentury\\Game\\WinFormsApp1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Konstantine\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
-    "C:\\Users\\Konstantine\\.nuget\\packages\\nunit3testadapter\\3.17.0\\nunit3testadapter.3.17.0.nupkg.sha512"
+    "C:\\Users\\The_p\\.nuget\\packages\\nunit\\3.13.1\\nunit.3.13.1.nupkg.sha512",
+    "C:\\Users\\The_p\\.nuget\\packages\\nunit3testadapter\\3.17.0\\nunit3testadapter.3.17.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Ошибка чтения файла кэша D:\\The_p\\GameOfTheCentury\\Game\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
