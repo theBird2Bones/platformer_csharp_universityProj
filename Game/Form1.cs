@@ -86,12 +86,7 @@ namespace WinFormsApp1 {
             drawingTimer.Tick += (s,a) => {
                 Invalidate();
             };
-<<<<<<< HEAD
-
-=======
             drawingTimer.Start();
-            
->>>>>>> 65496eeacf9e91b3c72f1572899c93aa3626934a
             Paint += (sender, args) => {
                 if (game.Hero != null)
                 {
