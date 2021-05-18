@@ -22,6 +22,7 @@ namespace WinFormsApp1
             Controls.Add(Shuriken);
             Controls.Add(Kunai);
             Controls.Add(Bow);
+            Controls.Add(platformMaker);
             Controls.Add(ScoresBox);
             Shuriken.Click += (sender, args) => {
                 if (game.Scores >= 50) {
@@ -69,7 +70,23 @@ namespace WinFormsApp1
                 else 
                     MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
-            }; 
+            };
+            platformMaker.Click += (sender, args) => {
+                if (game.Scores >= 200)
+                {
+                    game.Scores -= 200;
+                    ScoresBox.Text = game.Scores.ToString();
+                    game.Hero.Weapon.ChangeWeapon(new Weapon(
+                        new System.Drawing.Size(28, 28),
+                        new System.Drawing.Point(Location.X, Location.Y - 10),
+                        WeaponType.platformMaker, 2, 0.5, 11, 0, 4, new Vector(), game.Hero));
+                    game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
+                    MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("У ВАС НЕ ХВАТАЕТ ОЧКОВ ДЛЯ ПОКУПКИ ДАННОГО ОРУЖИЯ", "", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+            };
             this.Closing += (sender, args) => {
                 gameForm.generalTimer.Start();
             };

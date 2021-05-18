@@ -20,6 +20,9 @@ namespace WinFormsApp1 {
             foreach (var monster in game.Monsters) 
                 if (!Controls.Contains(monster))
                     Controls.Add(monster);
+            foreach (var environmentEl in game.EnvironmentObjects.Where(x => x is Platform))
+                if (!Controls.Contains(environmentEl))
+                    Controls.Add(environmentEl);
         }
 
         public Form1(GameModel game) {
@@ -106,6 +109,7 @@ namespace WinFormsApp1 {
                     }
                     g.DrawImage(new Bitmap(game.Hero.Image, game.Hero.Size), game.Hero.Location);
                     g.DrawImage(new Bitmap(game.Hero.Weapon.Image, game.Hero.Weapon.Size), game.Hero.Weapon.Location);
+                    g.DrawImage(new Bitmap(game.Hero.Weapon.Aim.Image, game.Hero.Weapon.Aim.Size), game.Hero.Weapon.Aim.Location);
                     g.DrawImage(new Bitmap(game.BackgroundWeapon.Image, game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
                     g.DrawImage(new Bitmap(game.WeaponIcon.Image, new Size(50, 50)), game.WeaponIcon.Location);
                 }
