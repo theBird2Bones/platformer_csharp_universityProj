@@ -81,9 +81,11 @@ namespace WinFormsApp1{
             game.MenuButton = new MenuButton(
                 new Size(90, 60),
                 new Point(0, 0));
+
             game.BackgroundWeapon = new BackgroundWeapon(
                 new Size(75, 75),
                 new Point(game.MapSize.Width - 64, 0));
+            game.Hero.HealthBar = new HealthBar(game.Hero, new Point(game.BackgroundWeapon.Location.X-170, game.BackgroundWeapon.Location.Y + game.BackgroundWeapon.Height/2 - 14));
             game.WeaponIcon = new WeaponIcons(
                 new Size(game.BackgroundWeapon.Size.Height - 20, game.BackgroundWeapon.Size.Width - 20),
                 new Point(game.BackgroundWeapon.Location.X + 13, game.BackgroundWeapon.Location.Y + 13),
