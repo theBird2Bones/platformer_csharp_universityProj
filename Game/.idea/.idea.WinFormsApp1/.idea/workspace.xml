@@ -30,8 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,22 +174,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1632" height="266" key="GridCell.Tab.0.bottom" timestamp="1621151054001">
+    <state width="1632" height="217" key="GridCell.Tab.0.bottom" timestamp="1621434864652">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="266" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1621151054001" />
-    <state width="1632" height="266" key="GridCell.Tab.0.center" timestamp="1621151054001">
+    <state width="1632" height="217" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1621434864652" />
+    <state width="1632" height="217" key="GridCell.Tab.0.center" timestamp="1621434864652">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="266" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1621151054001" />
-    <state width="1632" height="266" key="GridCell.Tab.0.left" timestamp="1621151054001">
+    <state width="1632" height="217" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1621434864652" />
+    <state width="1632" height="217" key="GridCell.Tab.0.left" timestamp="1621434864651">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="266" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1621151054001" />
-    <state width="1632" height="266" key="GridCell.Tab.0.right" timestamp="1621151054001">
+    <state width="1632" height="217" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1621434864651" />
+    <state width="1632" height="217" key="GridCell.Tab.0.right" timestamp="1621434864652">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="266" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1621151054001" />
+    <state width="1632" height="217" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1621434864652" />
     <state width="1632" height="217" key="GridCell.Tab.1.bottom" timestamp="1621150530562">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
@@ -256,26 +258,5 @@
       <screen x="0" y="0" width="1676" height="911" />
     </state>
     <state x="500" y="192" width="672" height="678" key="search.everywhere.popup/0.0.1676.911@0.0.1676.911" timestamp="1621145798477" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Architecture/Hero.cs</url>
-          <line>142</line>
-          <properties documentPath="C:\Users\Konstantine\Personal\Study\Программирование\C#\Игра\GameOfTheCentury\Game\Architecture\Hero.cs" initialLine="139">
-            <startOffsets>
-              <option value="4786" />
-              <option value="4824" />
-            </startOffsets>
-            <endOffsets>
-              <option value="4823" />
-              <option value="4825" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

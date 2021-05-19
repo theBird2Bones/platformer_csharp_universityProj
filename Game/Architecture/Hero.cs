@@ -262,6 +262,10 @@ namespace Game{
                     foreach (var monster in game.Monsters) {
                         monster.Left += game.Hero.Speed;
                     }
+
+                    foreach (var firedBullet in game.FiredBullets) {
+                        firedBullet.Left += game.Hero.Speed;
+                    }
                 }
                 this.IsGoingLeft = false;
             }
@@ -274,6 +278,9 @@ namespace Game{
                 
                 foreach (var monster in game.Monsters) {
                     monster.Left -= game.Hero.Speed;
+                }
+                foreach (var firedBullet in game.FiredBullets) {
+                    firedBullet.Left -= game.Hero.Speed;
                 }
                 this.IsGoingRight = false;
             }
