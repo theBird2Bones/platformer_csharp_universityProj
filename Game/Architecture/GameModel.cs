@@ -78,6 +78,8 @@ namespace Game
                                     game.Scores += 60;
                                 }
                                 game.FiredBullets.Remove(firedBullet);
+                                if (game.Hero.Weapon.Bullets.Contains(firedBullet))
+                                    game.Hero.Weapon.Bullets.Remove(firedBullet);
                                 break;
                             }
                         }
@@ -107,6 +109,8 @@ namespace Game
                                     game.Scores += 40;
                                 }
                                 game.FiredBullets.Remove(firedBullet);
+                                if (game.Hero.Weapon.Bullets.Contains(firedBullet))
+                                    game.Hero.Weapon.Bullets.Remove(firedBullet);
                                 break;
                             }
                         }
@@ -136,6 +140,8 @@ namespace Game
                                     game.Scores += 25;
                                 }
                                 game.FiredBullets.Remove(firedBullet);
+                                if (game.Hero.Weapon.Bullets.Contains(firedBullet))
+                                    game.Hero.Weapon.Bullets.Remove(firedBullet);
                                 break;
                             }
                         }

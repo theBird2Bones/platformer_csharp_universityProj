@@ -115,13 +115,9 @@ namespace Game{
 
         public void Shoot(GameModel game) {
             var typeOfWeapon = Weapon.WeaponType;
+            var shouldChangeWeapon = false;
             if (--Weapon.BulletCount <= 0) {
-                Weapon = new Weapon(
-                    new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                    WeaponType.stone, 1, 0.295, 1.5, 30,4,
-                    new Vector(), this);
-                game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
-
+                shouldChangeWeapon = true;
             }
             Size bulletSize = Size.Empty;
             switch (typeOfWeapon) {
@@ -137,21 +133,66 @@ namespace Game{
                 case WeaponType.stone: 
                     bulletSize = new Size(16,16);
                     break;
+                case WeaponType.platformMaker:
+                    bulletSize = new Size(30, 30);
+                    break;
             }
 
             Bullet bullet = null;
             if (IsLookingRight || !IsLookingLeft) {
-                 bullet = new Bullet(game.Hero.Location,
-                    bulletSize,Weapon.Damage,Weapon.BulletSpeed,
-                    typeOfWeapon, ViewDirecton.LookingRight);
+                bullet = new Bullet(game.Hero.Location,
+                   bulletSize, Weapon.Damage, Weapon.BulletSpeed,
+                   -Weapon.AimState,
+                   typeOfWeapon, ViewDirecton.LookingRight) ;
+                Weapon.Bullets.Add(bullet);
             }
 
             if (IsLookingLeft || !IsLookingRight) {
                  bullet = new Bullet(game.Hero.Location,
-                    bulletSize,Weapon.Damage,-1 * Weapon.BulletSpeed,
+                    bulletSize,Weapon.Damage, Weapon.BulletSpeed,
+                    Weapon.AimState,
                     typeOfWeapon, ViewDirecton.LookingLeft);
+                Weapon.Bullets.Add(bullet);
             }
             game.FiredBullets.Add(bullet);
+            if (shouldChangeWeapon && 
+                Weapon.WeaponType != WeaponType.platformMaker)
+            {
+                var oldAimState = Weapon.AimState;
+                Weapon = new Weapon(
+                    new Size(13, 13), new Point(Location.X + 10, Location.Y + 15),
+                    WeaponType.stone, 1, 0.295, 1.5, 30, 4,
+                    new Vector(), this);
+                Weapon.ChangeAim(oldAimState);
+                game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
+            }
+        }
+
+        public void MakeActionWithBullet(GameModel game)
+        {
+            if (game.Hero.Weapon.WeaponType
+                == WeaponType.platformMaker
+                && game.Hero.Weapon.Bullets.Count != 0)
+            {
+                var bullet = game.Hero.Weapon.Bullets.First();
+                var platform = new Platform(
+                    new Point(bullet.Location.X - 50, bullet.Location.Y + 30),
+                        new Size(150, 40));
+                game.EnvironmentObjects.Add(platform);
+                game.FiredBullets.Remove(bullet);
+                if (game.Hero.Weapon.Bullets.Contains(bullet))
+                    game.Hero.Weapon.Bullets.Remove(bullet);
+                if (game.Hero.Weapon.BulletCount == 0)
+                {
+                    var oldAimState = Weapon.AimState;
+                    Weapon = new Weapon(
+                        new Size(13, 13), new Point(Location.X + 10, Location.Y + 15),
+                        WeaponType.stone, 1, 0.295, 1.5, 30, 4,
+                        new Vector(), this);
+                    Weapon.ChangeAim(oldAimState);
+                    game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
+                }
+            }
         }
         
         public void ProcessKeys(GameModel game, Keys key, ActionWithKey ActionWithKey) {
@@ -175,6 +216,17 @@ namespace Game{
                                 Shoot(game);
                                 timeOfLastShoot = DateTime.Now;
                             }
+                            break;
+                        case Keys.Up:
+                            game.Hero.Weapon.ChangeAim(
+                                game.Hero.Weapon.AimState + 0.1);
+                            break;
+                        case Keys.Down:
+                            game.Hero.Weapon.ChangeAim(
+                                game.Hero.Weapon.AimState - 0.1);
+                            break;
+                        case Keys.Enter:
+                            MakeActionWithBullet(game);
                             break;
                     }
                     break;

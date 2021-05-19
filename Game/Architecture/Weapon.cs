@@ -20,12 +20,20 @@ namespace Game
         public double SplashRadius { get; set; }
         public int BulletSpeed { get; set; }
         public Vector BulletGravity { get; set; }
+        public List<Bullet> Bullets { get; set; }
+        public double AimState { get; set; }
+        public PictureBox Aim { get; set; }
         public Weapon(System.Drawing.Size size, System.Drawing.Point location, 
             WeaponType weaponType, int bulletCount, double reloadingTime, double splashRadius, int damage , 
             int bulletSpeed, Vector bulletGravity, Hero owner) : base(size, location, weaponType) {
+            Aim = new PictureBox();
+            Aim.Size = new System.Drawing.Size(10,10);
+            Aim.Image = new Bitmap(PathToImages + "aim.png");
+            ChangeAim(0);
             BulletCount = bulletCount;
             ReloadingTime = reloadingTime;
             SplashRadius = splashRadius;
+            Bullets = new List<Bullet>();
             BulletSpeed = bulletSpeed;
             BulletGravity = bulletGravity;
             Damage = damage;
@@ -35,8 +43,28 @@ namespace Game
             WeaponType = weaponType;
         }
 
+        public void ChangeAim(double aimState)
+        {
+            if (Math.Abs(aimState-Math.PI/2) >= 0.1)
+            {
+                AimState = aimState;
+                double sin = Math.Sin(aimState);
+                if (Math.Cos(aimState) > 0)
+                    sin = -sin;
+
+                Aim.Location = new System.Drawing.Point(
+                   Convert.ToInt32(Math.Ceiling(Location.X + Math.Cos(aimState)*50)),
+                   Convert.ToInt32(Math.Ceiling(Location.Y + sin*50)));
+            }
+        }
+
         public void ChangeWeapon(Weapon weapon)
         {
+            Aim = new PictureBox();
+            Aim.Size = new System.Drawing.Size(10, 10);
+            Aim.Image = new Bitmap(PathToImages + "aim.png");
+            ChangeAim(0);
+            Bullets = new List<Bullet>();
             BulletCount = weapon.BulletCount;
             ReloadingTime = weapon.ReloadingTime;
             SplashRadius = weapon.SplashRadius;
@@ -101,7 +129,32 @@ namespace Game
                         Location = new System.Drawing.Point(
                             Owner.Location.X, Owner.Location.Y + 20);
                     break;
+                case WeaponType.platformMaker:
+                    if (Owner.IsLookingRight)
+                    {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X + 20, Owner.Location.Y + 5);
+                        weaponType = WeaponType.platformMakerRight;
+                    }
+                    else
+                    {
+                        Location = new System.Drawing.Point(
+                            Owner.Location.X - 20, Owner.Location.Y + 5);
+                        weaponType = WeaponType.platformMakerLeft;
+                    }
+                    break;
             }
+            if (Owner.IsLookingRight)
+            {
+                if (Math.Cos(AimState) <= 0)
+                    AimState = -(Math.PI - AimState);
+            }
+            else
+            {
+                if (Math.Cos(AimState) > 0)
+                    AimState = -(Math.PI - AimState);
+            }
+            ChangeAim(AimState);
             Image = new Bitmap(PathToImages + _weaponTypeIcons[weaponType]);
         }
         

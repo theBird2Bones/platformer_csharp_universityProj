@@ -19,6 +19,9 @@ namespace Game
         bow,
         bowRight,
         bowLeft,
+        platformMaker,
+        platformMakerLeft,
+        platformMakerRight,
     }
     
     public class WeaponIcons : StaticObject
@@ -33,6 +36,9 @@ namespace Game
                 {WeaponType.bow, "bowRight.png"},
                 {WeaponType.bowRight, "bowRight.png"},
                 {WeaponType.bowLeft, "bowLeft.png"},
+                {WeaponType.platformMaker, "platformMakerSmallRight.png"},
+                {WeaponType.platformMakerLeft, "platformMakerSmallLeft.png"},
+                {WeaponType.platformMakerRight, "platformMakerSmallRight.png"},
             };
 
         public WeaponIcons(Size size, Point location, WeaponType weaponType) : base(size, location) {
