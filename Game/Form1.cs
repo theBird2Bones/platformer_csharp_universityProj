@@ -31,6 +31,7 @@ namespace WinFormsApp1 {
             DoubleBuffered = true;
             
             Controls.Add(game.MenuButton);
+            
             foreach (var environmentEl in game.EnvironmentObjects.Where(x => x is Platform)) 
                 Controls.Add(environmentEl);
             Controls.Add(game.Background);
@@ -112,6 +113,10 @@ namespace WinFormsApp1 {
                     g.DrawImage(new Bitmap(game.Hero.Weapon.Aim.Image, game.Hero.Weapon.Aim.Size), game.Hero.Weapon.Aim.Location);
                     g.DrawImage(new Bitmap(game.BackgroundWeapon.Image, game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
                     g.DrawImage(new Bitmap(game.WeaponIcon.Image, new Size(50, 50)), game.WeaponIcon.Location);
+                    g.FillRectangle(new SolidBrush(Color.Maroon), game.Hero.HealthBar.Location.X, game.Hero.HealthBar.Location.Y ,
+                        game.Hero.HealthBar.Size.Width * game.Hero.Health / game.Hero.HealthBar.MaxValue, game.Hero.HealthBar.Size.Height );
+                    
+                    
                 }
             };
 

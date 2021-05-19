@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Forms;
 using WinFormsApp1;
@@ -39,27 +40,20 @@ namespace Game{
             return hero.Health > 0;
           
         }
-        public bool IsGoingLeft
-        {
+        public bool IsGoingLeft {
             get { return _isGoingLeft; }
-            set {
-                _isGoingLeft = value;
-            }
+            set { _isGoingLeft = value; }
         }
         private bool _isGoingLeft;
-        public bool IsGoingRight
-        {
+        public bool IsGoingRight {
             get { return _isGoingRight; }
-            set
-            {
-                _isGoingRight = value;
-                
-            }
+            set { _isGoingRight = value; }
         }
         private bool _isGoingRight;
         public bool IsJumping { get; set; }
         public bool IsLanded { get; set; }
         public int CurrentJumpHeight { get; set; }
+        public HealthBar HealthBar;
         public bool IsMoving => IsGoingLeft || IsGoingRight || IsJumping;
         public ViewDirecton ViewDirecton { get; set; }
 
