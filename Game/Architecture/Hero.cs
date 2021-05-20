@@ -72,8 +72,8 @@ namespace Game{
             Tag = "hero";
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
-            Weapon = new Weapon(new Size(13, 13), new Point(Location.X+10, Location.Y+15), 
-                WeaponType.stone, 1, 0.295d, 1.5, 30,4, new Vector(), this); // уточнить по векторам
+            Weapon = new Weapon(new Size(26, 26), new Point(Location.X + 10, Location.Y+15), 
+                WeaponType.stone, 1, 0.6, 1.5, 30,8, new Vector(), this); // уточнить по векторам
         }
 
         public bool ActInConflict(Hero hero, Monster monster) {
@@ -157,16 +157,16 @@ namespace Game{
             Size bulletSize = Size.Empty;
             switch (typeOfWeapon) {
                 case WeaponType.bow: 
-                    bulletSize = new Size(17,10);
+                    bulletSize = new Size(34,20);
                     break;
                 case WeaponType.kunai: 
-                    bulletSize = new Size(15,15);
+                    bulletSize = new Size(30,30);
                     break;
                 case WeaponType.shuriken: 
-                    bulletSize = new Size(15,15);
+                    bulletSize = new Size(30,30);
                     break;
                 case WeaponType.stone: 
-                    bulletSize = new Size(16,16);
+                    bulletSize = new Size(26, 26);
                     break;
                 case WeaponType.platformMaker:
                     bulletSize = new Size(30, 30);
@@ -175,7 +175,7 @@ namespace Game{
 
             Bullet bullet = null;
             if (IsLookingRight || !IsLookingLeft) {
-                bullet = new Bullet(game.Hero.Location,
+                bullet = new Bullet(new Point(game.Hero.Location.X, game.Hero.Location.Y + 30),
                    bulletSize, Weapon.Damage, Weapon.BulletSpeed,
                    -Weapon.AimState,
                    typeOfWeapon, ViewDirecton.LookingRight) ;
@@ -183,7 +183,7 @@ namespace Game{
             }
 
             if (IsLookingLeft || !IsLookingRight) {
-                 bullet = new Bullet(game.Hero.Location,
+                 bullet = new Bullet(new Point(game.Hero.Location.X, game.Hero.Location.Y + 30),
                     bulletSize,Weapon.Damage, Weapon.BulletSpeed,
                     Weapon.AimState,
                     typeOfWeapon, ViewDirecton.LookingLeft);
@@ -195,8 +195,8 @@ namespace Game{
             {
                 var oldAimState = Weapon.AimState;
                 Weapon = new Weapon(
-                    new Size(13, 13), new Point(Location.X + 10, Location.Y + 15),
-                    WeaponType.stone, 1, 0.295, 1.5, 30, 4,
+                    new Size(26, 26), new Point(Location.X, Location.Y + 35),
+                    WeaponType.stone, 1, 0.6, 1.5, 30, 8,
                     new Vector(), this);
                 Weapon.ChangeAim(oldAimState);
                 game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
@@ -229,8 +229,8 @@ namespace Game{
                 {
                     var oldAimState = Weapon.AimState;
                     Weapon = new Weapon(
-                        new Size(13, 13), new Point(Location.X + 10, Location.Y + 15),
-                        WeaponType.stone, 1, 0.295, 1.5, 30, 4,
+                        new Size(26, 26), new Point(Location.X + 10, Location.Y + 15),
+                        WeaponType.stone, 1, 0.6, 1.5, 30, 8,
                         new Vector(), this);
                     Weapon.ChangeAim(oldAimState);
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
