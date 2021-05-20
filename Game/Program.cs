@@ -87,7 +87,7 @@ namespace WinFormsApp1{
             game.Background = new Background(
                 game.MapSize,
                 new Point(0, -120));
-            game.Background.FrameRateTimer.Interval = 90;
+            game.Background.FrameRateTimer.Interval = 1500;
             game.Background.FrameRateTimer.Start();
             game.Background.FrameRateTimer.Tick += (s, a) => {
                 game.Background.ChangeFrame();

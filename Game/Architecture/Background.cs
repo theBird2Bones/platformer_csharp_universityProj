@@ -10,15 +10,13 @@ namespace Game {
         public Timer FrameRateTimer = new Timer();
         private int _currentFrame = 0;
         private Dictionary<int,string> _frames = new Dictionary<int, string> {
-            {0,"background.png"},
-            {1,"background.png"},
-            {2,"background.png"},
-            {3,"background.png"},
-            {4,"background.png"},
-            {5,"background.png"},
-            {6,"background.png"},
-            {7,"background.png"},
-            {8,"background.png"},
+            {0,"background1.png"},
+            {1,"background2.png"},
+            {2,"background3.png"},
+            {3,"background4.png"},
+            {4,"background5.png"},
+            {5,"background6.png"},
+            {6,"background7.png"},
         };
         public Background(Size size, Point location)
         :base( size, location){
