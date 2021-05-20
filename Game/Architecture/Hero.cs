@@ -26,6 +26,31 @@ namespace Game{
     }
     
     public class Hero : DynamicObject {
+        public Timer FrameRateTimer = new Timer();
+        private int _currentFrame = 0;
+        private Dictionary<int,string> _framesRight = new Dictionary<int, string> {
+            {0,"heroRight.png"},
+            {1,"heroRight.png"},
+            {2,"heroRight.png"},
+            {3,"heroRight.png"},
+            {4,"heroRight.png"},
+            {5,"heroRight.png"},
+            {6,"heroRight.png"},
+            {7,"heroRight.png"},
+            {8,"heroRight.png"},
+        };
+        private Dictionary<int,string> _framesLeft = new Dictionary<int, string> {
+            {0,"heroLeft.png"},
+            {1,"heroLeft.png"},
+            {2,"heroLeft.png"},
+            {3,"heroLeft.png"},
+            {4,"heroLeft.png"},
+            {5,"heroLeft.png"},
+            {6,"heroLeft.png"},
+            {7,"heroLeft.png"},
+            {8,"heroLeft.png"},
+        };
+        
         public Hero(int health, int speed, int jumpHeight, Point location, Size size)
             : base(health, speed, jumpHeight, location, size) {
             Tag = "hero";
@@ -160,6 +185,14 @@ namespace Game{
                 Weapon.ChangeAim(oldAimState);
                 game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
             }
+        }
+
+        public void ChangeFrame() {
+            _currentFrame = (_currentFrame + 1) % (_framesRight.Count - 1);
+            if(_isLookingRight)
+                Image = new Bitmap(PathToImages + _framesRight[_currentFrame]);
+            else 
+                Image = new Bitmap(PathToImages + _framesLeft[_currentFrame]);
         }
 
         public void MakeActionWithBullet(GameModel game)

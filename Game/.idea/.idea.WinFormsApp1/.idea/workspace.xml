@@ -30,10 +30,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Architecture/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Form1.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -64,9 +61,10 @@
         <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
         <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
         <option value="$PROJECT_DIR$/MenuForm.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
         <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/Architecture/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Background.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
@@ -177,22 +175,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1632" height="231" key="GridCell.Tab.0.bottom" timestamp="1621438721930">
+    <state width="1632" height="276" key="GridCell.Tab.0.bottom" timestamp="1621517752864">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="231" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1621438721930" />
-    <state width="1632" height="231" key="GridCell.Tab.0.center" timestamp="1621438721930">
+    <state width="1632" height="276" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1621517752864" />
+    <state width="1632" height="276" key="GridCell.Tab.0.center" timestamp="1621517752864">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="231" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1621438721930" />
-    <state width="1632" height="231" key="GridCell.Tab.0.left" timestamp="1621438721930">
+    <state width="1632" height="276" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1621517752864" />
+    <state width="1632" height="276" key="GridCell.Tab.0.left" timestamp="1621517752864">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="231" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1621438721930" />
-    <state width="1632" height="231" key="GridCell.Tab.0.right" timestamp="1621438721930">
+    <state width="1632" height="276" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1621517752864" />
+    <state width="1632" height="276" key="GridCell.Tab.0.right" timestamp="1621517752864">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="231" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1621438721930" />
+    <state width="1632" height="276" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1621517752864" />
     <state width="1632" height="217" key="GridCell.Tab.1.bottom" timestamp="1621435245497">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
