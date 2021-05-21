@@ -13,6 +13,9 @@
     <Compile Update="Architecture\DynamicObject.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Architecture\HealthBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Architecture\Hero.cs">
       <SubType>Component</SubType>
     </Compile>

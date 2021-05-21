@@ -39,18 +39,18 @@ namespace Game
             {
                 var random = new Random();
                 var randomMonsterType = random.Next(3);
-                Monster monster = new Monster(300, 1, 0, 0,SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                Monster monster = new Monster(300, 3, 0, 50,SpawnLocation, new Size(60, 90), MonsterType.fatMonster);
                 switch (randomMonsterType) {
                     case (int)MonsterType.fatMonster: {
-                        monster = new Monster(300, 1, 0, 50,SpawnLocation, new Size(40, 60), MonsterType.fatMonster);
+                        monster = new Monster(300, 3, 0, 50,SpawnLocation, new Size(60, 90), MonsterType.fatMonster);
                         break;
                     }
                     case (int)MonsterType.normalMonster: {
-                        monster = new Monster(150, 3, 0, 35,SpawnLocation, new Size(30, 40), MonsterType.normalMonster);
+                        monster = new Monster(150, 6, 0, 35,SpawnLocation, new Size(45, 60), MonsterType.normalMonster);
                         break;
                     }
                     case (int)MonsterType.fastMonster: {
-                        monster = new Monster(50, 5, 0, 15,SpawnLocation, new Size(25, 30), MonsterType.fastMonster);
+                        monster = new Monster(50, 13, 0, 10,SpawnLocation, new Size(25, 45), MonsterType.fastMonster);
                         break;
                     }
                 }
@@ -65,7 +65,7 @@ namespace Game
                 var collectionWasChanged = false;
                 switch (monster.MonsterType) {
                     case MonsterType.fatMonster:
-                        monster.MoveToHero(this, 1);
+                        monster.MoveToHero(this, monster.Speed);
                         foreach (var firedBullet in FiredBullets)
                         {
                             if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
@@ -96,7 +96,7 @@ namespace Game
                         break;
                     
                     case MonsterType.normalMonster: 
-                        monster.MoveToHero(this, 3);
+                        monster.MoveToHero(this, monster.Speed);
                         foreach (var firedBullet in FiredBullets)
                         {
                             if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
@@ -127,7 +127,7 @@ namespace Game
                         break;
                     
                     case MonsterType.fastMonster:
-                        monster.MoveToHero(this, 5);
+                        monster.MoveToHero(this, monster.Speed);
                         foreach (var firedBullet in FiredBullets)
                         {
                             if (monster.Bounds.IntersectsWith(firedBullet.Bounds))

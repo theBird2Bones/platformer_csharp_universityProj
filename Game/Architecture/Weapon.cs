@@ -27,7 +27,7 @@ namespace Game
             WeaponType weaponType, int bulletCount, double reloadingTime, double splashRadius, int damage , 
             int bulletSpeed, Vector bulletGravity, Hero owner) : base(size, location, weaponType) {
             Aim = new PictureBox();
-            Aim.Size = new System.Drawing.Size(10,10);
+            Aim.Size = new System.Drawing.Size(20,20);
             Aim.Image = new Bitmap(PathToImages + "aim.png");
             ChangeAim(0);
             BulletCount = bulletCount;
@@ -61,7 +61,7 @@ namespace Game
         public void ChangeWeapon(Weapon weapon)
         {
             Aim = new PictureBox();
-            Aim.Size = new System.Drawing.Size(10, 10);
+            Aim.Size = new System.Drawing.Size(20, 20);
             Aim.Image = new Bitmap(PathToImages + "aim.png");
             ChangeAim(0);
             Bullets = new List<Bullet>();
@@ -90,24 +90,24 @@ namespace Game
                 case WeaponType.bow:
                     if(Owner.IsLookingRight) {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X + 15, Owner.Location.Y + 15);
+                            Owner.Location.X + 30, Owner.Location.Y + 25);
                         weaponType = WeaponType.bowRight;
                     }
                     else {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X, Owner.Location.Y + 15);
+                            Owner.Location.X - 25, Owner.Location.Y + 25);
                         weaponType = WeaponType.bowLeft;
                     }
                     break;
                 case WeaponType.kunai:
                     if(Owner.IsLookingRight) {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X + 20, Owner.Location.Y + 20);
+                            Owner.Location.X + 45, Owner.Location.Y + 35);
                         weaponType = WeaponType.kunaiRight;
                     }
                     else {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X - 9, Owner.Location.Y + 20);
+                            Owner.Location.X - 20, Owner.Location.Y + 35);
                         weaponType = WeaponType.kunaiLeft;
                         
                     }
@@ -115,31 +115,31 @@ namespace Game
                 case WeaponType.shuriken:
                     if (Owner.IsLookingRight)
                         Location = new System.Drawing.Point(
-                            Owner.Location.X + 21, Owner.Location.Y + 21);
+                            Owner.Location.X + 40, Owner.Location.Y + 35);
                     else
                         Location = new System.Drawing.Point(
-                            Owner.Location.X - 8, Owner.Location.Y + 21);
+                            Owner.Location.X - 15, Owner.Location.Y + 35);
                     weaponType = WeaponType.shuriken;
                     break;
                 case WeaponType.stone:
                     if (Owner.IsLookingRight)
                         Location = new System.Drawing.Point(
-                            Owner.Location.X + 20, Owner.Location.Y + 20);
+                            Owner.Location.X + 40, Owner.Location.Y + 35);
                     else
                         Location = new System.Drawing.Point(
-                            Owner.Location.X, Owner.Location.Y + 20);
+                            Owner.Location.X-5, Owner.Location.Y + 35);
                     break;
                 case WeaponType.platformMaker:
                     if (Owner.IsLookingRight)
                     {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X + 20, Owner.Location.Y + 5);
+                            Owner.Location.X + 40, Owner.Location.Y + 10);
                         weaponType = WeaponType.platformMakerRight;
                     }
                     else
                     {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X - 20, Owner.Location.Y + 5);
+                            Owner.Location.X - 40, Owner.Location.Y + 10);
                         weaponType = WeaponType.platformMakerLeft;
                     }
                     break;

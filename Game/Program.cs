@@ -23,7 +23,7 @@ namespace WinFormsApp1{
             
             var player = new Hero(100, 4, 12,
                 new Point(400, 400),
-                new Size(30, 40));
+                new Size(60, 80));
             game.Hero = player;
             game.Hero.FrameRateTimer.Interval = 43;
             game.Hero.FrameRateTimer.Tick += (s, a) => {
