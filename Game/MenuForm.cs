@@ -29,9 +29,9 @@ namespace WinFormsApp1
                     game.Scores -= 50;
                     ScoresBox.Text = game.Scores.ToString();
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
-                        new System.Drawing.Size(30, 30),
+                        new System.Drawing.Size(25, 25),
                         new System.Drawing.Point(Location.X, Location.Y),
-                        WeaponType.shuriken, 3, 0.19, 4, 60, 15, new Vector(), game.Hero));
+                        WeaponType.shuriken, 6, 0.19, 4, 60, 10, new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -61,7 +61,7 @@ namespace WinFormsApp1
                     game.Scores -= 150;
                     ScoresBox.Text = game.Scores.ToString();
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
-                        new System.Drawing.Size(50, 50),
+                        new System.Drawing.Size(35, 40),
                         new System.Drawing.Point(Location.X, Location.Y-10),
                         WeaponType.bow, 12, 0.3, 11, 150, 15, new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);

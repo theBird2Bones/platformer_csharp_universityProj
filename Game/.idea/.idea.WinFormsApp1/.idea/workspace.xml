@@ -30,8 +30,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cefb8f39-6d4b-4ab6-9bcd-5f109cfcd8c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Architecture/Background.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Background.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormsApp1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Hero.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Hero.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Architecture/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Architecture/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MenuForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MenuForm.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/WinFormsApp1.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +66,13 @@
       <list>
         <option value="$PROJECT_DIR$/Architecture/Monster.cs" />
         <option value="$PROJECT_DIR$/Architecture/GameModel.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
-        <option value="$PROJECT_DIR$/MenuForm.cs" />
         <option value="$PROJECT_DIR$/Form1.cs" />
         <option value="$PROJECT_DIR$/Architecture/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
         <option value="$PROJECT_DIR$/Architecture/Background.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Hero.cs" />
+        <option value="$PROJECT_DIR$/Architecture/Weapon.cs" />
+        <option value="$PROJECT_DIR$/MenuForm.cs" />
       </list>
     </option>
   </component>
@@ -139,6 +146,7 @@
       <workItem from="1619454423894" duration="315000" />
       <workItem from="1620378855882" duration="1342000" />
       <workItem from="1621520610043" duration="285000" />
+      <workItem from="1621795483377" duration="1128000" />
     </task>
     <servers />
   </component>
@@ -176,22 +184,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1632" height="110" key="GridCell.Tab.0.bottom" timestamp="1621521085262">
+    <state width="1632" height="125" key="GridCell.Tab.0.bottom" timestamp="1621796479656">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="110" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1621521085262" />
-    <state width="1632" height="110" key="GridCell.Tab.0.center" timestamp="1621521085262">
+    <state width="1632" height="125" key="GridCell.Tab.0.bottom/0.0.1676.911@0.0.1676.911" timestamp="1621796479656" />
+    <state width="1632" height="125" key="GridCell.Tab.0.center" timestamp="1621796479656">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="110" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1621521085262" />
-    <state width="1632" height="110" key="GridCell.Tab.0.left" timestamp="1621521085262">
+    <state width="1632" height="125" key="GridCell.Tab.0.center/0.0.1676.911@0.0.1676.911" timestamp="1621796479656" />
+    <state width="1632" height="125" key="GridCell.Tab.0.left" timestamp="1621796479656">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="110" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1621521085262" />
-    <state width="1632" height="110" key="GridCell.Tab.0.right" timestamp="1621521085262">
+    <state width="1632" height="125" key="GridCell.Tab.0.left/0.0.1676.911@0.0.1676.911" timestamp="1621796479656" />
+    <state width="1632" height="125" key="GridCell.Tab.0.right" timestamp="1621796479656">
       <screen x="0" y="0" width="1676" height="911" />
     </state>
-    <state width="1632" height="110" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1621521085262" />
+    <state width="1632" height="125" key="GridCell.Tab.0.right/0.0.1676.911@0.0.1676.911" timestamp="1621796479656" />
     <state width="1632" height="217" key="GridCell.Tab.1.bottom" timestamp="1621520808396">
       <screen x="0" y="0" width="1676" height="911" />
     </state>

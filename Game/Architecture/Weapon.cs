@@ -95,7 +95,7 @@ namespace Game
                     }
                     else {
                         Location = new System.Drawing.Point(
-                            Owner.Location.X - 25, Owner.Location.Y + 25);
+                            Owner.Location.X - 15, Owner.Location.Y + 25);
                         weaponType = WeaponType.bowLeft;
                     }
                     break;

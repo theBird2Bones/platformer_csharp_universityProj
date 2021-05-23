@@ -20,17 +20,14 @@ namespace WinFormsApp1{
             var game = new GameModel(new Size(1500, 800));
             game.Scores = 500;
             
-            
-            var player = new Hero(100, 4, 12,
+            game.Hero = new Hero(100, 4, 12,
                 new Point(400, 400),
-                new Size(60, 80));
-            game.Hero = player;
+                new Size(50, 70));
             game.Hero.FrameRateTimer.Interval = 43;
             game.Hero.FrameRateTimer.Tick += (s, a) => {
                 game.Hero?.ChangeFrame();
             };
             game.Hero.FrameRateTimer.Start();
-            
             
             game.EnvironmentObjects.Add(
                 new Platform(new Point(-100, game.MapSize.Height - 100),
@@ -92,9 +89,7 @@ namespace WinFormsApp1{
             game.Background.FrameRateTimer.Tick += (s, a) => {
                 game.Background.ChangeFrame();
             };
-            
-            
-            
+
             game.MenuButton = new MenuButton(
                 new Size(90, 60),
                 new Point(0, 0));
