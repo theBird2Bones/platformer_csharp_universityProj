@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace WinFormsApp1 {
     public partial class Form1 : Form {
         public Timer generalTimer;
-        
+
         public void UpdateControls(GameModel game) {
             foreach (var monster in game.Monsters) 
                 if (!Controls.Contains(monster))
@@ -48,7 +48,7 @@ namespace WinFormsApp1 {
                 generalTimer.Stop();
                 menuForm.Show();
             };
-
+            
             generalTimer = new Timer();
             generalTimer.Interval = 1;
             generalTimer.Start();
@@ -115,16 +115,14 @@ namespace WinFormsApp1 {
                     g.DrawImage(new Bitmap(game.WeaponIcon.Image, new Size(50, 50)), game.WeaponIcon.Location);
                     g.FillRectangle(new SolidBrush(Color.Maroon), game.Hero.HealthBar.Location.X, game.Hero.HealthBar.Location.Y ,
                         game.Hero.HealthBar.Size.Width * game.Hero.Health / game.Hero.HealthBar.MaxValue, game.Hero.HealthBar.Size.Height );
-                    
-                    
+                    g.DrawString("ОчКи: " + game.Scores,
+                        new Font("Arial",16),
+                        Brushes.Black, new Point(game.MenuButton.Location.X,game.MenuButton.Location.Y + 70) );
+                    var isStoneInHand = game.Hero.Weapon.WeaponType == WeaponType.stone;
+                    g.DrawString( isStoneInHand ? "Патроны: целая куча" : "Патроны: " +  game.Hero.Weapon.BulletCount,
+                        new Font("Arial",16),
+                        Brushes.Black, new Point(game.MenuButton.Location.X,game.MenuButton.Location.Y + 100) );
                 }
-            };
-
-            FormClosing += (sender, eventArgs) => {
-                var res = MessageBox.Show("Уверен, что хочешь закрыть?",
-                    "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (res != DialogResult.Yes)
-                    eventArgs.Cancel = true;
             };
         }
     }
