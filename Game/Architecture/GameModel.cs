@@ -33,30 +33,30 @@ namespace Game
         public bool NewGameShouldBeAfterThat = false;
 
         public Point SpawnLocation = new Point(0,0);
-        public void SpawnMonster()
+        public void SpawnMonster(int speedAdder)
         {
-            if (monsterSpawnsMonitor % 100 == 0)
+            if (monsterSpawnsMonitor % 57 == 0)
             {
                 var random = new Random();
                 var randomMonsterType = random.Next(3);
-                Monster monster = new Monster(300, 3, 0, 50,SpawnLocation, new Size(60, 90), MonsterType.fatMonster);
+                Monster monster = new Monster(300, 3 + speedAdder, 0, 50,SpawnLocation, new Size(60, 90), MonsterType.fatMonster);
                 switch (randomMonsterType) {
                     case (int)MonsterType.fatMonster: {
-                        monster = new Monster(300, 3, 0, 50,SpawnLocation, new Size(60, 90), MonsterType.fatMonster);
+                        monster = new Monster(300, 3 + speedAdder, 0, 50,SpawnLocation, new Size(60, 90), MonsterType.fatMonster);
                         break;
                     }
                     case (int)MonsterType.normalMonster: {
-                        monster = new Monster(150, 6, 0, 35,SpawnLocation, new Size(45, 60), MonsterType.normalMonster);
+                        monster = new Monster(150, 6 + speedAdder, 0, 35,SpawnLocation, new Size(45, 60), MonsterType.normalMonster);
                         break;
                     }
                     case (int)MonsterType.fastMonster: {
-                        monster = new Monster(50, 13, 0, 10,SpawnLocation, new Size(25, 45), MonsterType.fastMonster);
+                        monster = new Monster(50, 13 + speedAdder, 0, 10,SpawnLocation, new Size(25, 45), MonsterType.fastMonster);
                         break;
                     }
                 }
                 Monsters.Add(monster);
             }
-            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 101;
+            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 57;
         }
         public void MakeActionOfMonsters(
             Control.ControlCollection Controls, GameModel game)

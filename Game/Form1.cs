@@ -15,7 +15,7 @@ using System.Windows.Forms;
 namespace WinFormsApp1 {
     public partial class Form1 : Form {
         public Timer generalTimer;
-
+        private int speedAdder = 0;
         public void UpdateControls(GameModel game) {
             foreach (var monster in game.Monsters) 
                 if (!Controls.Contains(monster))
@@ -50,61 +50,59 @@ namespace WinFormsApp1 {
             };
             
             generalTimer = new Timer();
-            generalTimer.Interval = 1;
+            generalTimer.Interval = 10;
+            var intervalCounter = 0;
             generalTimer.Start();
             generalTimer.Tick += (sender, args) => {
+                intervalCounter += 1;
+                if (intervalCounter % 1500 == 0) {
+                    intervalCounter = 1;
+                    speedAdder += 10;
+                }
                 if (game.IsOver)
                     return;
-                game.SpawnMonster();
+                game.SpawnMonster(speedAdder);
                 UpdateControls(game);
                 game.MakeActionOfMonsters(Controls, game);
                 if (game.Hero != null)
                     game.Hero.Action(game, Keys.None, ActionWithKey.None, generalTimer);
-                else
-                {
+                else {
                     game.IsOver = true;
                     var res = MessageBox.Show("Поражение. Хотите полностью выйти из игры?",
                     "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (res == DialogResult.Yes)
                         Application.Exit();
-                    else
-                    {
+                    else {
                         game.NewGameShouldBeAfterThat = true;
                         Application.ExitThread();
                         Application.Restart();
                     }
                     generalTimer.Stop();
-
                     return;
                 }
-                if (game.FiredBullets.Count > 0)
-                {
-                    foreach (var bullet in game.FiredBullets)
-                    {
+                if (game.FiredBullets.Count > 0) {
+                    foreach (var bullet in game.FiredBullets) {
                         bullet.Move();
                     }
                 }
             };
             var drawingTimer = new Timer();
-            drawingTimer.Interval = 37;
+            drawingTimer.Interval = 30;
             drawingTimer.Tick += (s,a) => {
                 Invalidate();
             };
             drawingTimer.Start();
             Paint += (sender, args) => {
-                if (game.Hero != null)
-                {
+                if (game.Hero != null) {
                     var g = args.Graphics;
                     g.DrawImage(game.Background.Image, game.Background.Location);
                     foreach (var environmentObject in game.EnvironmentObjects.Where(x => !(x is Platform)))
-                        g.DrawImage(new Bitmap(environmentObject.Image, environmentObject.Size), environmentObject.Location);
-
+                        g.DrawImage(new Bitmap(environmentObject.Image, environmentObject.Size),
+                            environmentObject.Location);
                     foreach (var monster in game.Monsters)
                         g.DrawImage(new Bitmap(monster.Image, monster.Size), monster.Location);
-                    if (game.FiredBullets.Count > 0)
-                    {
-                        foreach (var bullet in game.FiredBullets)
-                        {
+                    if (game.FiredBullets.Count > 0) {
+                        foreach (var bullet in game.FiredBullets) {
                             g.DrawImage(new Bitmap(bullet.Image, bullet.Size), bullet.Location);
                         }
                     }
