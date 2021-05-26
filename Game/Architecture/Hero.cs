@@ -106,7 +106,10 @@ namespace Game{
             }
             set {
                 _isLookingRight = value;
-                this.ViewDirecton = ViewDirecton.LookingRight;
+                if (value == true)
+                    this.ViewDirecton = ViewDirecton.LookingRight;
+                else
+                    this.ViewDirecton = ViewDirecton.LookingLeft;
                 _isLookingLeft = !value;
             }
         }
@@ -119,7 +122,10 @@ namespace Game{
             }
             set {
                 _isLookingLeft = value;
-                this.ViewDirecton = ViewDirecton.LookingLeft;
+                if (value == true)
+                    this.ViewDirecton = ViewDirecton.LookingLeft;
+                else
+                    this.ViewDirecton = ViewDirecton.LookingRight;
                 _isLookingRight = !value;
             }
         }
@@ -177,7 +183,7 @@ namespace Game{
             var bullet = new Bullet(new Point(game.Hero.Location.X, game.Hero.Location.Y + 30), 
                 bulletSize,Weapon.Damage, Weapon.BulletSpeed,
                 aimState,
-                typeOfWeapon, ViewDirecton.LookingLeft);
+                typeOfWeapon, this.ViewDirecton);
             Weapon.Bullets.Add(bullet);
             
             game.FiredBullets.Add(bullet);
@@ -208,6 +214,7 @@ namespace Game{
                 var platform = new Platform(
                     new Point(bullet.Location.X - 50, bullet.Location.Y + 30),
                         new Size(150, 40));
+                game.TemporalEnvironmentObjects.Add(platform);
                 game.EnvironmentObjects.Add(platform);
                 game.FiredBullets.Remove(bullet);
                 if (game.Hero.Weapon.Bullets.Contains(bullet))
