@@ -79,7 +79,7 @@ namespace WinFormsApp1
                     game.Hero.Weapon.ChangeWeapon(new Weapon(
                         new System.Drawing.Size(56, 56),
                         new System.Drawing.Point(Location.X, Location.Y - 10),
-                        WeaponType.platformMaker, 2, 0.5, 11, 0, 8, new Vector(), game.Hero));
+                        WeaponType.platformMaker, 2, 1, 11, 0, 8, new Vector(), game.Hero));
                     game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
                     MessageBox.Show("ПОКУПКА СОВЕРШЕНА", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

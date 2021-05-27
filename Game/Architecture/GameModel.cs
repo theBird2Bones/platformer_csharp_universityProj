@@ -65,7 +65,27 @@ namespace Game
         }
         public void SpawnMonster(int speedAdder)
         {
-            if (monsterSpawnsMonitor % 57 == 0)
+            if (monsterSpawnsMonitor > 1000)
+            {
+                var alreadyExist = false;
+                foreach (var monster in Monsters)
+                {
+                    if (monster.MonsterType == MonsterType.boss)
+                    {
+                        alreadyExist = true;
+                        break;
+                    }
+                }
+                if (!alreadyExist)
+                {
+                    var boss = new Monster(3000, 3, 200, 100,
+                    new Point(SpawnLocation.X, SpawnLocation.Y - 270),
+                    new Size(180, 270), MonsterType.boss);
+                    Monsters.Add(boss);
+                }
+                monsterSpawnsMonitor = 0;
+            }
+            else if (monsterSpawnsMonitor % 57 == 0)
             {
                 var random = new Random();
                 var randomMonsterType = random.Next(3);
@@ -91,114 +111,101 @@ namespace Game
                 }
                 Monsters.Add(monster);
             }
-            monsterSpawnsMonitor = (monsterSpawnsMonitor + 1) % 57;
+            monsterSpawnsMonitor++;
         }
+
         public void MakeActionOfMonsters(
             Control.ControlCollection Controls, GameModel game)
         {
             foreach (var monster in Monsters) {
-                var collectionWasChanged = false;
                 monster.MoveToHero(this, monster.Speed);
+                var scoresToAdd = 0;
                 switch (monster.MonsterType) {
                     case MonsterType.fatMonster:
-                        foreach (var firedBullet in FiredBullets)
-                        {
-                            if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
-                            {
-                                if (!monster.ActInConflict(Hero, true))
-                                {
-                                    Controls.Remove(monster);
-                                    game.Monsters.Remove(monster);
-                                    collectionWasChanged = true;
-                                    game.Scores += 60;
-                                }
-                                game.FiredBullets.Remove(firedBullet);
-                                if (game.Hero.Weapon.Bullets.Contains(firedBullet))
-                                    game.Hero.Weapon.Bullets.Remove(firedBullet);
-                                break;
-                            }
-                        }
-
-                        if (monster.Bounds.IntersectsWith(Hero.Bounds))
-                        {
-                            if (!monster.ActInConflict(Hero, false))
-                            {
-                                Controls.Remove(Hero);
-                                Hero = null;
-                                collectionWasChanged = true;
-                            }
-                        }
+                        scoresToAdd = 60;
                         break;
                     
-                    case MonsterType.normalMonster: 
-                        foreach (var firedBullet in FiredBullets)
-                        {
-                            if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
-                            {
-                                if (!monster.ActInConflict(Hero, true))
-                                {
-                                    Controls.Remove(monster);
-                                    game.Monsters.Remove(monster);
-                                    collectionWasChanged = true;
-                                    game.Scores += 40;
-                                }
-                                game.FiredBullets.Remove(firedBullet);
-                                if (game.Hero.Weapon.Bullets.Contains(firedBullet))
-                                    game.Hero.Weapon.Bullets.Remove(firedBullet);
-                                break;
-                            }
-                        }
-                        
-                        if (monster.Bounds.IntersectsWith(Hero.Bounds))
-                        {
-                            if(!monster.ActInConflict(Hero, false))
-                            {
-                                Controls.Remove(Hero);
-                                Hero = null;
-                                collectionWasChanged = true;
-                            }
-                        }
+                    case MonsterType.normalMonster:
+                        scoresToAdd = 40;
                         break;
                     
                     case MonsterType.fastMonster:
-                        foreach (var firedBullet in FiredBullets)
-                        {
-                            if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
-                            {
-                                if (!monster.ActInConflict(Hero, true))
-                                {
-                                    Controls.Remove(monster);
-                                    game.Monsters.Remove(monster);
-                                    collectionWasChanged = true;
-                                    game.Scores += 25;
-                                }
-                                game.FiredBullets.Remove(firedBullet);
-                                if (game.Hero.Weapon.Bullets.Contains(firedBullet))
-                                    game.Hero.Weapon.Bullets.Remove(firedBullet);
-                                break;
-                            }
-                        }
-                        
-                        if (monster.Bounds.IntersectsWith(Hero.Bounds))
-                        {
-                            if(!monster.ActInConflict(Hero, false))
-                            {
-                                Controls.Remove(Hero);
-                                Hero = null;
-                                collectionWasChanged = true;
-                            }
-                            if (monster.Health <= 0)
-                            {
-                                Controls.Remove(monster);
-                                game.Monsters.Remove(monster);
-                                collectionWasChanged = true;
-                            }
-                        }
+                        scoresToAdd = 25;
                         break;
                 }
-                
+                var collectionWasChanged =
+                            ProcessMonstersAndBulletsConflict(
+                                Controls, game, monster, scoresToAdd);
+
+                if (!game.IsOver)
+                    collectionWasChanged =
+                        ProcessMonsterIntersectsWithHero(
+                            Controls, monster, game, collectionWasChanged);
+
                 if (collectionWasChanged) break;
             }
+        }
+
+        public bool ProcessMonstersAndBulletsConflict(
+            Control.ControlCollection Controls, GameModel game,
+            Monster monster, int scores)
+        {
+            var collectionWasChanged = false;
+            foreach (var firedBullet in FiredBullets)
+            {
+                if (monster.Bounds.IntersectsWith(firedBullet.Bounds))
+                {
+                    if (!monster.ActInConflict(Hero, true))
+                    {
+                        Controls.Remove(monster);
+                        game.Monsters.Remove(monster);
+                        collectionWasChanged = true;
+                        game.Scores += scores;
+                        if (monster.MonsterType == MonsterType.boss)
+                        {
+                            game.IsOver = true;
+                            var res = MessageBox.Show("Победа! Хотите полностью выйти из игры?",
+                                "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (res == DialogResult.Yes)
+                                Application.Exit();
+                            else
+                            {
+                                game.NewGameShouldBeAfterThat = true;
+                                Application.ExitThread();
+                                Application.Restart();
+                            }
+                            break;
+                        }
+                    }
+                    game.FiredBullets.Remove(firedBullet);
+                    if (game.Hero.Weapon.Bullets.Contains(firedBullet))
+                        game.Hero.Weapon.Bullets.Remove(firedBullet);
+                    break;
+                }
+            }
+            return collectionWasChanged;
+        }
+
+        public bool ProcessMonsterIntersectsWithHero(
+            Control.ControlCollection Controls, Monster monster,
+            GameModel game, bool collectionWasChanged)
+        {
+            if (monster.Bounds.IntersectsWith(Hero.Bounds))
+            {
+                if (!monster.ActInConflict(Hero, false))
+                {
+                    Controls.Remove(Hero);
+                    Hero = null;
+                    collectionWasChanged = true;
+                }
+            }
+            if (monster.Health <= 0)
+            {
+                Controls.Remove(monster);
+                game.Monsters.Remove(monster);
+                collectionWasChanged = true;
+            }
+            return collectionWasChanged;
         }
     }
 }

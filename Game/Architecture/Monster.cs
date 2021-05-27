@@ -13,6 +13,7 @@ namespace Game
         fatMonster,
         normalMonster,
         fastMonster,
+        boss,
     }
     public class Monster : DynamicObject {
         private int patienceRight;
@@ -26,7 +27,8 @@ namespace Game
         private readonly Dictionary<MonsterType, string> _mosterType = new Dictionary<MonsterType, string>() {
             {MonsterType.fatMonster, "fatMonster.png"},
             {MonsterType.normalMonster, "normalMonster.png"},
-            {MonsterType.fastMonster, "fastMonster.png"}
+            {MonsterType.fastMonster, "fastMonster.png"},
+            {MonsterType.boss, "KostyaPixelRight.png"}
         };
         private Timer punchTimer = new Timer();
         private int frame = 0;
@@ -51,6 +53,18 @@ namespace Game
         public void MoveToHero(GameModel game, int travelSpeed) {
             this.IsLanded = false;
             timer++;
+            if (this.MonsterType == MonsterType.boss)
+            {
+                if (this.Left >= game.Hero.Right)
+                    this.Left -= travelSpeed;
+                if (this.Right <= game.Hero.Left)
+                    this.Left += travelSpeed;
+                if (this.Top >= game.Hero.Top)
+                    this.Top -= travelSpeed;
+                if (this.Bottom <= game.Hero.Bottom)
+                    this.Top += travelSpeed;
+                return;
+            }
             foreach (Control obj in game.EnvironmentObjects.Where(x => x is Platform))
             {
                 if (obj is Platform && this.Bounds.IntersectsWith(obj.Bounds))
@@ -64,31 +78,10 @@ namespace Game
                     }
                     break;
                 }
-                /*
-                else if (this.Bottom <= obj.Top && this.Bottom > obj.Top - 6
-                        && (this.Left > obj.Left || this.Right < obj.Right) &&
-                    !this.IsLanded && currentJumpHeight == 0)
-                {
-                    this.Top += obj.Top - this.Bottom + 1;
-                }
-                */
                 else if (!this.IsLanded && currentJumpHeight == 0)
                 {
                     this.Top += 4;
                 }
-
-                /*
-                if (obj is Platform && (this.Left <= obj.Right && this.Left >= obj.Left ||
-                        this.Right >= obj.Left && this.Right <= obj.Right) &&
-                    this.Top >= obj.Bottom)
-                {
-                    this.TempJumpLimit = this.Top - obj.Bottom > this.TempJumpLimit ?
-                        Hero.JumpLimit :
-                        this.Top - obj.Bottom + 35;
-                    break;
-                }
-                this.TempJumpLimit = JumpLimit;
-                */
             }
             if (!underPlatform)
             {

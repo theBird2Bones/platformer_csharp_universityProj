@@ -45,7 +45,7 @@ namespace Game
 
         public void ChangeAim(double aimState)
         {
-            if (Math.Abs(aimState-Math.PI/2) >= 0.1)
+            if (Math.Abs(Math.Cos(aimState)) > 0.1 )
             {
                 AimState = aimState;
                 double sin = Math.Sin(aimState);

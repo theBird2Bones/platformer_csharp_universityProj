@@ -12,9 +12,9 @@ namespace Game {
         public int Damage { get; set; }
         public WeaponType WeaponType { get; set; }
         public double Direction { get; set; }
-        public double GRAVITY = 0.3;
-        public Bullet(Point location, Size size, int damage, int speed, double direction, 
-            WeaponType weaponType,ViewDirecton shootingDirection)  {
+        public double GRAVITY = 0.6;
+        public Bullet(Point location, Size size, int damage, int speed, double direction,
+            WeaponType weaponType, ViewDirecton shootingDirection) {
             Location = location;
             Size = size;
             Damage = damage;
@@ -53,13 +53,13 @@ namespace Game {
         public System.Windows.Vector MakeTotalForce()
         {
             return new System.Windows.Vector(
-                Math.Cos(Direction) * ForceValue*2,
-                Math.Sin(Direction) * ForceValue*2 + GRAVITY);
+                Math.Cos(Direction) * ForceValue * 2,
+                Math.Sin(Direction) * ForceValue * 2 + GRAVITY);
         }
 
         public void Move() {
             var totalForce = MakeTotalForce();
-            var tForce = new Point(Convert.ToInt32(Math.Ceiling(totalForce.X)), 
+            var tForce = new Point(Convert.ToInt32(Math.Ceiling(totalForce.X)),
                 Convert.ToInt32(Math.Ceiling(totalForce.Y)));
             Location = new Point(Location.X + tForce.X, Location.Y + tForce.Y);
             var angle = Math.Asin(totalForce.Y /
@@ -70,6 +70,7 @@ namespace Game {
             else
                 Direction = Math.PI - angle;
         }
+
         private static string PathToImages = GetGameDirectoryRoot().FullName.ToString() + "\\Images\\";
         private static DirectoryInfo GetGameDirectoryRoot() {
             var dir = new DirectoryInfo(Directory.GetCurrentDirectory());
