@@ -35,7 +35,8 @@ namespace WinFormsApp1 {
             foreach (var environmentEl in game.EnvironmentObjects.Where(x => x is Platform)) 
                 Controls.Add(environmentEl);
             Controls.Add(game.Background);
-            game.SpawnLocation = new Point(-50,700);
+            game.SpawnLocation = new Point(-100,650);
+            game.SpawnLocation2 = new Point(1550, 650);
             KeyDown += (sender, args) => {
                 game.Hero.Action(game, args.KeyCode, ActionWithKey.Pressed,generalTimer);
             };
@@ -62,6 +63,7 @@ namespace WinFormsApp1 {
                 if (game.IsOver)
                     return;
                 game.SpawnMonster(speedAdder);
+                game.CheckTemporalEnvironmentObjects(Controls);
                 UpdateControls(game);
                 game.MakeActionOfMonsters(Controls, game);
                 if (game.Hero != null)
@@ -95,6 +97,7 @@ namespace WinFormsApp1 {
             Paint += (sender, args) => {
                 if (game.Hero != null) {
                     var g = args.Graphics;
+                    
                     g.DrawImage(game.Background.Image, game.Background.Location);
                     foreach (var environmentObject in game.EnvironmentObjects.Where(x => !(x is Platform)))
                         g.DrawImage(new Bitmap(environmentObject.Image, environmentObject.Size),
@@ -110,6 +113,7 @@ namespace WinFormsApp1 {
                     g.DrawImage(new Bitmap(game.Hero.Weapon.Image, game.Hero.Weapon.Size), game.Hero.Weapon.Location);
                     g.DrawImage(new Bitmap(game.Hero.Weapon.Aim.Image, game.Hero.Weapon.Aim.Size), game.Hero.Weapon.Aim.Location);
                     g.DrawImage(new Bitmap(game.BackgroundWeapon.Image, game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
+                    
                     g.DrawImage(new Bitmap(game.WeaponIcon.Image, new Size(50, 50)), game.WeaponIcon.Location);
                     g.FillRectangle(new SolidBrush(Color.Maroon), game.Hero.HealthBar.Location.X, game.Hero.HealthBar.Location.Y ,
                         game.Hero.HealthBar.Size.Width * game.Hero.Health / game.Hero.HealthBar.MaxValue, game.Hero.HealthBar.Size.Height );
