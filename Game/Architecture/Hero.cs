@@ -73,7 +73,8 @@ namespace Game{
             Image = new Bitmap(PathToImages + "heroRight.png");
             Visible = false;
             Weapon = new Weapon(new Size(26, 26), new Point(Location.X + 10, Location.Y+15), 
-                WeaponType.stone, 10, 0.2, 1.5, 30,5, new Vector(), this); // уточнить по векторам
+                WeaponType.stone, 10, 0.4, 1.5, 30,5, new Vector(), this);
+            SpecialBullets = new List<Bullet>();
         }
 
         public bool ActInConflict(Hero hero, Monster monster) {
@@ -97,6 +98,7 @@ namespace Game{
         public HealthBar HealthBar;
         public bool IsMoving => IsGoingLeft || IsGoingRight || IsJumping;
         public ViewDirecton ViewDirecton { get; set; }
+        public List<Bullet> SpecialBullets { get; set; }
 
         public new bool IsLookingRight {
             get {
@@ -154,12 +156,29 @@ namespace Game{
             }
         }
 
+        public void ChangeWeapon(GameModel game)
+        {
+            var oldAimState = Weapon.AimState;
+            Weapon = new Weapon(
+                new Size(26, 26), new Point(Location.X, Location.Y + 35),
+                WeaponType.stone, 10, 0.4, 1.5, 30, 5,
+                new Vector(), this);
+            Weapon.ChangeAim(oldAimState);
+            game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
+        }
+
         public void Shoot(GameModel game) {
             var typeOfWeapon = Weapon.WeaponType;
             var shouldChangeWeapon = false;
+            if (Weapon.BulletCount == 0)
+            {
+                ChangeWeapon(game);
+                return;
+            }
             if (--Weapon.BulletCount <= 0) {
                 shouldChangeWeapon = true;
             }
+            
             Size bulletSize = Size.Empty;
             switch (typeOfWeapon) {
                 case WeaponType.bow: 
@@ -184,18 +203,12 @@ namespace Game{
                 bulletSize,Weapon.Damage, Weapon.BulletSpeed,
                 aimState,
                 typeOfWeapon, this.ViewDirecton);
-            Weapon.Bullets.Add(bullet);
-            
+            if (typeOfWeapon == WeaponType.platformMaker)
+                SpecialBullets.Add(bullet);
+
             game.FiredBullets.Add(bullet);
-            if (shouldChangeWeapon && Weapon.WeaponType != WeaponType.platformMaker) {
-                var oldAimState = Weapon.AimState;
-                Weapon = new Weapon(
-                    new Size(26, 26), new Point(Location.X, Location.Y + 35),
-                    WeaponType.stone, 10, 0.2, 1.5, 30, 5,
-                    new Vector(), this);
-                Weapon.ChangeAim(oldAimState);
-                game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
-            }
+            if (shouldChangeWeapon)
+                ChangeWeapon(game);
         }
 
         public void ChangeFrame() {
@@ -208,27 +221,21 @@ namespace Game{
 
         public void MakeActionWithBullet(GameModel game)
         {
-            if (game.Hero.Weapon.WeaponType == WeaponType.platformMaker
-                && game.Hero.Weapon.Bullets.Count != 0) {
-                var bullet = game.Hero.Weapon.Bullets.First();
-                var platform = new Platform(
+            if (game.Hero.SpecialBullets.Count != 0) {
+                var bullet = game.Hero.SpecialBullets.First();
+                if (bullet.WeaponType == WeaponType.platformMaker 
+                    || bullet.WeaponType == WeaponType.platformMakerLeft
+                    || bullet.WeaponType == WeaponType.platformMakerRight)
+                {
+                    var platform = new Platform(
                     new Point(bullet.Location.X - 50, bullet.Location.Y + 30),
                         new Size(150, 40));
-                game.TemporalEnvironmentObjects.Add(platform);
-                game.EnvironmentObjects.Add(platform);
+                    game.TemporalEnvironmentObjects.Add(platform);
+                    game.EnvironmentObjects.Add(platform);
+                }   
                 game.FiredBullets.Remove(bullet);
-                if (game.Hero.Weapon.Bullets.Contains(bullet))
-                    game.Hero.Weapon.Bullets.Remove(bullet);
-                if (game.Hero.Weapon.BulletCount == 0)
-                {
-                    var oldAimState = Weapon.AimState;
-                    Weapon = new Weapon(
-                        new Size(26, 26), new Point(Location.X + 10, Location.Y + 15),
-                        WeaponType.stone, 10, 0.2, 1.5, 30, 5,
-                        new Vector(), this);
-                    Weapon.ChangeAim(oldAimState);
-                    game.WeaponIcon.UpdateWeapon(game.Hero.Weapon.WeaponType);
-                }
+                if (game.Hero.SpecialBullets.Contains(bullet))
+                    game.Hero.SpecialBullets.Remove(bullet);
             }
         }
         
