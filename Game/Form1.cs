@@ -115,7 +115,7 @@ namespace WinFormsApp1 {
                     g.DrawImage(new Bitmap(game.BackgroundWeapon.Image, game.BackgroundWeapon.Size), game.BackgroundWeapon.Location);
                     
                     g.DrawImage(new Bitmap(game.WeaponIcon.Image, new Size(50, 50)), game.WeaponIcon.Location);
-                    g.FillRectangle(new SolidBrush(Color.Maroon), game.Hero.HealthBar.Location.X, game.Hero.HealthBar.Location.Y ,
+                    g.FillRectangle(new SolidBrush(Color.ForestGreen), game.Hero.HealthBar.Location.X, game.Hero.HealthBar.Location.Y ,
                         game.Hero.HealthBar.Size.Width * game.Hero.Health / game.Hero.HealthBar.MaxValue, game.Hero.HealthBar.Size.Height );
                     g.DrawString("ОчКи: " + game.Scores,
                         new Font("Arial",16),

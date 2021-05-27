@@ -78,7 +78,7 @@ namespace Game
                 }
                 if (!alreadyExist)
                 {
-                    var boss = new Monster(3000, 3, 200, 100,
+                    var boss = new Monster(2700, 3, 200, 100,
                     new Point(SpawnLocation.X, SpawnLocation.Y - 270),
                     new Size(180, 270), MonsterType.boss);
                     Monsters.Add(boss);

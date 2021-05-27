@@ -30,13 +30,17 @@ namespace Game
             {MonsterType.fastMonster, "fastMonster.png"},
             {MonsterType.boss, "KostyaPixelRight.png"}
         };
-        private Timer punchTimer = new Timer();
-        private int frame = 0;
-        private Dictionary<int,string> frames = new Dictionary<int, string> {
-            {0,"monsterPunch1.png"},
-            {1,"monsterPunch2.png"},
-            {2,"monsterPunch3.png"},
-            {3,"monsterPunch4.png"},
+        private readonly Dictionary<MonsterType, string> sightDirectionRight = new Dictionary<MonsterType, string>() {
+            {MonsterType.fatMonster, "fatMonsterRight.png"},
+            {MonsterType.normalMonster, "normalMonsterRight.png"},
+            {MonsterType.fastMonster, "fastMonsterRight.png"},
+            {MonsterType.boss, "KostyaPixelRight.png"}
+        };
+        private readonly Dictionary<MonsterType, string> sightDirectionLeft = new Dictionary<MonsterType, string>() {
+            {MonsterType.fatMonster, "fatMonsterLeft.png"},
+            {MonsterType.normalMonster, "normalMonsterLeft.png"},
+            {MonsterType.fastMonster, "fastMonsterLeft.png"},
+            {MonsterType.boss, "KostyaPixelLeft.png"}
         };
         public Monster(int health, int speed, int jumpHeight,int damage, Point location, Size size, MonsterType monsterType)
             : base(health, speed, jumpHeight, location, size)
@@ -46,7 +50,6 @@ namespace Game
             MonsterType = monsterType;
             Damage = damage;
             Visible = false;
-            punchTimer.Interval = 30;
             IsLanded = false;
         }
 
@@ -64,6 +67,11 @@ namespace Game
                 if (this.Bottom <= game.Hero.Bottom)
                     this.Top += travelSpeed;
                 return;
+            }
+            if (Right < game.Hero.Right)
+                Image = new Bitmap(PathToImages + sightDirectionRight[MonsterType]);
+            else {
+                Image = new Bitmap(PathToImages + sightDirectionLeft[MonsterType]);
             }
             foreach (Control obj in game.EnvironmentObjects.Where(x => x is Platform))
             {
@@ -158,23 +166,6 @@ namespace Game
                 hero.Location = new Point(hero.Location.X + shift, hero.Location.Y - 30);
             }
             return hero.Health > 0;
-        }
-
-        public void DrawPunchAnimation() {
-            punchTimer.Start();
-            punchTimer.Tick += (s, a) => {
-                if(frame >= 3)
-                    punchTimer.Stop();
-                else {
-                    /*Paint += (sender, args) => {
-                        var g = args.Graphics;
-                        g.DrawImage(new Bitmap(new Bitmap(PathToImages + frames[frame]), 
-                            new Size(35, 35)), Location);
-                    };
-                    frame = (frame + 1) % 4;*/
-                }
-                
-            };
         }
     }
 }

@@ -18,7 +18,7 @@ namespace WinFormsApp1{
             Application.SetCompatibleTextRenderingDefault(false);
 
             var game = new GameModel(new Size(1500, 800));
-            game.Scores = 500;
+            game.Scores = 100;
             
             game.Hero = new Hero(100, 4, 12,
                 new Point(400, 400),
